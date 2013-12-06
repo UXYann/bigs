@@ -1,3 +1,4 @@
+var CWF_URL = 'http://localhost:8888';
 var d = document;
 var wasACRSelected = 0;
 
@@ -142,8 +143,6 @@ function splashscreen() {
 		fakingFalseParallax();
 		
 	}, 1300);
-	//t.clear();
-
 }
 
 function settingUpNav() {
@@ -169,35 +168,14 @@ function settingUpNav() {
 }
 
 
-
-//	Top Menu navigation animations
-
-/*buttonElem1 = d.getElementById('stepOne');
+buttonElem1 = d.getElementById('stepOne');
 buttonElem2 = d.getElementById('stepTwo');
 buttonElem3 = d.getElementById('stepThree');
 buttonElem4 = d.getElementById('stepFour');
-
-stepNumber1 = d.getElementById('stepNumber1');
-stepNumber2 = d.getElementById('stepNumber2');
-stepNumber3 = d.getElementById('stepNumber3');
-stepNumber4 = d.getElementById('stepNumber4');
-
-step12 = d.getElementById('step12');
-step23 = d.getElementById('step23');
-step34 = d.getElementById('step34');
 buttonElem1.setAttribute('onclick',"didYouSelectYourCr('1', 'index.html', hidingMenu, 'One');");
 buttonElem2.setAttribute('onclick',"didYouSelectYourCr('2', 'verify-dashboard.html', creditRequestSelected, 'Two');");
 buttonElem3.setAttribute('onclick',"didYouSelectYourCr('3' , 'action.html', '', 'Three');");
-buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', hidingMenu, 'Four');");*/
-
-	buttonElem1 = d.getElementById('stepOne');
-	buttonElem2 = d.getElementById('stepTwo');
-	buttonElem3 = d.getElementById('stepThree');
-	buttonElem4 = d.getElementById('stepFour');
-	buttonElem1.setAttribute('onclick',"didYouSelectYourCr('1', 'index.html', hidingMenu, 'One');");
-	buttonElem2.setAttribute('onclick',"didYouSelectYourCr('2', 'verify-dashboard.html', creditRequestSelected, 'Two');");
-	buttonElem3.setAttribute('onclick',"didYouSelectYourCr('3' , 'action.html', '', 'Three');");
-	buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");	
+buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");	
 
 
 
@@ -682,7 +660,7 @@ function creditRequestSelected(jsonAccountID) {
 	}, 1000);
 	
 	var t = new Timeout(function () {
-    	readingSpecificJson("proxy-list-fake.php?requestCode=" + newTarget, startingCharts);
+    	readingSpecificJson(CWF_URL + "/details/" + newTarget, startingCharts);
 	}, 2500);
 
 	settingUpNav();	
@@ -807,11 +785,6 @@ function runningAjaxCall(currentURL,callback) {
 		};
 		if(d.getElementById('dash1')) {
 			settingUpNav();
-			/*
-			if(currentURL == "index.html") {
-				//notInitStartSwipeCarouel();
-			}
-			*/
 		}	 	
 
 	}, 1000);
@@ -1000,7 +973,7 @@ function hidingMenu() {
 
 function notInitStartSwipeCarouel() {
 	
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 
 	hookingCreditRequest();
 	if(d.getElementById('requests')) {
@@ -1046,7 +1019,7 @@ function ajaxJsonRequest(){
 }
 
 var currentCRSelected;
-function readingMainJson(fileUrl,callback) {
+function readingMainJson(callback) {
 	var mygetrequest=new ajaxJsonRequest()
 	mygetrequest.onreadystatechange=function(){
 
@@ -1086,15 +1059,9 @@ function readingMainJson(fileUrl,callback) {
 						elemToBeGenerated += "</span>";
 
 						elemToBeGenerated += "<span class='crPricing'>";
-						var currentPricing = "15";
-						if(myObject[i].details) {
-							if(myObject[i].details.facilities) {
-								if(myObject[i].details.facilities[0].pricing) {
-									currentPricing = myObject[i].details.facilities[0].total;
-								}
-							}
-						}
-						elemToBeGenerated += currentPricing;
+
+						elemToBeGenerated += Math.floor(Math.random() * 100);
+
 						elemToBeGenerated += " M€</span>";
 
 						elemToBeGenerated += "<span class='crDeadline'>";
@@ -1134,7 +1101,7 @@ function readingMainJson(fileUrl,callback) {
 		}
 	}
 
-	mygetrequest.open("GET", fileUrl, true)
+	mygetrequest.open("GET", CWF_URL + '/todolist', true)
 	mygetrequest.send(null)
 }
 
@@ -1160,44 +1127,23 @@ function readingSpecificJson(fileUrl,callback) {
 
 					var elemToBeGenerated = "";
 
-					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
-						elemToBeGenerated += "<div class='navMainTableOverContent'>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle' style='font-size: 0.8em'>Deadline</span><br/>";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent' style='font-size: 1.2em; font-weight: 500'>";
-									elemToBeGenerated += new Date(myObject.deadlineDate).toDateString();	
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span>";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500;'> ";
-									elemToBeGenerated += myObject.details.facilities[0].total;
-								elemToBeGenerated += "</span> million";							
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500'>";
-									elemToBeGenerated += myObject.details.glfi_rating.or;
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500'>";
-									elemToBeGenerated += myObject.details.currency;
-								elemToBeGenerated += "</span>";						
-							elemToBeGenerated += "</span>";
-						elemToBeGenerated += "</div>";
+					//elemToBeGenerated += "<div class='graphs'><div class='graph'><h2 class='graph-title'>OR</h2><span class='graph-rate or'>5</span><canvas id='chartDoughnutOR' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Rating and Profitability</h3></div><div class='graph'><h2 class='graph-title'>RW</h2><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Weight</h3></div><div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div></div>";
+
+					elemToBeGenerated += "<div class='graphs'>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
+					elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
+					elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
+					//elemToBeGenerated += "<div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div>";
 					elemToBeGenerated += "</div>";
 
 					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Credit Request Information</span><span class='creditRequestR'></span></div>";
 					elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
-					elemToBeGenerated += "<div class='tableRow tableRow1'><span class='creditRequestL'>ID</span><span class='creditRequestR'>"+myObject.requestCode+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Form of Request</span><span class='creditRequestR'>"+myObject.requestType+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Deadline</span><span class='creditRequestR'>"+new Date(myObject.deadlineDate)+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Amount</span><span class='creditRequestR'>"+myObject.details.facilities[0].pricing + "</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Guarantors</span><span class='creditRequestR'>"+myObject.details.guarantors + "</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Description</span><span class='creditRequestR'>"+myObject.details.description+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
 
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
 
@@ -1254,12 +1200,7 @@ function readingSpecificJson(fileUrl,callback) {
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Or</span><span class='creditRequestR'>"+myObject.details.rating+"</span></div>";
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'></span><span class='creditRequestR crediRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";
-						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Scarce Resources</span><span class='creditRequestR'>"+myObject.details.scarce_resources+"</span></div>";
-						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Risk Rating</span><span class='creditRequestR'>"+myObject.details.risk_rating+"</span></div>";
-						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Country Limit</span><span class='creditRequestR'>"+myObject.details.country_limit+"</span></div>";
-						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Categorization</span><span class='creditRequestR'>"+myObject.details.categorization+"</span></div>";
 
-							//elemToBeGenerated += "<div class='tableCategories'><span>FACILITIES</span></div>";
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>RISK ANALYSE</p><div class='redLine' style='width:637px;'></div><div class='clear'></div></div>";
 
 							elemToBeGenerated += "<div class='riskRangeLeft'>";
@@ -1317,8 +1258,6 @@ function readingSpecificJson(fileUrl,callback) {
 							elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
 
 					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
-
-
 				}
 
 				if(callback) {
@@ -1329,18 +1268,14 @@ function readingSpecificJson(fileUrl,callback) {
 					d.getElementById('dashboardClientSelected').style.display = "block";
 					window.setTimeout(function(){d.getElementById('dashboardClientSelected').style.opacity = "1"},500);
 
-
-					//testSticky();
-					//stickingThings();
-
 			} else {
 				alert("An error has occured making the request")
 			}
 		}
 	}
-	//if (document.URL.indexOf('?') === -1)
+
 	if( (fileUrl.indexOf('?') === -1) && (currentCRSelected) && (currentCRSelected != '') )  {
-		mygetrequest.open("GET", "proxy-list-fake.php?requestCode=" + currentCRSelected, true)
+		mygetrequest.open("GET", CWF_URL + "/details/" + currentCRSelected, true)
 		mygetrequest.send(null);
 	} else {
 		mygetrequest.open("GET", fileUrl, true)
@@ -1353,7 +1288,7 @@ function readingSpecificJson(fileUrl,callback) {
 
 
 if(document.getElementById('mySwipe')) {
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 }
 
 function didYouChooseACR() {

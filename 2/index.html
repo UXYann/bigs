@@ -53,9 +53,9 @@
 				element2.src = "scripts/jquery-2.0.3.min.js";
 				document.body.appendChild(element2);
 
-				var element3 = document.createElement("script");
+				/*var element3 = document.createElement("script");
 				element3.src = "http://codeorigin.jquery.com/ui/1.10.3/jquery-ui.min.js";
-				document.body.appendChild(element3);
+				document.body.appendChild(element3);*/
 
 				var element4 = document.createElement("script");
 				element4.src = "scripts/Chart.min.js";
@@ -158,6 +158,7 @@
 		</header>
 
 		<section id="delayingArrival" class="hiddenArrival">
+			<div class="requestLabels delayingSubTitle">SELECT A CREDIT REQUEST</div>
 			<section id="searchDocsForm" style="opacity: 0">
 				<div>
 					<span class="formButtons1">
@@ -408,17 +409,17 @@
 
 							<div class="peopleTableHead">
 								<div class="peopleName">Team/Manager</div>
-								<div class="peopleType">Rank/Type</div>
 								<div class="peopleDate">Date</div>
+								<div class="peopleType">Rank</div>
 								<div class="peopleDecision">Decision</div>
 								<div class="peopleUnfold"></div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleInfos">
 								<div class="peopleName"><b>ITEC / FCC / OSD</b><br/>Martin Dupont</div>
-								<div class="peopleType">1<br/>Final response</div>
 								<div class="peopleDate">Friday, November 29</div>
-								<div class="peopleDecision">All approved</div>
+								<div class="peopleType">1</div>
+								<div class="peopleDecision">All approved<br/>(Final)</div>
 								<div class="peopleUnfold peopleUnfold1"></div>
 								<div class="clear"></div>
 							</div>
@@ -461,9 +462,9 @@
 
 							<div class="peopleInfos">
 								<div class="peopleName"><b>GLF/ EXT / DIR</b><br/>Annie Croche</div>
-								<div class="peopleType">3<br/>LGD validation</div>
 								<div class="peopleDate">Friday, November 29</div>
-								<div class="peopleDecision">All approved</div>
+								<div class="peopleType">3</div>
+								<div class="peopleDecision">All approved<br/>(LGD validation)</div>
 								<div class="peopleUnfold peopleUnfold2"></div>
 								<div class="clear"></div>
 							</div>
@@ -496,9 +497,9 @@
 
 							<div class="peopleInfos">
 								<div class="peopleName">Sophie Pierret</div>
-								<div class="peopleType">2<br/>Intermediary response</div>
 								<div class="peopleDate">Thursday, November 28</div>
-								<div class="peopleDecision">LGD approved</div>
+								<div class="peopleType">2</div>
+								<div class="peopleDecision">LGD approved<br/>(Intermediary)</div>
 								<div class="peopleUnfold peopleUnfold3"></div>
 								<div class="clear"></div>
 							</div>
@@ -538,28 +539,6 @@
 
 						</div>
 
-						<div class="teamHeadBand">
-							<div class="teamTitle">Teams</div>
-							<div class="redLine"></div>
-							<div class="clear"></div>
-						</div>
-						<div class="teamLeft teamLeft1">Team</div>
-						<div class="teamRight teamRight1">
-							<p>MET : Nicolas Palmero, Pavlina Zajc, Dilpesh Patel</p>
-							<p>EXT : Isabelle Roux-Sharpe, Virginie Bouthillon de La Serve,Damien Midot</p>
-						</div>
-						<div class="teamLeft teamLeft2">Vlatt<br/>Validation Level<br/>According To thresholds</div>
-						<div class="teamRight teamRight2">BL</div>
-						<div class="teamLeft teamLeft3">Corisq</div>
-						<div class="teamRight teamRight3">No breach of CORISQ</div>
-						<div class="clear"></div>
-
-						<div class="peopleHeadBand">
-							<div class="peopleTitle">People have given their decision (<b>3</b>/8)</div>
-							<div class="redLine"></div>
-							<div class="clear"></div>
-						</div>						
-
 						<div class="peopleLeftHeadBand">
 							<div class="peopleTitle">People still have given their decision (<b>5</b>/8)</div>
 							<div class="redLine"></div>
@@ -570,30 +549,35 @@
 							<div class="peopleLeft peopleLeft1">
 								<div class="peopleLeftWhat">GLF/ EXT / DIR</div>
 								<div class="peopleLeftName">Sarah Porte - Alice Baune</div>
+								<div class="peopleLeftRank">3</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft2">
 								<div class="peopleLeftWhat">GLF/ CMK / DIR</div>
 								<div class="peopleLeftName">Anne Estaisie</div>
+								<div class="peopleLeftRank">4</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft3">
 								<div class="peopleLeftWhat">CORI / DIR</div>
 								<div class="peopleLeftName">Jeremy Du Bois</div>
+								<div class="peopleLeftRank">3</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft4">
 								<div class="peopleLeftWhat">RISQ / CIB - CAG / LET</div>
 								<div class="peopleLeftName">Sammy Rémilleux</div>
+								<div class="peopleLeftRank">5</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft5">
 								<div class="peopleLeftWhat">CORI / RISQ / DIR</div>
 								<div class="peopleLeftName">Pierre Farret</div>
+								<div class="peopleLeftRank">4</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
