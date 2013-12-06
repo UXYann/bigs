@@ -1407,32 +1407,26 @@ function addingClickBehaviour() {
 
 
 
-/*
+
+function doOnOrientationChange() {
+	switch(window.orientation) {  
+	  case -90:
+	  case 90:
+	    console.log('landscape');
+	    d.getElementById('wrongOrientation').className = "landscape";
+	    break; 
+	  default:
+	    console.log('portrait');
+	    d.getElementById('wrongOrientation').className = "portrait";
+	    break; 
+
+	}
+}
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+doOnOrientationChange();
 
 
-  function doOnOrientationChange()
-  {
-    switch(window.orientation) 
-    {  
-      case -90:
-      case 90:
-        alert('landscape');
-        break; 
-      default:
-        alert('portrait');
-        break; 
-    }
-  }
-
-  window.addEventListener('orientationchange', doOnOrientationChange);
-
-  // Initial execution if needed
-  doOnOrientationChange();
-
-
-
-
-
-*/
 
 
