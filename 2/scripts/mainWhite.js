@@ -1160,46 +1160,59 @@ function readingSpecificJson(fileUrl,callback) {
 
 					var elemToBeGenerated = "";
 
-					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
-						elemToBeGenerated += "<div class='navMainTableOverContent'>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle' style='font-size: 0.8em'>Deadline</span><br/>";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent' style='font-size: 1.2em; font-weight: 500'>";
-									elemToBeGenerated += new Date(myObject.deadlineDate).toDateString();	
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span>";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500;'> ";
-									elemToBeGenerated += myObject.details.facilities[0].total;
-								elemToBeGenerated += "</span> million";							
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500'>";
-									elemToBeGenerated += myObject.details.glfi_rating.or;
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent' style='font-size: 0.8em; text-align: center'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold' style='font-size: 1.4em; font-weight: 500'>";
-									elemToBeGenerated += myObject.details.currency;
-								elemToBeGenerated += "</span>";						
-							elemToBeGenerated += "</span>";
-						elemToBeGenerated += "</div>";
+					//elemToBeGenerated += "<div class='graphs'><div class='graph'><h2 class='graph-title'>OR</h2><span class='graph-rate or'>5</span><canvas id='chartDoughnutOR' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Rating and Profitability</h3></div><div class='graph'><h2 class='graph-title'>RW</h2><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Weight</h3></div><div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div></div>";
+
+					elemToBeGenerated += "<div class='graphs'>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
+					elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
+					elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
+					elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
+					//elemToBeGenerated += "<div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div>";
 					elemToBeGenerated += "</div>";
 
 					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Credit Request Information</span><span class='creditRequestR'></span></div>";
 					elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
-					elemToBeGenerated += "<div class='tableRow tableRow1'><span class='creditRequestL'>ID</span><span class='creditRequestR'>"+myObject.requestCode+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Form of Request</span><span class='creditRequestR'>"+myObject.requestType+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Deadline</span><span class='creditRequestR'>"+new Date(myObject.deadlineDate)+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Amount</span><span class='creditRequestR'>"+myObject.details.facilities[0].pricing + "</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Guarantors</span><span class='creditRequestR'>"+myObject.details.guarantors + "</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Description</span><span class='creditRequestR'>"+myObject.details.description+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow tableRow1'><span class='creditRequestL'>ID</span><span class='creditRequestR'>"+myObject.requestCode+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Form of Request</span><span class='creditRequestR'>"+myObject.requestType+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Deadline</span><span class='creditRequestR'>"+new Date(myObject.deadlineDate)+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Amount</span><span class='creditRequestR'>"+myObject.details.facilities[0].pricing + "</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Guarantors</span><span class='creditRequestR'>"+myObject.details.guarantors + "</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Description</span><span class='creditRequestR'>"+myObject.details.description+"</span></div>";
 
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Counterparty</span><span class='creditRequestR'>"+myObject.counterparty+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Team</span><span class='creditRequestR'>"+myObject.teamLbl+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Team Pending Actions</span><span class='creditRequestR'>"+myObject.teamPendingAction+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Urgent Credit Request</span><span class='creditRequestR'>"+myObject.urgentCreditRequest+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator</span><span class='creditRequestR'>"+myObject.initiator+"</span></div>";
+					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Request Status</span><span class='creditRequestR'>"+myObject.requestStatusLbl+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
+					
+
+						//elemToBeGenerated += "<div class='tableCategories'><span>DETAILS</span></div>";
+
+						//elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>DETAILS</p><div class='redLine' style='width:698px;'></div><div class='clear'></div></div>";
+
+						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Borrowers</span><span class='creditRequestR'>"+myObject.details.borrowers + "</span></div>";
+						//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Guarantors</span><span class='creditRequestR'>"+myObject.details.guarantors + "</span></div>";
+
+							//elemToBeGenerated += "<div class='tableCategories'><span>FACILITIES</span></div>";
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
+
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Tranche</span><span class='creditRequestR'>"+myObject.details.facilities[0].tranche+"</span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Borrowers</span><span class='creditRequestR'>"+myObject.details.facilities[0].borrowers + "</span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Total(€M)</span><span class='creditRequestR'>"+myObject.details.facilities[0].total +"<span class='cRCurrency'>" + myObject.details.currency.toLowerCase() +"</span></span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>sg</span><span class='creditRequestR'>"+myObject.details.facilities[0].sg + " <span class='cRCurrency'>" + myObject.details.currency.toLowerCase() +"</span></span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Pricing</span><span class='creditRequestR'>"+myObject.details.facilities[0].pricing + "</span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Repayment</span><span class='creditRequestR'>"+myObject.details.facilities[0].repayment + "</span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Maturity</span><span class='creditRequestR'>"+myObject.details.facilities[0].maturity +"</span></div>";
+
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Hedging</span><span class='creditRequestR'>"+myObject.details.hedging + " <span class='cRCurrency'>" + myObject.details.currency.toLowerCase() +"</span></span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Pricing</span><span class='creditRequestR'>"+myObject.details.facilities[0].pricing + "</span></div>";
+							//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Repayment</span><span class='creditRequestR'>"+myObject.details.facilities[0].repayment + "</span></div>";
 
 							elemToBeGenerated += "<div class='tableFinanceHead'>";
 							elemToBeGenerated += "<div id='financeHead1'>Dept Facilities</div>";
