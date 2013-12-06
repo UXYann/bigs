@@ -1086,10 +1086,11 @@ function readingMainJson(fileUrl,callback) {
 						elemToBeGenerated += "</span>";
 
 						elemToBeGenerated += "<span class='crPricing'>";
+						var currentPricing = "15";
 						if(myObject[i].details) {
 							if(myObject[i].details.facilities) {
 								if(myObject[i].details.facilities[0].pricing) {
-									var currentPricing = myObject[i].details.facilities[0].total;
+									currentPricing = myObject[i].details.facilities[0].total;
 								}
 							}
 						}
