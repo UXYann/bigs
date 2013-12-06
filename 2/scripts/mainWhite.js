@@ -1,3 +1,4 @@
+var CWF_URL = 'http://localhost:8888';
 var d = document;
 var wasACRSelected = 0;
 
@@ -682,7 +683,7 @@ function creditRequestSelected(jsonAccountID) {
 	}, 1000);
 	
 	var t = new Timeout(function () {
-    	readingSpecificJson("proxy-list-fake.php?requestCode=" + newTarget, startingCharts);
+    	readingSpecificJson(CWF_URL + "/details/" + newTarget, startingCharts);
 	}, 2500);
 
 	settingUpNav();	
@@ -1000,7 +1001,7 @@ function hidingMenu() {
 
 function notInitStartSwipeCarouel() {
 	
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 
 	hookingCreditRequest();
 	if(d.getElementById('requests')) {
@@ -1046,7 +1047,7 @@ function ajaxJsonRequest(){
 }
 
 var currentCRSelected;
-function readingMainJson(fileUrl,callback) {
+function readingMainJson(callback) {
 	var mygetrequest=new ajaxJsonRequest()
 	mygetrequest.onreadystatechange=function(){
 
@@ -1133,7 +1134,7 @@ function readingMainJson(fileUrl,callback) {
 		}
 	}
 
-	mygetrequest.open("GET", fileUrl, true)
+	mygetrequest.open("GET", CWF_URL + '/todolist', true)
 	mygetrequest.send(null)
 }
 
@@ -1339,7 +1340,7 @@ function readingSpecificJson(fileUrl,callback) {
 	}
 	//if (document.URL.indexOf('?') === -1)
 	if( (fileUrl.indexOf('?') === -1) && (currentCRSelected) && (currentCRSelected != '') )  {
-		mygetrequest.open("GET", "proxy-list-fake.php?requestCode=" + currentCRSelected, true)
+		mygetrequest.open("GET", CWF_URL + "/details/" + currentCRSelected, true)
 		mygetrequest.send(null);
 	} else {
 		mygetrequest.open("GET", fileUrl, true)
@@ -1352,7 +1353,7 @@ function readingSpecificJson(fileUrl,callback) {
 
 
 if(document.getElementById('mySwipe')) {
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 }
 
 function didYouChooseACR() {
