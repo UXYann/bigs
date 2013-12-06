@@ -1087,14 +1087,7 @@ function readingMainJson(callback) {
 						elemToBeGenerated += "</span>";
 
 						elemToBeGenerated += "<span class='crPricing'>";
-						if(myObject[i].details) {
-							if(myObject[i].details.facilities) {
-								if(myObject[i].details.facilities[0].pricing) {
-									var currentPricing = myObject[i].details.facilities[0].total;
-								}
-							}
-						}
-						elemToBeGenerated += currentPricing;
+						elemToBeGenerated += Math.floor(Math.random() * 100);
 						elemToBeGenerated += " M€</span>";
 
 						elemToBeGenerated += "<span class='crDeadline'>";
