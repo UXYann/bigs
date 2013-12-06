@@ -1,0 +1,240 @@
+<!-- 
+    ################################## 
+    ##################################
+    #####     ##     #     #      ####  ++++'.   +++++++  '+++',   ++   ++  +++++',   ++      ++  .'++,
+    #######  ####  ####  #####  ######  ++;'++,  +++++++  ++;'++:  ++   ++  +++''++:  ++      ++ ,++;++:
+    #######  ####  #####  ###  #######  ++  `++  ++`      ++   ++  ++   ++  ++'  ++'  ++      ++ ++.  ++
+    #######  ####  ######  #  ########  ++  `++  ++`      ++   '+  ++   ++  ++'  ,+;  ++      ++ +'`  ``
+    #######  ####  #######   #########  ++''++,  +++++++  ++;;'+'  ++   ++  ++++++    ++      ++ +'`
+    #######  ####  ######  #  ########  ++'++,   +++++++  +++++'   ++   ++  ++++++    ++      ++ +'`
+    #######  ####  #####  ###  #######  ++ ;+,   ++`      ++```    ++   ++  ++'  ,+;  ++      ++ +'`  `.
+    #######  ####  ####  #####  ######  ++ `++   ++`      ++       ++   ++  ++'  ++'  ++      ++ '+. `++
+    #######   ##   ###  #######  #####  ++  :+;  +++++++  ++       .++'++:  +++''++:  +++++++ ++ .++'++:
+    #######.      .#      ###      ###  ++  `''  +++++++  ++        `'+'.   +++++',   +++++++ ++  `'+',  
+    ################################## 
+    ##################################
+    ###                                                             
+    ###   Developpeur, si tu lis ce code, si tu penses que tu peux l'améliorer
+    ###        join-us@ux-republic.com  - join-us.ux-republic.com
+    ###   Ton mac est pret, on t'attend.
+    ###
+-->
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+		<link type="text/css" rel="stylesheet" href="styles/main.css" />
+		<script type="text/javascript">
+			
+			var d = document;
+
+
+			//	Top Menu navigation animations
+			var buttonElem1, buttonElem2, buttonElem3, buttonElem4, step12, step23, step34;
+			function changingMenuState(whichSteAreWe) {
+
+				if (whichSteAreWe == "1") {
+					buttonElem1.className = "setToBlue";
+					buttonElem2.className = "setToDark";
+					buttonElem3.className = "setToDark";
+					buttonElem4.className = "setToDark";
+					step12.className = "stepStatusLineMid";
+					step23.className = "stepStatusLineDark";
+					step34.className = "stepStatusLineDark";
+				} else if (whichSteAreWe == "2") {
+					buttonElem1.className = "setToBlue";
+					buttonElem2.className = "setToBlue";
+					buttonElem3.className = "setToDark";
+					buttonElem4.className = "setToDark";
+					step12.className = "stepStatusLineBlue";
+					step23.className = "stepStatusLineMid";
+					step34.className = "stepStatusLineDark";
+				} else if (whichSteAreWe == "3") {
+					buttonElem1.className = "setToBlue";
+					buttonElem2.className = "setToBlue";
+					buttonElem3.className = "setToBlue";
+					buttonElem4.className = "setToDark";
+					step12.className = "stepStatusLineBlue";
+					step23.className = "stepStatusLineBlue";
+					step34.className = "stepStatusLineMid";
+				} else if (whichSteAreWe == "4") {
+					buttonElem1.className = "setToBlue";
+					buttonElem2.className = "setToBlue";
+					buttonElem3.className = "setToBlue";
+					buttonElem4.className = "setToBlue";
+					step12.className = "stepStatusLineBlue";
+					step23.className = "stepStatusLineBlue";
+					step34.className = "stepStatusLineBlue";
+				}
+			}
+
+
+			//	Dashboard Menu navigation animations
+			var DashButtonElem1, DashButtonElem2, DashButtonElem3, DashButtonElem4;
+			function changingDashMenuState(whichSteAreWe) {
+				if (whichSteAreWe == "1") {
+					DashButtonElem1.className = "blue";
+					DashButtonElem2.className = "dark";
+					DashButtonElem3.className = "dark";
+					DashButtonElem4.className = "dark";
+				} else if (whichSteAreWe == "2") {
+					DashButtonElem1.className = "dark";
+					DashButtonElem2.className = "blue";
+					DashButtonElem3.className = "dark";
+					DashButtonElem4.className = "dark";
+				} else if (whichSteAreWe == "3") {
+					DashButtonElem1.className = "dark";
+					DashButtonElem2.className = "dark";
+					DashButtonElem3.className = "blue";
+					DashButtonElem4.className = "dark";
+				} else if (whichSteAreWe == "4") {
+					DashButtonElem1.className = "dark";
+					DashButtonElem2.className = "dark";
+					DashButtonElem3.className = "dark";
+					DashButtonElem4.className = "blue";
+				}
+			}
+
+
+
+
+			window.onload = function() {
+
+				//	console.log('onload');
+
+				//	Top Menu navigation animations
+				buttonElem1 = d.getElementById('stepOne');
+				buttonElem2 = d.getElementById('stepTwo');
+				buttonElem3 = d.getElementById('stepThree');
+				buttonElem4 = d.getElementById('stepFour');
+				step12 = d.getElementById('step12');
+				step23 = d.getElementById('step23');
+				step34 = d.getElementById('step34');
+				buttonElem1.setAttribute('onclick',"changingMenuState('1')");
+				buttonElem2.setAttribute('onclick',"changingMenuState('2')");
+				buttonElem3.setAttribute('onclick',"changingMenuState('3')");
+				buttonElem4.setAttribute('onclick',"changingMenuState('4')");
+
+				//	Dashboard Menu navigation animation
+				DashButtonElem1 = d.getElementById('dash1');
+				DashButtonElem2 = d.getElementById('dash2');
+				DashButtonElem3 = d.getElementById('dash3');
+				DashButtonElem4 = d.getElementById('dash4');
+				DashButtonElem1.setAttribute('onclick', "changingDashMenuState('1')")
+				DashButtonElem2.setAttribute('onclick', "changingDashMenuState('2')")
+				DashButtonElem3.setAttribute('onclick', "changingDashMenuState('3')")
+				DashButtonElem4.setAttribute('onclick', "changingDashMenuState('4')");
+			}
+
+		</script>
+	</head>
+	<body style="background: url('images/app-BG__2x.jpg') fixed no-repeat left top; background-size: 1024px 768px;">
+
+
+
+	<section id="splashscreen">
+        <div style="margin-top: 200px;">
+            <span style="display: inline-block; background: url('images/logo-ux-republic__2x.png') no-repeat 150px 35px; background-size: 77px 78px; padding-left: 160px; height: 128px; width: 77px; border-right: 1px solid #464749;">
+            <span>
+            <span style="display: inline-block;  padding-left: 96px; padding-top: 35px;">
+                <img src="images/logo-sg-branding__2x.png" width="484" alt="" />
+                <br/>
+                <span style="display: inline-block; color: #FFFFFF; font-size: 0.9em;">
+                    Prototype 12.11.2013
+                </span>
+            </span>
+        </div>
+        <div style="color: #FFFFFF; font-size: 3em; margin-left: 270px; margin-top: 100px;">
+                <a href="verify-dashboard.html">Démarrer l'expérience</a>
+        </div>
+    </section>
+
+
+
+	
+	<section id="site">
+
+		<header>
+			<div id="topNavBar">
+
+				<span id="topNavBarBackButton">
+					<span id="topNavBarBackBorder"></span>
+				</span>
+
+				<span id="topNavCurrentStepInfo">
+					<span>
+						Crédit Request
+					</span>
+					<br/>
+					Toto
+				</span>
+			
+				<span id="navStepMenu">
+					<a id="stepOne" class="setToBlue">
+						<span class="stepNumber">
+							1
+						</span>
+						<span>
+							Choose CR
+						</span></a><span id="step12" class="stepStatusLineBlue">&#160;</span><a id="stepTwo" class="setToBlue"><span class="stepNumber">2</span>
+						<span>
+							Verify
+						</span></a><span id="step23" class="stepStatusLineMid">&#160;</span><a id="stepThree" class="setToDark"><span class="stepNumber">3</span>	
+						<span>
+							Accept / refuse
+						</span></a><span id="step34" class="stepStatusLineDark">&#160;</span><a id="stepFour" class="setToDark"><span class="stepNumber">4</span>
+						<span>
+							Submit
+						</span>
+					</a>
+				</span>
+
+				<span id="userIDConnect">
+					Edouard
+					<br/>
+					Sousak
+				</span>
+			</div>
+
+		</header>
+
+		<section id="content">
+			
+			<section id="navDashBoard">
+				<div id="navDashBoardRightBorder">
+					
+				</div>
+
+				<ul>
+					<li id="dash1" class="blue">
+						Dashboard
+					</li>
+					<li id="dash2" class="dark">
+						Documents
+					</li>
+					<li id="dash3" class="dark">
+						Summury
+					</li>
+					<li id="dash4" class="dark">
+						Rating
+					</li>
+				</ul>
+				<div>
+					<span id="SGLogoBottomNav">
+						
+					</span>
+				</div>
+			</section>
+
+			<section id="dashMainContentSection">
+
+			</section>
+
+		</section>
+
+	</section>
+	</body>
+</html>

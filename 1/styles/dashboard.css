@@ -1,0 +1,329 @@
+
+.navDashBoard {
+	background: #1A1A1A;
+	z-index: 1000;
+	width: 110px;
+	position: relative;
+	float: left;
+	clear: both;
+	margin-top: 90px;
+	/*position: -webkit-sticky;*/
+	display: none;
+	-webkit-transition: all ease-out 500ms;	
+}
+
+.navDashBoard ul, .navDashBoardFixed ul {
+    list-style-type: none;
+    padding-left: 0;
+    -webkit-margin-before: 0;
+    -o-margin-before: 0;
+    -ms-margin-before: 0;
+    margin-bottom: 0;
+}
+
+.navDashBoard li, .navDashBoardFixed li {
+	border-bottom: 1px solid #232525;
+	padding-top: 35px;
+	padding-bottom: 25px;
+	font-size: 0.8em;
+	font-weight: 100;
+	text-align: center;
+	-webkit-transition: all ease-in-out 250ms;
+}
+
+.navDashBoard li.blue, .navDashBoardFixed li.blue {
+	/*background-color: #0096E1;*/
+	/*color: #E8F7FB;*/
+	color: #747474;
+	border-bottom: 1px solid #E8F7FB;
+	background-color: rgba(0, 150, 225, 0.4);
+	background-color: #E8E9E8;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+.navDashBoard li.dark, .navDashBoardFixed li.dark {
+	background-color: transparent;
+	color: #747474;
+}
+
+
+
+.navDashBoardFixed {
+	background: #1A1A1A;
+	z-index: 1000;
+	width: 110px;
+	position: fixed;
+	top: 195px;
+	display: none;
+}
+
+
+#dashboardClientSelected {
+	/*padding: 15px 10px 0px 15px;*/
+	float: left;
+	display: none;
+	z-index: 10000;
+	position: fixed;
+	top: 85px;
+	margin-top: 0;
+	margin-bottom: 0;
+	/*background-color: rgba(0,0,0,.75);*/
+	width: 100%;
+	-webkit-transition: all ease-out 500ms;
+
+}
+
+.clientLogo {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin-left: 30px;
+	margin-top: 10px;
+	vertical-align: top;
+}
+
+.textThiner {
+	font-weight: 100;
+}
+
+.clientNameRLabel {
+	font-family:  "Helvetica neue";
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: 300;
+	color: #FEFEFE;
+	vertical-align: bottom;
+	padding: 10px 35px 10px 0px;
+	width: 800px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid #FBFBFC;
+	vertical-align: top;
+	margin-left: 50px;
+}
+
+.dashLeftMenu {
+	float: left;
+	position: fixed;
+	top: 131px;
+}
+
+
+.dashLeftMenu li {
+	width: 131px;
+}
+
+.dashLeftMenu li span {
+	display: block;
+/*	width: 110px;*/
+	text-align: center;
+}
+
+#dash1 span {
+	display: block;
+	background: url('../images/img-icon_left_2x.png') transparent no-repeat center top;
+	background-size: 50px 200px;
+	height: 50px;
+	text-align: center;
+}
+
+#dash2 span {
+	display: block;
+	background: url('../images/img-icon_left_2x.png') transparent no-repeat center 100%;
+	background-size: 50px 200px;
+	margin-bottom: 10px;
+	height: 50px;
+	text-align: center;
+}
+
+#dash3 span {
+	display: block;
+	background: url('../images/img-icon_left_2x.png') transparent no-repeat center 30%;
+	margin-bottom: 10px;
+	background-size: 50px 200px;
+	height: 50px;
+	text-align: center;
+}
+
+#SGLogoBottomNav {
+	display: inline-block;
+	bottom: 0;
+	width: 90px;
+	height: 13px;
+	background: url('../images/logo-sg-branding.png') transparent no-repeat left top;
+	background-size: 90px 13px;
+	margin-left: 10px;
+}
+
+#dashMainContentSection {
+	position: absolute;
+	left: 131px;
+	width: 880px;
+	min-height: 88%;
+	-webkit-transform: translate3d(0, 0,0);
+	-webkit-transition: all ease-in-out 1000ms; 
+	z-index: 0;
+	font-family:  "Helvetica neue";
+	letter-spacing: 1px;
+	font-weight: 100;
+	padding-bottom: 100px;
+	opacity: 0;
+	background-color: #E8E9E8;
+
+}
+
+#dashMainContentSection div.tableRow {
+	display: table-row;
+}
+
+#dashMainContentSection div.tableRow:first-child {
+	font-size: 1.5em;
+	height: 100px;
+	border: none;
+
+}
+#dashMainContentSection span.creditRequestL{
+	color: #000000;	
+	width: 200px;
+	font-size: 0.9em;
+	font-weight: 600;
+}
+
+#dashMainContentSection span.creditRequestR {
+	color: #000000;
+	font-size: 1em;
+	width: 600px;
+}
+
+#dashMainContentSection span.creditRequestL, #dashMainContentSection span.creditRequestR {
+	display: table-cell;
+	border-bottom: 1px solid rgba(90, 90, 90, 0.5);
+	padding: 20px;
+}
+
+#dashMainContentSection .subSection {
+	font-size: 1.3em;
+	height: 90px;
+	vertical-align: middle;
+	font-weight: 300;
+}
+
+#dashMainContentSection .subUnderSection {
+	font-size: 1.2em;
+	height: 90px;
+	vertical-align: middle;
+	font-weight: 100;
+	color: #FFF !IMPORTANT;
+	border: none;
+}
+
+.cRCurrency {
+	font-size: 0.7em;
+}
+
+.dashCRHighlightDate {
+	position: absolute;
+	top: 300px;
+	font-size: 1.5em;
+	font-weight: 300;
+	width: 200px;
+	right: 20px;
+}
+
+.dashCRHighlightTotal {
+	position: absolute;
+	top: 150px;
+	font-size: 1.5em;
+	font-weight: 300;
+	width: 200px;
+	right: 20px;
+}
+
+#dashMainContentDumentsSection {
+	padding-top: 150px;
+	margin-left: 131px;	
+	padding-bottom: 100px;
+}
+
+.navMainTableOverContentTable {
+	display:table;
+	border-collapse:separate;
+	border-spacing:20px;
+}
+
+.navMainTableOverContent {
+	display: table-row;
+	vertical-align: middle;
+	padding: 30px;
+}
+
+.navMainTableCellOverContent {
+	border-spacing: 20px;
+	padding: 15px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 200px;
+	border: 1px solid #A1A1A1;
+	background-color: #303030;
+	opacity: 0.7;
+	color: #CCCCCC;
+	border-radius: 7px;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+	font-size: 1em;
+	height: 30px;
+}
+
+.stylingHeadDetailsTitle {
+	font-family: "Helvetica neue";
+	font-size: 0.9em;
+	font-weight: 100;
+}
+
+.stylingHeadDetailsTitleBold {
+	font-family: "Helvetica neue";
+	font-weight: 300;
+	font-size: 0.9em;
+}
+
+.dateCurrent {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 200px;
+}
+
+
+/*
+
+
+#navDashBoardRightBorder {
+	float: right;
+	height: 85%;
+	background: -webkit-gradient(linear, left top, right top, color-stop(40%,#0096E1), color-stop(90%,#5FBCE9), color-stop(0%,#0096E1));
+	width: 5px;
+	display: inline-block;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+
+
+.dashboardMainContentSec {
+	font-family: 'Helvetica neue', sans-serif;
+	width: 300px;
+	height: 300px;
+	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 0.9em;
+	color: #BFBFBF;
+	font-weight: 100;
+}
+*/
+/*
+#site {
+	opacity: 1;
+}
+
+
+*/

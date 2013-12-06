@@ -1,0 +1,217 @@
+
+#logoHeadBand {
+	width: 100%;
+}
+
+#logoHeadBand #headBandLogo {
+	float: left;
+	height: 40px;
+	margin: 20px 0 0 20px;
+}
+
+#logoHeadBand #optHolder {
+	position: fixed;
+	top: 0;
+	right: 20px;
+	/*width: 200px;*/
+	height: 45px;
+	margin-top: 20px;
+}
+
+#logoHeadBand #param,
+#logoHeadBand #account {
+	float: left;
+	width: 45px;
+	height: 45px;
+	background: url('../../images/white/btn_reglage_compte_off.png') no-repeat;
+	background-size: 45px;
+}
+
+#logoHeadBand #account {
+	background-position: 0 -45px;
+}
+
+
+#topNavBar {
+	vertical-align: top;
+	height: 85px;
+	top: 0;
+	width: 100%;
+	-webkit-transition: all ease-in-out 500ms;
+	/*background: rgba(0, 0, 0, .27);*/
+	z-index: 10000;
+	/*position: fixed;*/
+	position: relative;
+}
+
+#topNavBarBackButton {
+	display: inline-block;
+	/*background: url('../../images/img_button_back.png') no-repeat left top;
+	background-size: 75px 150px;
+	height: 85px;
+	width: 110px;
+	margin-top: 3px;
+	margin-left: 28px;*/
+	width: 50px;
+	height: 53px;
+	margin: 15px 56px 0 0;
+	background: url('../../images/white/left-arrow.png') no-repeat 20px 17px;
+	background-size: 10px;
+	-moz-box-shadow: 0px 3px 3px 0px #dfdfdf;
+	-webkit-box-shadow: 0px 3px 3px 0px #dfdfdf;
+	-o-box-shadow: 0px 3px 3px 0px #dfdfdf;
+	box-shadow: 0px 3px 3px 0px #dfdfdf;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3);
+	-webkit-transition: all ease-in-out 500ms;
+}
+
+#topNavBarBackButton:hover {
+	background-color: #fafafa;
+}
+
+#topNavBarBackBorder {
+	float: right;
+	height: 70%;
+	margin-top: 10%;
+	border-right: 2px solid #3E3E3E;
+	display: none;
+}
+
+#topNavCurrentStepInfo {
+	display: inline-block;
+	vertical-align: top;
+	height: 75px;
+	color: #FFFFFF;
+	margin-top: 5px;
+	padding-top: 20px;
+	padding-left: 10px;
+	font-size: 0.9em;
+	padding-right: 25px;
+}
+
+#topNavCurrentStepInfo :first-child {
+	text-transform:uppercase;
+	font-weight: 500;
+}
+
+#navStepMenu {
+	vertical-align: top;
+	display: inline-block;
+	height: 62px;
+}
+
+
+#navStepMenu a {
+	color: #FFFFFF;
+	margin-top: 15px;
+	vertical-align: top;
+	display: inline-block;
+	width: 170px;
+	-webkit-border-radius: 12px;
+	font-size: 0.8em;
+	padding: 2px 10px 5px 5px;
+	font-weight: 100;
+	height: 30px;
+	text-align: center;
+	-webkit-transition: all ease-in-out 250ms;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.navStepMenuLabels {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+#navStepMenu a.setToBlue {
+	background-color: #009ADD;
+	color: #D9EFFA;
+	letter-spacing: 1px;
+}
+
+#navStepMenu a.setToDark {
+	background-color: #111010;
+	color: #A5A6A8;
+	opacity: 0.5;
+}
+
+#stepNumber1, #stepNumber2, #stepNumber3, #stepNumber4 {
+	display: inline-block;
+	float: left;
+	border-radius: 50px;
+	font-size: 1.4em;
+	font-weight: 700;
+	-webkit-transition: all ease-in-out 250ms;
+	-webkit-transform: translate3d(0, 0, 0);	
+}
+
+.stepNumberBlue {
+	border: 1px solid #13A5E0;
+	background-color: #1BA9E2;
+	color: #FDFEFE;
+	padding: 5px 10px 5px 10px;
+}
+
+.stepNumberDark {
+	border: none;
+	color: #8C8C8B;
+	background-color: transparent;
+	padding: 7px 10px 5px 10px;
+}
+
+#step12, #step23, #step34 {
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+	color: #FFFFFF;
+	padding: 0;
+	height: 7px;
+	margin-top: 30px;
+	width: 20px;
+	-webkit-transition: all ease-in-out 500ms;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.stepStatusLineMid {
+	background: -webkit-gradient(linear, left top, right top, color-stop(40%,#0096E1), color-stop(40%,#171C21), color-stop(0%,#0096E1));
+	-webkit-transition: all ease-in-out 500ms;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.stepStatusLineBlue {
+	background-color: #0096E1;
+	-webkit-transition: all ease-in-out 500ms;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.stepStatusLineDark {
+	background-color: #171C21;
+	-webkit-transition: all ease-in-out 500ms;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+#navStepMenu a.setToDarkNotSelected { 
+	width: 120px;
+	border: 1px solid #D71236;
+	color:#FFFFFF;
+	background-color: rgb(48,51,52);
+	background-size: 15px 15px;
+	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	                  transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	                  transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	                  transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	                  transparent 75%, transparent);
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	                  transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	                  transparent 75%, transparent);
+	-pie-background: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	                 transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	                 transparent 75%, transparent) 0 0 / 10px 10px, #EDEDED;
+	opacity: 0.2;
+	}
+
+#navStepMenu a.setToBlueNotSelected { 
+	background-color: #009ADD;
+	box-shadow: 0px 0px 10px 0px rgba(166,226,42, .8);
+	color:#FFFFFF;

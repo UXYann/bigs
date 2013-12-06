@@ -1,0 +1,108 @@
+<html>
+
+	<head>
+		<script type="text/javascript" src="scripts/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript">
+
+			var d = document;
+
+			function ajaxJsonRequest(){
+				var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
+				if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
+					for (var i=0; i<activexmodes.length; i++){
+						try {
+							return new ActiveXObject(activexmodes[i])
+						}
+						catch(e){
+						//suppress error
+						}
+					}
+				} else if (window.XMLHttpRequest) // if Mozilla, Safari etc
+				return new XMLHttpRequest()
+				else
+				return false
+			}
+
+
+			function readingJson(fileUrl) {
+				var mygetrequest=new ajaxJsonRequest()
+				mygetrequest.onreadystatechange=function(){
+
+					if (mygetrequest.readyState==4){
+
+						if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
+
+							var myObject = eval('(' + mygetrequest.responseText + ')');
+
+							var elemToBeGenerated = "";
+
+							var j = 0;
+							var k = 0;
+
+							for (var i = 0; i < myObject.length; i++) {
+								if(k == 0) {
+									elemToBeGenerated += "<div>";
+								}
+
+								elemToBeGenerated += "<span class='crCard'>";
+									elemToBeGenerated += "<span class='crTitle'>";
+										elemToBeGenerated += "<b>" + myObject[i].requestCode + "</b>";
+									elemToBeGenerated += "</span>";
+									elemToBeGenerated += "<span class='crRequester'>";
+										elemToBeGenerated +=  myObject[i].counterparty;
+									elemToBeGenerated += "</span>";
+									elemToBeGenerated += "<span class='crStatus'>";
+										elemToBeGenerated +=  myObject[i].requestStatusLbl;
+									elemToBeGenerated += "</span>";
+								elemToBeGenerated += "</span>";
+
+								j++;
+
+								if(j == 4) {
+									elemToBeGenerated += "<br class='swipeBreak' />";
+									j = 0;
+								}
+
+								k++;
+
+								if(k == 8) {
+									elemToBeGenerated += "</div>";
+									k = 0;
+								}
+							}
+
+							d.getElementById('content').innerHTML = elemToBeGenerated;
+
+						} else {
+							alert("An error has occured making the request")
+						}
+					}
+				}
+
+				mygetrequest.open("GET", fileUrl, true)
+				mygetrequest.send(null)
+			}
+
+
+
+
+
+
+
+
+			
+			window.onload = function(){
+				console.log('onload');
+				readingJson('json/list-real.json');
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div id="content">
+
+		</div>	
+	</body>
+
+</html>

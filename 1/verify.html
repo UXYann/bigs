@@ -1,0 +1,126 @@
+<!-- 
+    ################################## 
+    ##################################
+    #####     ##     #     #      ####  ++++'.   +++++++  '+++',   ++   ++  +++++',   ++      ++  .'++,
+    #######  ####  ####  #####  ######  ++;'++,  +++++++  ++;'++:  ++   ++  +++''++:  ++      ++ ,++;++:
+    #######  ####  #####  ###  #######  ++  `++  ++`      ++   ++  ++   ++  ++'  ++'  ++      ++ ++.  ++
+    #######  ####  ######  #  ########  ++  `++  ++`      ++   '+  ++   ++  ++'  ,+;  ++      ++ +'`  ``
+    #######  ####  #######   #########  ++''++,  +++++++  ++;;'+'  ++   ++  ++++++    ++      ++ +'`
+    #######  ####  ######  #  ########  ++'++,   +++++++  +++++'   ++   ++  ++++++    ++      ++ +'`
+    #######  ####  #####  ###  #######  ++ ;+,   ++`      ++```    ++   ++  ++'  ,+;  ++      ++ +'`  `.
+    #######  ####  ####  #####  ######  ++ `++   ++`      ++       ++   ++  ++'  ++'  ++      ++ '+. `++
+    #######   ##   ###  #######  #####  ++  :+;  +++++++  ++       .++'++:  +++''++:  +++++++ ++ .++'++:
+    #######.      .#      ###      ###  ++  `''  +++++++  ++        `'+'.   +++++',   +++++++ ++  `'+',  
+    ################################## 
+    ##################################
+    ###                                                             
+    ###   Developpeur, si tu lis ce code, si tu penses que tu peux l'améliorer
+    ###        join-us@ux-republic.com  - join-us.ux-republic.com
+    ###   Ton mac est pret, on t'attend.
+    ###
+-->
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+		<link type="text/css" rel="stylesheet" href="styles/main.css" />
+		
+		<script type="text/javascript">
+
+			// Add a script element as a child of the body
+			function downloadJSAtOnload() {
+				var element = document.createElement("script");
+				element.src = "scripts/main.js";
+				document.body.appendChild(element);
+
+				var element2 = document.createElement("script");
+				element2.src = "scripts/jquery-2.0.3.min.js";
+				document.body.appendChild(element2);
+			}
+
+			 // Check for browser support of event handling capability
+			if (window.addEventListener)
+				window.addEventListener("load", downloadJSAtOnload, false);
+			else if (window.attachEvent)
+				window.attachEvent("onload", downloadJSAtOnload);
+			else window.onload = downloadJSAtOnload;
+
+		</script>
+
+	<body style="background: url('images/app-BG__2x.jpg') fixed no-repeat left top; background-size: 1024px 768px;">
+	<section id="splash" style="position: absolute; top: 0; left: 0; -webkit-transition: visibility ease-in-out 250ms; z-index: 100;">
+
+
+		<!-- 	TODO remplacer les images du splashscreen avec des images converties en base64 	-->
+        <div style="margin-top: 200px;">
+            <span style="display: inline-block; background: url('images/logo-ux-republic__2x.png') no-repeat 150px 35px; background-size: 77px 78px; padding-left: 160px; height: 128px; width: 77px; border-right: 1px solid #464749;">
+            <span>
+            <span style="display: inline-block;  padding-left: 96px; padding-top: 35px;">
+                <img src="images/logo-sg-branding__2x.png" width="484" alt="" />
+                <br/>
+                <span style="display: inline-block; color: #FFFFFF; font-size: 0.9em;">
+                    Prototype 12.11.2013
+                </span>
+            </span>
+        </div>
+        <div style="color: #FFFFFF; font-size: 3em; margin-left: 270px; margin-top: 100px;">
+                <a id="startingExperience">Démarrer l'expérience</a>
+        </div>
+
+	</section>
+
+
+
+
+
+
+
+
+	
+
+
+	<section id="site" style="z-index: 0; opacity: 0; -webkit-transition: opacity ease-in-out 1500ms;">
+
+		<header>
+			<div id="topNavBar">
+				<span id="topNavBarBackButton">
+					<span id="topNavBarBackBorder"></span>
+				</span>
+
+				<span id="navStepMenu">
+					<a id="stepOne" class="setToBlue">
+						<span id="stepNumber1" class="stepNumberBlue">
+							1
+						</span>
+						<span class="navStepMenuLabels">
+							Choose CR
+						</span></a><span id="step12" class="stepStatusLineMid">&#160;</span><a id="stepTwo" class="setToDark"><span id="stepNumber2" class="stepNumberDark">2</span>
+						<span class="navStepMenuLabels">
+							Verify
+						</span></a><span id="step23" class="stepStatusLineDark">&#160;</span><a id="stepThree" class="setToDark"><span id="stepNumber3" class="stepNumberDark">3</span>	
+						<span class="navStepMenuLabels">
+							Accept / refuse
+						</span></a><span id="step34" class="stepStatusLineDark">&#160;</span><a id="stepFour" class="setToDark"><span id="stepNumber4" class="stepNumberDark">4</span>
+						<span class="navStepMenuLabels">
+							Submit
+						</span>
+					</a>
+				</span>
+			</div>
+		</header>
+
+		<section>
+			<section id="content">
+				
+				
+			</section>
+		</section>
+	
+	</section>
+
+	</body>
+	
+</html>	

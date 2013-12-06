@@ -1,0 +1,24 @@
+
+
+
+%cf,
+.clearfix {
+  @include pie-clearfix;
+}
+
+%center,
+.center {
+  margin: 0 auto;
+}
+
+
+%visible,
+.visible {
+  display: block;
+}
+
+
+%hidden,
+.hidden {
+  display: none;
+}
