@@ -1051,7 +1051,6 @@ function readingMainJson(callback) {
 					elemToBeGenerated += "<span onclick=\"creditRequestSelected('"+currentCRSelected+"')\" class='"+mainColor+"'>";
 
 						elemToBeGenerated += "<span class='crTitle crTitle"+z+"'>";
-						//elemToBeGenerated += "<b>" + myObject[i].requestCode + "</b>";
 						elemToBeGenerated += "<b>" + myObject[i].counterparty + "</b>";
 						elemToBeGenerated += "</span>";
 						elemToBeGenerated += "<span class='crRequester'>";
@@ -1127,18 +1126,14 @@ function readingSpecificJson(fileUrl,callback) {
 
 					var elemToBeGenerated = "";
 
-					//elemToBeGenerated += "<div class='graphs'><div class='graph'><h2 class='graph-title'>OR</h2><span class='graph-rate or'>5</span><canvas id='chartDoughnutOR' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Rating and Profitability</h3></div><div class='graph'><h2 class='graph-title'>RW</h2><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='165px' height='165px'></canvas><h3 class='graph-label'>Risk Weight</h3></div><div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div></div>";
-
 					elemToBeGenerated += "<div class='graphs'>";
 					elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
 					elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
 					elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
 					elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
 					elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
-					//elemToBeGenerated += "<div class='graph graph-medium'><h2 class='graph-title graph-title-line-chart'>VALUE</h6><canvas id='lineChartValue' width='432px' height='188px'></canvas></div>";
 					elemToBeGenerated += "</div>";
 
-					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Credit Request Information</span><span class='creditRequestR'></span></div>";
 					elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
 					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
