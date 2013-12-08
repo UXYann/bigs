@@ -102,6 +102,7 @@
 .clientLogo8 { background: url('../../images/white/crPicto-08.png') no-repeat 30px 20px; }
 
 .clientNameRLabel {
+	position: relative;
 	font-family:  "Helvetica neue";
 	display: inline-block;
 	/*font-size: 1.4em;
@@ -123,6 +124,13 @@
 	font-size: 0.7em;
 	font-weight: lighter;
 	color: #505050;
+}
+
+.clientNameRLabel #requestLbl:nth-child(2) {
+	position: absolute;
+	top: 35;
+	left: 10;
+	font-size: 0.6em;
 }
 
 .dashLeftMenu {
@@ -481,7 +489,7 @@
 #dashMainContentDumentsSection {
 	width: 860px;
 	margin-left: 120px;	
-	padding: 180px 0 100px 20px;
+	padding: 200px 0 100px 20px;
 	background: #fff;
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
 	-webkit-transform: translate3d(0, 0,0);
@@ -491,7 +499,7 @@
 #dashMainContentSummarySection {
 	width: 860px;
 	margin-left: 120px;	
-	padding: 180px 0 100px 20px;
+	padding: 200px 0 100px 20px;
 	background: #fff;
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
 	-webkit-transform: translate3d(0, 0,0);
@@ -662,7 +670,7 @@
 /* === RESPONSES ============================================================================== */
 /* ============================================================================================ */
 
-#dashMainContentSummarySection { font-family: "Helvetica neue"; font-weight: 100; color: #000; letter-spacing: 1px; padding-top: 220px; }
+#dashMainContentSummarySection { font-family: "Helvetica neue"; font-weight: 100; color: #000; letter-spacing: 1px; padding-top: 240px; }
 
 .teamHeadBand .teamTitle,
 .peopleHeadBand .peopleTitle,
@@ -686,27 +694,35 @@
 .peopleTable .peopleTableHead .peopleType { float: left; width: 185px; height: 30px; line-height: 30px; font-weight: bold; text-align: center; }
 .peopleTable .peopleTableHead .peopleDate { float: left; width: 185px; height: 30px; line-height: 30px; font-weight: bold; text-align: center; }
 .peopleTable .peopleTableHead .peopleDecision { float: left; width: 185px; height: 30px; line-height: 30px; font-weight: bold; text-align: center; }
+
+.peopleFold1 { float: left; width: 45px; height: 60px; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -38px; background-size: 35px; }
 .peopleTable .peopleTableHead .peopleUnfold { float: left; width: 45px; height: 30px; }
 .peopleTable .peopleInfos { border-top: 1px solid #e6e6e6; }
+.peopleTable .peopleInfos2,
+.peopleTable .peopleComment2,
+.peopleTable .peopleDocs2 { background: #f9f9f9; }
 .peopleTable .peopleInfos .peopleName { float: left; width: 180px; height: 20px; padding: 20px 20px 20px 0; font-size: 0.8em; line-height: 20px; text-align: right; }
-.peopleTable .peopleInfos .peopleType { float: left; width: 185px; height: 20px; padding: 10px 0 30px 0; line-height: 20px; text-align: center; border-bottom: 1px dotted #e6e6e6; }
-.peopleTable .peopleInfos .peopleDate { float: left; width: 185px; height: 20px; padding: 20px 0; line-height: 20px; text-align: center; border-bottom: 1px dotted #e6e6e6; }
-.peopleTable .peopleInfos .peopleDecision { float: left; width: 145px; height: 20px; padding: 20px 0 20px 40px; line-height: 20px; text-align: center; background: url('../../images/white/valid.png') no-repeat 36px 16px; background-size: 30px; border-bottom: 1px dotted #e6e6e6; }
+.peopleTable .peopleInfos .peopleType { float: left; width: 185px; height: 20px; padding: 20px 0 20px 0; line-height: 20px; text-align: center; }
+.peopleTable .peopleInfos .peopleType { background: url('../../images/white/attach.png') no-repeat 0 25px; background-size: 20px; }
+.peopleTable .peopleInfos2 .peopleType { background: none; }
+.peopleTable .peopleInfos .peopleDate { float: left; width: 185px; height: 20px; padding: 20px 0; line-height: 20px; text-align: center; }
+.peopleTable .peopleInfos .peopleDecision { float: left; width: 145px; height: 20px; padding: 20px 0 20px 40px; line-height: 20px; text-align: center; background: url('../../images/white/valid.png') no-repeat 36px 16px; background-size: 30px; }
 .peopleTable .peopleInfos .peopleUnfold,
-.peopleTable .peopleInfos .peopleFold { float: left; width: 45px; height: 60px; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -38px; background-size: 35px; border-bottom: 1px dotted #e6e6e6; }
+.peopleTable .peopleInfos .peopleFold { float: left; width: 45px; height: 60px; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -38px; background-size: 35px; }
 .peopleTable .peopleInfos .peopleUnfold:hover,
 .peopleTable .peopleInfos .peopleFold:hover { background-color: #fafafa; -webkit-transition: all ease-out 500ms; }
 .peopleTable .peopleComment .peopleBubble { float: left; width: 200px; height: 80px; background: url('../../images/white/quoteGray.png') no-repeat 145px 18px; background-size: 30px; }
 .peopleTable .peopleComment .peopleQuote { float: left; width: 600px; height: 60px; padding: 10px 0; color: #a4a4a4; }
-.peopleTable .peopleDocs { display: none; }
+.peopleTable .peopleDocs { display: none; padding: 10px 0 20px 0; }
 .peopleTable .peopleDocs .peopleAttach { float: left; width: 200px; height: 150px; background: url('../../images/white/attach.png') no-repeat 145px 25px; background-size: 30px; }
 .peopleTable .peopleDocs .peopleDocsBand { float: left; width: 600px; border-top: 1px solid #e6e6e6; }
-.peopleTable .peopleDocs .peopleDoc { float: left; width: 300px; height: 110px; padding: 20px 0; }
-.peopleTable .peopleDocs .peopleDoc .peopleDocImg { float: left; width: 80px; height: 110px; margin: 0 20px; background: url('../../images/white/doc.png') no-repeat; background-size: 80px; }
+.peopleTable .peopleDocs .peopleDoc { float: left; width: 378px; margin-right: 40px; padding: 5px 0; border: 1px solid #e6e6e6; }
+.peopleTable .peopleDocs .peopleDoc:nth-child(2) { margin-right: 0; }
+.peopleTable .peopleDocs .peopleDoc .peopleDocImg { float: left; width: 40px; height: 55px; margin: 0 20px; background: url('../../images/white/doc.png') no-repeat; background-size: 40px; }
 .peopleTable .peopleDocs .peopleDoc .peopleDocInfo { float: left; padding-top: 10px; font-size: 0.8em; }
 .peopleTable .peopleDocs .peopleDoc .peopleDocInfo .docTitle { font-weight: bold; text-transform: uppercase; }
-.peopleTable .peopleDocs .peopleDoc .peopleDocInfo .docButton { width: 75px; height: 30px; line-height: 30px; margin-top: 10px; font-size: 1.2em; font-weight: 300; text-align: center; background: #fff; box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18); -webkit-transition: all ease-out 500ms; }
-.peopleTable .peopleDocs .peopleDoc .peopleDocInfo .docButton:hover { color: #0dbe00; cursor: pointer; }
+.peopleTable .peopleDocs .peopleDoc .docButton { float: left; width: 35px; height: 48px; margin-left: 60px; text-align: center; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -40px; background-size: 35px; }
+.peopleTable .peopleDocs .peopleDoc .docButton:hover { color: #0dbe00; cursor: pointer; }
 
 .peopleLeftTable { width: 800px; margin-left: 30px; font-size: 1em; }
 .peopleLeftTable .peopleLeft2,

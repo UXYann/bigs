@@ -1469,20 +1469,39 @@ function addingClickBehaviour() {
 
 $(document).ready(function() {
 
-$('.peopleUnfold1').click(function() {
-	$('.peopleDocs1').slideToggle('fast');
-	return false;
-});
+	$('.peopleUnfold1').click(function() {
+		$('.peopleDocs1').slideToggle('fast');
+		return false;
+	});
 
-$('.peopleUnfold2').click(function() {
-	$('.peopleDocs2').slideToggle('fast');
-	return false;
-});
+	$('.peopleUnfold2').click(function() {
+		$('.peopleDocs2').slideToggle('fast');
+		return false;
+	});
 
-$('.peopleUnfold3').click(function() {
-	$('.peopleDocs3').slideToggle('fast');
-	return false;
-});
+	$('.peopleUnfold3').click(function() {
+		$('.peopleDocs3').slideToggle('fast');
+		return false;
+	});
+
+
+
+
+/*
+	$('.peopleUnfold1').click(function() {
+		$('.peopleDocs1').slideDown('fast');
+		$(this).addClass('peopleFold1');
+		$(this).removeClass('peopleUnfold1');
+		return false;
+	});
+
+	$('.peopleFold1').click(function() {
+		$('.peopleDocs1').slideUp('fast');
+		$(this).addClass('peopleUnfold1');
+		$(this).removeClass('peopleFold1');
+		console.log('fffff');
+		return false;
+	});*/
 
 });
 
