@@ -1,4 +1,4 @@
-var CWF_URL = 'http://localhost:8888';
+var CWF_URL = 'http://localhost:8080';
 var d = document;
 var wasACRSelected = 0;
 
