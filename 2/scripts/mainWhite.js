@@ -578,7 +578,7 @@ function hackingIOS7() {
 		//	d.getElementById('rangeSlider').style.marginLeft = "-85px";
 		} 
 		d.getElementById('rangeSlider').addEventListener( 'touchend', touchEnd, false);
-		addingClickBehaviour();
+		//addingClickBehaviour();
 
 	}
 }
@@ -1449,26 +1449,42 @@ function displayDocViewer() {
 }
 
 
-
+/*
 function addingClickBehaviour() {
 	if($( ".peopleUnfold1" )) {
 		$( ".peopleUnfold1" ).click(function() {
-		  $( ".peopleDocs1" ).toggle( "fold", 500 );
+		  $( ".peopleDocs1" ).toggle( "blind", 500 );
 		});
 
 		$( ".peopleUnfold2" ).click(function() {
-		  $( ".peopleDocs2" ).toggle( "fold", 500 );
+		  $( ".peopleDocs2" ).toggle( "blind", 500 );
 		});
 
 		$( ".peopleUnfold3" ).click(function() {
-		  $( ".peopleDocs3" ).toggle( "fold", 500 );
+		  $( ".peopleDocs3" ).toggle( "blind", 500 );
 		});
 	}	
-}
+}*/
 
 
+$(document).ready(function() {
 
+$('.peopleUnfold1').click(function() {
+	$('.peopleDocs1').slideToggle('fast');
+	return false;
+});
 
+$('.peopleUnfold2').click(function() {
+	$('.peopleDocs2').slideToggle('fast');
+	return false;
+});
+
+$('.peopleUnfold3').click(function() {
+	$('.peopleDocs3').slideToggle('fast');
+	return false;
+});
+
+});
 
 function doOnOrientationChange() {
 

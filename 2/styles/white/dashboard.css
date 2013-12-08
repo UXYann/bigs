@@ -720,7 +720,7 @@
 /* ===================================================================== */
 
 .teamRight1 { width: 560px; height: 60px; border: none; }
-.teamLeft1 { line-height: 30px; height: 60px; font-size: 1.3em; text-transform: uppercase; font-family: "Helvetica neue"; font-weight: 100; text-align: left; }
+.teamLeft1 { height: 60px; font-weight: bold; }
 
 .peopleTable .peopleComment .peopleBubble { display: none; }
 .peopleTable .peopleComment .peopleQuote { float: left; width: 750px; height: 60px; padding: 10px 0 10px 50px; color: #a4a4a4; background: url('../../images/white/quoteGray.png') no-repeat 15px 18px; background-size: 30px; }
