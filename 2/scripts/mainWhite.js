@@ -1,4 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
