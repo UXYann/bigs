@@ -92,14 +92,13 @@
 
 }
 
-.clientLogo1 { background: url('../../images/white/crPicto-01.png') no-repeat 30px 20px; }
-.clientLogo2 { background: url('../../images/white/crPicto-02.png') no-repeat 30px 20px; }
-.clientLogo3 { background: url('../../images/white/crPicto-03.png') no-repeat 30px 20px; }
-.clientLogo4 { background: url('../../images/white/crPicto-04.png') no-repeat 30px 20px; }
-.clientLogo5 { background: url('../../images/white/crPicto-05.png') no-repeat 30px 20px; }
-.clientLogo6 { background: url('../../images/white/crPicto-06.png') no-repeat 30px 20px; }
-.clientLogo7 { background: url('../../images/white/crPicto-07.png') no-repeat 30px 20px; }
-.clientLogo8 { background: url('../../images/white/crPicto-08.png') no-repeat 30px 20px; }
+.clientLogo1 { background: url('../../images/white/crPicto-01.png') no-repeat 30px 30px; }
+.clientLogo2 { background: url('../../images/white/crPicto-08.png') no-repeat 30px 30px; }
+.clientLogo3 { background: url('../../images/white/crPicto-03.png') no-repeat 30px 30px; }
+.clientLogo4 { background: url('../../images/white/crPicto-04.png') no-repeat 30px 30px; }
+.clientLogo5 { background: url('../../images/white/crPicto-05.png') no-repeat 30px 30px; }
+.clientLogo6 { background: url('../../images/white/crPicto-06.png') no-repeat 30px 30px; }
+.clientLogo7 { background: url('../../images/white/crPicto-07.png') no-repeat 30px 30px; }
 
 .clientNameRLabel {
 	position: relative;

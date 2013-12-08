@@ -1127,7 +1127,7 @@ function readingSpecificJson(fileUrl,callback) {
 				if(d.getElementsByClassName('dashboardClientSelected')) {
 
 					var elemToBeGenerated = "";
-					var z = Math.floor((Math.random()*8)+1);
+					var z = Math.floor((Math.random()*7)+1);
 					elemToBeGenerated += "<span class='clientLogo clientLogo"+z+"'><img src='' alt='' /></span>";					
 					elemToBeGenerated += "<span class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <span id='requestLbl'>" + myObject.requestLbl + "</span>&#160;&#160; <span id='requestLbl'>Request n° : " + myObject.requestCode + "</span></span>";
 
