@@ -726,7 +726,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2);
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
 	white-space: nowrap;
-	width: 100px;
+	/*width: 100px;*/
 	text-overflow: ellipsis;	
 }
 
@@ -866,7 +866,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
 	white-space: nowrap;
-	width: 100px;
+	/*width: 100px;*/
 	text-overflow: ellipsis;	
 }
 

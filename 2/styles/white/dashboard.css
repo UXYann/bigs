@@ -119,17 +119,18 @@
 	vertical-align: top;
 }
 
+#requestLbl:first-child {
+	margin-top: -3px;
+}
+
 #requestLbl {
-	font-size: 0.7em;
+	font-size: 0.6em;
 	font-weight: lighter;
 	color: #505050;
 }
 
-.clientNameRLabel #requestLbl:nth-child(2) {
-	position: absolute;
-	top: 35;
-	left: 10;
-	font-size: 0.6em;
+#requestLbl #redLbl {
+	color: #D71236;
 }
 
 .dashLeftMenu {
@@ -701,11 +702,11 @@
 .peopleTable .peopleComment2,
 .peopleTable .peopleDocs2 { background: #f9f9f9; }
 .peopleTable .peopleInfos .peopleName { float: left; width: 180px; height: 20px; padding: 20px 20px 20px 0; font-size: 0.8em; line-height: 20px; text-align: right; }
-.peopleTable .peopleInfos .peopleType { float: left; width: 185px; height: 20px; padding: 20px 0 20px 0; line-height: 20px; text-align: center; }
-.peopleTable .peopleInfos .peopleType { background: url('../../images/white/attach.png') no-repeat 0 25px; background-size: 20px; }
-.peopleTable .peopleInfos2 .peopleType { background: none; }
-.peopleTable .peopleInfos .peopleDate { float: left; width: 185px; height: 20px; padding: 20px 0; line-height: 20px; text-align: center; }
-.peopleTable .peopleInfos .peopleDecision { float: left; width: 145px; height: 20px; padding: 20px 0 20px 40px; line-height: 20px; text-align: center; background: url('../../images/white/valid.png') no-repeat 36px 16px; background-size: 30px; }
+.peopleTable .peopleInfos .peopleType { float: left; width: 155px; height: 20px; padding: 20px 0 20px 0; line-height: 20px; text-align: center; }
+.peopleTable .peopleInfos .peopleDate { background: url('../../images/white/attach.png') no-repeat 0 25px; background-size: 20px; }
+.peopleTable .peopleInfos2 .peopleDate { background: none; }
+.peopleTable .peopleInfos .peopleDate { float: left; width: 200px; height: 20px; padding: 20px 0; line-height: 20px; text-align: center; }
+.peopleTable .peopleInfos .peopleDecision { float: left; width: 160px; height: 20px; padding: 20px 0 20px 40px; line-height: 20px; text-align: center; background: url('../../images/white/valid.png') no-repeat 36px 16px; background-size: 30px; }
 .peopleTable .peopleInfos .peopleUnfold,
 .peopleTable .peopleInfos .peopleFold { float: left; width: 45px; height: 60px; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -38px; background-size: 35px; }
 .peopleTable .peopleInfos .peopleUnfold:hover,

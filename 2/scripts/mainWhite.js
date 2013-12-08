@@ -1130,7 +1130,7 @@ function readingSpecificJson(fileUrl,callback) {
 					var elemToBeGenerated = "";
 					var z = Math.floor((Math.random()*7)+1);
 					elemToBeGenerated += "<span class='clientLogo clientLogo"+z+"'><img src='' alt='' /></span>";					
-					elemToBeGenerated += "<span class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <span id='requestLbl'>" + myObject.requestLbl + "</span>&#160;&#160; <span id='requestLbl'>Request n° : " + myObject.requestCode + "</span></span>";
+					elemToBeGenerated += "<div class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <div id='requestLbl'><span id='redLbl'>Project Finance for : </span>" + myObject.requestLbl + "</div><div id='requestLbl'>Request " + myObject.requestCode + "</div></div>";
 
 					d.getElementById('dashboardClientSelected').innerHTML = elemToBeGenerated;
 
@@ -1293,14 +1293,14 @@ function readingSpecificJson(fileUrl,callback) {
 
 							elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
 
-
+							/*
 							elemToBeGenerated += "<div class='graphs'>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
 							elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
 							elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
-							elemToBeGenerated += "</div>";
+							elemToBeGenerated += "</div>";*/
 
 
 					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
