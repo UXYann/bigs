@@ -1409,17 +1409,19 @@ function addingClickBehaviour() {
 
 
 function doOnOrientationChange() {
-	switch(window.orientation) {  
-	  case -90:
-	  case 90:
-	    console.log('landscape');
-	    d.getElementById('wrongOrientation').className = "landscape";
-	    break; 
-	  default:
-	    console.log('portrait');
-	    d.getElementById('wrongOrientation').className = "portrait";
-	    break; 
 
+	if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
+		switch(window.orientation) {  
+		  case -90:
+		  case 90:
+		    console.log('landscape');
+		    d.getElementById('wrongOrientation').className = "landscape";
+		    break; 
+		  default:
+		    console.log('portrait');
+//		    d.getElementById('wrongOrientation').className = "portrait";
+		    break; 
+		}
 	}
 }
 
