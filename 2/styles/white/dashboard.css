@@ -627,6 +627,9 @@
 #riskHead8,
 #riskHead9 { line-height: normal; }
 
+#shouldbeGraphicsThere{
+	margin: 220px 0 0 70px;
+} 
 
 .navMainTableCellOverContent {
 	border-spacing: 20px;

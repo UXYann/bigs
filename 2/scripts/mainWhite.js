@@ -1304,15 +1304,52 @@ function readingSpecificJson(fileUrl,callback) {
 
 
 					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+							elemToBeGenerated = "";
+							elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
+							elemToBeGenerated += "<div class='navMainTableOverContent'>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";	
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent'>";
+
+									currentDL = new Date(myObject.deadlineDate)
+									var month = currentDL.getUTCMonth();
+									var day = currentDL.getUTCDate();
+									var year = currentDL.getUTCFullYear();
+
+							elemToBeGenerated += year + "/" + month + "/" + day;
+
+							elemToBeGenerated += "</span>";								
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> ";	
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+							elemToBeGenerated += myObject.details.facilities[0].total;
+							elemToBeGenerated += "</span>";							
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";	
+							elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+							elemToBeGenerated += myObject.details.glfi_rating.or;
+							elemToBeGenerated += "</span>";								
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";	
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+									elemToBeGenerated += myObject.details.currency;
+								elemToBeGenerated += "</span>";						
+							elemToBeGenerated += "</span>";
+						elemToBeGenerated += "</div>";
+					elemToBeGenerated += "</div>";
 
 
+					/*
 							elemToBeGenerated = "";
 							elemToBeGenerated += "<div class='graphs'>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
 							elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
-							elemToBeGenerated += "</div>";
+							elemToBeGenerated += "</div>";*/
 
 
 					d.getElementById('shouldbeGraphicsThere').innerHTML = elemToBeGenerated;

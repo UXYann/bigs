@@ -1075,10 +1075,10 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
     background-color: #000;
 }
 
-#submitSectionPlacer { margin-top: 220px; padding: 0 50px 0 70px; }
-#submitSectionPlacer .accepted { width: 500px; height: 50px; line-height: 50px; text-align: center; margin: 0 0 30px 202px; font-size: 1.2em; font-weight: bold; text-transform: uppercase; background-size: 35px;}
+#submitSectionPlacer { margin-top: 20px; padding: 0 50px 0 70px; }
+#submitSectionPlacer .accepted { width: 500px; height: 50px; line-height: 50px; text-align: center; margin: 0 0 10px 202px; font-size: 1.2em; font-weight: bold; text-transform: uppercase; background-size: 35px;}
 #submitSectionPlacer .commentTitle { color: #808080; font-size: 1.2em; }
-#submitSectionPlacer .comment { color: #242424; font-size: 1em; font-weight: lighter; }
+#submitSectionPlacer .comment { margin-top: 0!important; color: #242424; font-size: 1em; font-weight: lighter; }
 #submitSectionPlacer .botButtons { margin-top: 50px; }
 #submitSectionPlacer .botButtons .modify { float: left; width: 211px; height: 40px;background-color: #FFFFFF; padding-left: 40px; padding-top: 10px; font-family: "Helvetica neue", sans-serif; font-weight: 100; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-webkit-box-shadow: 0px 3px 3px 0px #dfdfdf;
