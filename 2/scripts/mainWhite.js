@@ -1126,13 +1126,44 @@ function readingSpecificJson(fileUrl,callback) {
 
 					var elemToBeGenerated = "";
 
-					elemToBeGenerated += "<div class='graphs'>";
-					elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
-					elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
-					elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
-					elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
-					elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
+					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
+						elemToBeGenerated += "<div class='navMainTableOverContent'>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";	
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent'>";
+
+									currentDL = new Date(myObject.deadlineDate)
+									var month = currentDL.getUTCMonth();
+									var day = currentDL.getUTCDate();
+									var year = currentDL.getUTCFullYear();
+
+									elemToBeGenerated += year + "/" + month + "/" + day;
+
+								elemToBeGenerated += "</span>";								
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> ";	
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+									elemToBeGenerated += myObject.details.facilities[0].total;
+								elemToBeGenerated += "</span>";							
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";	
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+									elemToBeGenerated += myObject.details.glfi_rating.or;
+								elemToBeGenerated += "</span>";								
+							elemToBeGenerated += "</span>";
+							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";	
+								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
+									elemToBeGenerated += myObject.details.currency;
+								elemToBeGenerated += "</span>";						
+							elemToBeGenerated += "</span>";
+						elemToBeGenerated += "</div>";
 					elemToBeGenerated += "</div>";
+
+
+
 
 					elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
@@ -1251,6 +1282,15 @@ function readingSpecificJson(fileUrl,callback) {
 							elemToBeGenerated += "<div class='clear'></div>";
 
 							elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
+
+
+							elemToBeGenerated += "<div class='graphs'>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
+							elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
+							elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
+							elemToBeGenerated += "</div>";							
 
 					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
 				}
