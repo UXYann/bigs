@@ -597,27 +597,36 @@ document.ontouchmove = function(e) {
 //    stickingThings();
 };
 
+var statusCRSelection = "ACCEPTED";
 document.ontouchend = function(e) {
 
 	if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
 		d.getElementById('rangeLine').className = "neutral";
 		d.getElementById('accept').className = "range";
 		d.getElementById('rangeSlider').value = 51;
+		statusCRSelection = "NOT DECIDED";
+		d.getElementById('userHasChosen').innerHTML = "You did not take decision about the transaction";
 
 	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
 		d.getElementById('rangeLine').className = "orange";
 		d.getElementById('accept').className = "rangeOrange";
 		d.getElementById('rangeSlider').value = 26;
+		statusCRSelection = "YES BUT...";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction at a specific condition";
 
 	} else if (d.getElementById('rangeSlider').value < 25) {
 		d.getElementById('rangeLine').className = "green";
 		d.getElementById('accept').className = "rangeValidated";
 		d.getElementById('rangeSlider').value = 0;
+		statusCRSelection = "ACCEPTED";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
 
 	} else if (d.getElementById('rangeSlider').value > 70) {
 		d.getElementById('rangeLine').className = "red";
 		d.getElementById('accept').className = "rangeCanceled";
 		d.getElementById('rangeSlider').value = 100;
+		statusCRSelection = "REFUSED";
+		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
 	}
 };
 
@@ -1120,7 +1129,7 @@ function readingSpecificJson(fileUrl,callback) {
 					var elemToBeGenerated = "";
 					var z = Math.floor((Math.random()*8)+1);
 					elemToBeGenerated += "<span class='clientLogo clientLogo"+z+"'><img src='' alt='' /></span>";					
-					elemToBeGenerated += "<span class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <span id='requestLbl'>" + myObject.requestLbl + "</span></span>";
+					elemToBeGenerated += "<span class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <span id='requestLbl'>" + myObject.requestLbl + "</span>&#160;&#160; <span id='requestLbl'>Request n° : " + myObject.requestCode + "</span></span>";
 
 					d.getElementById('dashboardClientSelected').innerHTML = elemToBeGenerated;
 
@@ -1290,9 +1299,22 @@ function readingSpecificJson(fileUrl,callback) {
 							elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
 							elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
 							elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
-							elemToBeGenerated += "</div>";							
+							elemToBeGenerated += "</div>";
+
 
 					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+
+
+							elemToBeGenerated = "";
+							elemToBeGenerated += "<div class='graphs'>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
+							elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
+							elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
+							elemToBeGenerated += "</div>";
+
+
+					d.getElementById('shouldbeGraphicsThere').innerHTML = elemToBeGenerated;
 				}
 
 				if(callback) {
@@ -1469,6 +1491,11 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 
 doOnOrientationChange();
 
+
+/*	Should be used to post the UserSelection 	*/
+function submitingResult() {
+
+}
 
 
 
