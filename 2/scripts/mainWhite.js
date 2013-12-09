@@ -173,12 +173,12 @@ buttonElem1 = d.getElementById('stepOne');
 buttonElem2 = d.getElementById('stepTwo');
 buttonElem3 = d.getElementById('stepThree');
 buttonElem4 = d.getElementById('stepFour');
-if(buttonElem5){buttonElem5 = d.getElementById('submitAction')};
+buttonElem5 = d.getElementById('submitAction');
 buttonElem1.setAttribute('onclick',"didYouSelectYourCr('1', 'index.html', hidingMenu, 'One');");
 buttonElem2.setAttribute('onclick',"didYouSelectYourCr('2', 'verify-dashboard.html', creditRequestSelected, 'Two');");
 buttonElem3.setAttribute('onclick',"didYouSelectYourCr('3' , 'action.html', '', 'Three');");
 buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");	
-if(buttonElem5){buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');")};
+buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
@@ -1772,7 +1772,6 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 doOnOrientationChange();
 
 /*	Should be used to post the UserSelection 	*/
-
 
 function submitingResult() {
 
