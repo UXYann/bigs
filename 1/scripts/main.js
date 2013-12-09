@@ -1,3 +1,4 @@
+var CWF_URL = 'http://localhost:8080';
 var d = document;
 var wasACRSelected = 0;
 
@@ -257,7 +258,7 @@ buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', hidin
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 	if(wasACRSelected != 0) {
-		if(initCallback) {
+		if(initCallback) {
 			if(url == "index.html") {
 				wasACRSelected = 0;
 				d.getElementById('displayAsList').style.opacity = 1;
@@ -722,7 +723,7 @@ function creditRequestSelected(jsonAccountID) {
 	}, 1000);
 	
 	var t = new Timeout(function () {
-    	readingSpecificJson("proxy-list-fake.php?requestCode=" + newTarget, startingCharts);
+    	readingSpecificJson(CWF_URL + "/details/" + newTarget, startingCharts);
 	}, 2500);
 
 	settingUpNav();	
@@ -945,7 +946,7 @@ function runningDashAjaxCall(currentURL,callback) {
 }
 
 
-function settingUpFixedNav() {
+function settingUpFixedNav() {
 	d.getElementsByTagName('header')[0].style.position = "fixed";
 	d.getElementsByTagName('header')[0].style.top = "0px";
 	d.getElementsByTagName('header')[0].style.height = "85px";
@@ -1032,7 +1033,7 @@ function hidingMenu() {
 
 function notInitStartSwipeCarouel() {
 	
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 
 	hookingCreditRequest();
 	if(d.getElementById('requests')) {
@@ -1078,7 +1079,7 @@ function ajaxJsonRequest(){
 }
 
 var currentCRSelected;
-function readingMainJson(fileUrl,callback) {
+function readingMainJson(callback) {
 	var mygetrequest=new ajaxJsonRequest()
 	mygetrequest.onreadystatechange=function(){
 
@@ -1159,7 +1160,7 @@ function readingMainJson(fileUrl,callback) {
 		}
 	}
 
-	mygetrequest.open("GET", fileUrl, true)
+	mygetrequest.open("GET", CWF_URL + '/todolist', true)
 	mygetrequest.send(null)
 }
 
@@ -1309,7 +1310,7 @@ function readingSpecificJson(fileUrl,callback) {
 
 
 if(document.getElementById('mySwipe')) {
-	readingMainJson('proxy-list-fake.php', startingSwipeCarousel);
+	readingMainJson(startingSwipeCarousel);
 }
 
 function didYouChooseACR() {
