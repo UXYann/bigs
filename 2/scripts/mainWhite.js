@@ -1,5 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
-//var CWF_URL = 'http://node.ux-republic.com';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -11,7 +11,7 @@ function Timeout(fn, interval) {
         clearTimeout(id);
     };
 }
-var buttonElem1, buttonElem2, buttonElem3, buttonElem4;
+var buttonElem1, buttonElem2, buttonElem3, buttonElem4, buttonElem5;
 
 function changingMenuState(whichSteAreWe) {
 
@@ -173,12 +173,12 @@ buttonElem1 = d.getElementById('stepOne');
 buttonElem2 = d.getElementById('stepTwo');
 buttonElem3 = d.getElementById('stepThree');
 buttonElem4 = d.getElementById('stepFour');
-buttonElem5 = d.getElementById('submitAction');
+if(buttonElem5){buttonElem5 = d.getElementById('submitAction')};
 buttonElem1.setAttribute('onclick',"didYouSelectYourCr('1', 'index.html', hidingMenu, 'One');");
 buttonElem2.setAttribute('onclick',"didYouSelectYourCr('2', 'verify-dashboard.html', creditRequestSelected, 'Two');");
 buttonElem3.setAttribute('onclick',"didYouSelectYourCr('3' , 'action.html', '', 'Three');");
 buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");	
-buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");
+if(buttonElem5){buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');")};
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
@@ -1747,33 +1747,9 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
-/*
-	$('.dispAltDashboard').click(function() {
-		$('.altDashboard').slideToggle('fast');
-		return false;
-	});
-*/
-
-
- 
-/*
-	$('.peopleUnfold1').click(function() {
-		$('.peopleDocs1').slideDown('fast');
-		$(this).addClass('peopleFold1');
-		$(this).removeClass('peopleUnfold1');
-		return false;
-	});
-
-	$('.peopleFold1').click(function() {
-		$('.peopleDocs1').slideUp('fast');
-		$(this).addClass('peopleUnfold1');
-		$(this).removeClass('peopleFold1');
-		console.log('fffff');
-		return false;
-	});*/
 
 });
-/*
+
 function doOnOrientationChange() {
 
 	if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
@@ -1785,7 +1761,7 @@ function doOnOrientationChange() {
 		    break; 
 		  default:
 		    console.log('portrait');
-//		    d.getElementById('wrongOrientation').className = "portrait";
+		    d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1793,8 +1769,7 @@ function doOnOrientationChange() {
 
 window.addEventListener('orientationchange', doOnOrientationChange);
 
-doOnOrientationChange();*/
-
+doOnOrientationChange();
 
 /*	Should be used to post the UserSelection 	*/
 
