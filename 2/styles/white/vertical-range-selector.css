@@ -181,7 +181,7 @@ input[type=range] {
 	background-size: 12px;
 }
 
-.submitAction {
+#submitAction {
 	position: absolute;
 	top: 560px;
 	right: 58px;
@@ -200,7 +200,7 @@ input[type=range] {
 	-webkit-transition: all ease-in-out 500ms;
 }
 
-.submitAction:hover {
+#submitAction:hover {
 	background-color: #23dd30;
 }
 

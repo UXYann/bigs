@@ -1,5 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
-//var CWF_URL = 'http://node.ux-republic.com';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -173,12 +173,11 @@ buttonElem1 = d.getElementById('stepOne');
 buttonElem2 = d.getElementById('stepTwo');
 buttonElem3 = d.getElementById('stepThree');
 buttonElem4 = d.getElementById('stepFour');
-buttonElem5 = d.getElementById('submitAction');
 buttonElem1.setAttribute('onclick',"didYouSelectYourCr('1', 'index.html', hidingMenu, 'One');");
 buttonElem2.setAttribute('onclick',"didYouSelectYourCr('2', 'verify-dashboard.html', creditRequestSelected, 'Two');");
 buttonElem3.setAttribute('onclick',"didYouSelectYourCr('3' , 'action.html', '', 'Three');");
 buttonElem4.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");	
-buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', 'Four');");
+
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
@@ -602,34 +601,34 @@ document.ontouchmove = function(e) {
 var statusCRSelection = "ACCEPTED";
 document.ontouchend = function(e) {
 
-if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
-d.getElementById('rangeLine').className = "neutral";
-d.getElementById('accept').className = "range";
-d.getElementById('rangeSlider').value = 51;
-statusCRSelection = "NOT DECIDED";
-d.getElementById('userHasChosen').innerHTML = "You did not take decision about the transaction";
+	if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
+		d.getElementById('rangeLine').className = "neutral";
+		d.getElementById('accept').className = "range";
+		d.getElementById('rangeSlider').value = 51;
+		statusCRSelection = "NOT DECIDED";
+		d.getElementById('userHasChosen').innerHTML = "You did not take decision about the transaction";
 
-} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
-d.getElementById('rangeLine').className = "orange";
-d.getElementById('accept').className = "rangeOrange";
-d.getElementById('rangeSlider').value = 26;
-statusCRSelection = "YES BUT...";
-d.getElementById('userHasChosen').innerHTML = "You accepted the transaction at a specific condition";
+	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+		d.getElementById('rangeLine').className = "orange";
+		d.getElementById('accept').className = "rangeOrange";
+		d.getElementById('rangeSlider').value = 26;
+		statusCRSelection = "YES BUT...";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction at a specific condition";
 
-} else if (d.getElementById('rangeSlider').value < 25) {
-d.getElementById('rangeLine').className = "green";
-d.getElementById('accept').className = "rangeValidated";
-d.getElementById('rangeSlider').value = 0;
-statusCRSelection = "ACCEPTED";
-d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+	} else if (d.getElementById('rangeSlider').value < 25) {
+		d.getElementById('rangeLine').className = "green";
+		d.getElementById('accept').className = "rangeValidated";
+		d.getElementById('rangeSlider').value = 0;
+		statusCRSelection = "ACCEPTED";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
 
-} else if (d.getElementById('rangeSlider').value > 70) {
-d.getElementById('rangeLine').className = "red";
-d.getElementById('accept').className = "rangeCanceled";
-d.getElementById('rangeSlider').value = 100;
-statusCRSelection = "REFUSED";
-d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
-}
+	} else if (d.getElementById('rangeSlider').value > 70) {
+		d.getElementById('rangeLine').className = "red";
+		d.getElementById('accept').className = "rangeCanceled";
+		d.getElementById('rangeSlider').value = 100;
+		statusCRSelection = "REFUSED";
+		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+	}
 };
 
 window.setInterval("hackingIOS7()", 5);
@@ -971,6 +970,14 @@ function startingSwipeCarousel() {
 	// with jQuery
 	// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
 	hookingCreditRequest();
+
+	$("#displayAsThumbnails").click(function() {
+		displayingCreditRequest('thumbnails');
+	});
+
+	$("#displayAsList").click(function() {
+		displayingCreditRequest('list');
+	});	
 }
 
 function hidingMenu() {
@@ -1062,13 +1069,10 @@ function readingMainJson(callback) {
 					elemToBeGenerated += "<span onclick=\"creditRequestSelected('"+currentCRSelected+"')\" class='"+mainColor+"'>";
 
 						elemToBeGenerated += "<span class='crTitle crTitle"+z+"'>";
-						elemToBeGenerated += "<b>" + myObject[i].requestLbl + "</b>";
+						elemToBeGenerated += "<b>" + myObject[i].counterparty + "</b>";
 						elemToBeGenerated += "</span>";
-
-						elemToBeGenerated += "<span class='crRequesterRed'>Project finance for</span>";
-
 						elemToBeGenerated += "<span class='crRequester'>";
-						elemToBeGenerated +=  myObject[i].counterparty;
+						elemToBeGenerated +=  myObject[i].requestLbl;
 						elemToBeGenerated += "</span>";
 
 						elemToBeGenerated += "<span class='crPricing'>";
@@ -1140,209 +1144,6 @@ function readingSpecificJson(fileUrl,callback) {
 
 					var elemToBeGenerated = "";
 
-
-
-elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
-						elemToBeGenerated += "<div class='navMainTableOverContent'>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent'>";
-
-									currentDL = new Date(myObject.deadlineDate)
-									var month = currentDL.getUTCMonth();
-									var day = currentDL.getUTCDate();
-									var year = currentDL.getUTCFullYear();
-
-									elemToBeGenerated += year + "/" + month + "/" + day;
-
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-									elemToBeGenerated += myObject.details.facilities[0].total;
-								elemToBeGenerated += "</span>";							
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-									elemToBeGenerated += myObject.details.glfi_rating.or;
-								elemToBeGenerated += "</span>";								
-							elemToBeGenerated += "</span>";
-							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";	
-								elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-									elemToBeGenerated += myObject.details.currency;
-								elemToBeGenerated += "</span>";						
-							elemToBeGenerated += "</span>";
-						elemToBeGenerated += "</div>";
-					elemToBeGenerated += "</div>";
-
-
-
-
-					elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
-
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR creditRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
-
-							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
-
-
-						elemToBeGenerated += "<div class='financeTableLine financeTableLine1'>";
-							elemToBeGenerated += "<div class='financeTableName'>Authorization Name</div>";
-							elemToBeGenerated += "<div class='financeTableCounter'>Counterparty</div>";
-							elemToBeGenerated += "<div class='financeTableRat'>Rating</div>";
-							elemToBeGenerated += "<div class='financeTableUnder'>SG Underwriting</div>";
-							elemToBeGenerated += "<div class='financeTableFinal'>SG Final Take</div>";
-							elemToBeGenerated += "<div class='financeTableTerm'>Term</div>";
-							elemToBeGenerated += "<div class='financeTablePro'>Profile</div>";
-							elemToBeGenerated += "<div class='financeTableLgd'>LGD</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='financeTableLine financeTableLine2'>";
-							elemToBeGenerated += "<div class='financeTableName'>Team Loan A</div>";
-							elemToBeGenerated += "<div class='financeTableCounter'>Client A</div>";
-							elemToBeGenerated += "<div class='financeTableRat'>4</div>";
-							elemToBeGenerated += "<div class='financeTableUnder'>10M€</div>";
-							elemToBeGenerated += "<div class='financeTableFinal'>5M€</div>";
-							elemToBeGenerated += "<div class='financeTableTerm'>17 Years</div>";
-							elemToBeGenerated += "<div class='financeTablePro'>Amortising</div>";
-							elemToBeGenerated += "<div class='financeTableLgd'>30%</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='financeTableLine financeTableLine3'>";
-							elemToBeGenerated += "<div class='financeTableName'>Secured By Guarantor B</div>";
-							elemToBeGenerated += "<div class='financeTableRat'>2</div>";
-							elemToBeGenerated += "<div class='financeTableUnder'></div>";
-							elemToBeGenerated += "<div class='financeTableFinal'>4M€</div>";
-							elemToBeGenerated += "<div class='financeTableTerm'></div>";
-							elemToBeGenerated += "<div class='financeTablePro'></div>";
-							elemToBeGenerated += "<div class='financeTableLgd'>10%</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='financeTableLine financeTableLine4'>";
-							elemToBeGenerated += "<div class='financeTableName'>Revolver</div>";
-							elemToBeGenerated += "<div class='financeTableCounter'>Client B</div>";
-							elemToBeGenerated += "<div class='financeTableRat'>4</div>";
-							elemToBeGenerated += "<div class='financeTableUnder'>5M€</div>";
-							elemToBeGenerated += "<div class='financeTableFinal'>2M€</div>";
-							elemToBeGenerated += "<div class='financeTableTerm'>3 Years</div>";
-							elemToBeGenerated += "<div class='financeTablePro'>Bullet</div>";
-							elemToBeGenerated += "<div class='financeTableLgd'>30%</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='financeTableLine financeTableLine5'>";
-							elemToBeGenerated += "<div class='financeTableName'>Total Debt</div>";
-							elemToBeGenerated += "<div class='financeTableCounter'></div>";
-							elemToBeGenerated += "<div class='financeTableRat'></div>";
-							elemToBeGenerated += "<div class='financeTableUnder'>15M€</div>";
-							elemToBeGenerated += "<div class='financeTableFinal'>7M€</div>";
-							elemToBeGenerated += "<div class='financeTableTerm'></div>";
-							elemToBeGenerated += "<div class='financeTablePro'></div>";
-							elemToBeGenerated += "<div class='financeTableLgd'></div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine1'>";
-							elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
-							elemToBeGenerated += "<div class='hedgingLine2'>Authorization Name</div>";
-							elemToBeGenerated += "<div class='hedgingLine3'>Risk Category</div>";
-							elemToBeGenerated += "<div class='hedgingLine4'>Amount</div>";
-							elemToBeGenerated += "<div class='hedgingLine5'>Tenor</div>";
-							elemToBeGenerated += "<div class='hedgingLine6'>Profile</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine2'>";
-							elemToBeGenerated += "<div class='hedgingLine1'></div>";
-							elemToBeGenerated += "<div class='hedgingLine2'>SWAP</div>";
-							elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
-							elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
-							elemToBeGenerated += "<div class='hedgingLine5'>17 years</div>";
-							elemToBeGenerated += "<div class='hedgingLine6'>CAR/VAR</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-
-
-
-						elemToBeGenerated += "<div class='bucketTable'>";
-
-						elemToBeGenerated += "<div class='bucketTableLine bucketTableLine1'>";
-							elemToBeGenerated += "<div class='bucketLine1'>Bucket</div>";
-							elemToBeGenerated += "<div class='bucketLine2'>(OD-3D)</div>";
-							elemToBeGenerated += "<div class='bucketLine3'>(3D-1M)</div>";
-							elemToBeGenerated += "<div class='bucketLine4'>(1M-3M)</div>";
-							elemToBeGenerated += "<div class='bucketLine5'>(3M-6M)</div>";
-							elemToBeGenerated += "<div class='bucketLine6'>(6M-12M)</div>";
-							elemToBeGenerated += "<div class='bucketLine7'>(1Y-2Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine8'>(2Y-3Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine9'>(3Y-5Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine10'>(5Y-7Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine11'>(7Y-10Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine12'>(10Y-15Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine13'>(15Y-20Y)</div>";
-							elemToBeGenerated += "<div class='bucketLine14'>(20Y-30Y)</div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='bucketTableLine bucketTableLine2'>";
-							elemToBeGenerated += "<div class='bucketLine1'>CAR/Nominal</div>";
-							elemToBeGenerated += "<div class='bucketLine2'>3.82 M</div>";
-							elemToBeGenerated += "<div class='bucketLine3'>3.62 M</div>";
-							elemToBeGenerated += "<div class='bucketLine4'></div>";
-							elemToBeGenerated += "<div class='bucketLine5'></div>";
-							elemToBeGenerated += "<div class='bucketLine6'></div>";
-							elemToBeGenerated += "<div class='bucketLine7'></div>";
-							elemToBeGenerated += "<div class='bucketLine8'></div>";
-							elemToBeGenerated += "<div class='bucketLine9'></div>";
-							elemToBeGenerated += "<div class='bucketLine10'></div>";
-							elemToBeGenerated += "<div class='bucketLine11'></div>";
-							elemToBeGenerated += "<div class='bucketLine12'></div>";
-							elemToBeGenerated += "<div class='bucketLine13'></div>";
-							elemToBeGenerated += "<div class='bucketLine14'></div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='bucketTableLine bucketTableLine3'>";
-							elemToBeGenerated += "<div class='bucketLine1'>cVar</div>";
-							elemToBeGenerated += "<div class='bucketLine2'>4.51 M</div>";
-							elemToBeGenerated += "<div class='bucketLine3'>5.46 M</div>";
-							elemToBeGenerated += "<div class='bucketLine4'></div>";
-							elemToBeGenerated += "<div class='bucketLine5'></div>";
-							elemToBeGenerated += "<div class='bucketLine6'></div>";
-							elemToBeGenerated += "<div class='bucketLine7'></div>";
-							elemToBeGenerated += "<div class='bucketLine8'></div>";
-							elemToBeGenerated += "<div class='bucketLine9'></div>";
-							elemToBeGenerated += "<div class='bucketLine10'></div>";
-							elemToBeGenerated += "<div class='bucketLine11'></div>";
-							elemToBeGenerated += "<div class='bucketLine12'></div>";
-							elemToBeGenerated += "<div class='bucketLine13'></div>";
-							elemToBeGenerated += "<div class='bucketLine14'></div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "<div class='bucketTableLine bucketTableLine4'>";
-							elemToBeGenerated += "<div class='bucketLine1'>Currency</div>";
-							elemToBeGenerated += "<div class='bucketLine2'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine3'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine4'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine5'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine6'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine7'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine8'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine9'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine10'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine11'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine12'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine13'>EUR</div>";
-							elemToBeGenerated += "<div class='bucketLine14'></div>";
-						elemToBeGenerated += "<div class='clear'></div></div>";
-
-						elemToBeGenerated += "</div>";
-
-						elemToBeGenerated += "<div class='dispAltDashboard'></div>"; 
-
-						elemToBeGenerated += "<div class='altDashboard'>";
-
-
-
 					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 						elemToBeGenerated += "<div class='navMainTableOverContent'>";
 							elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
@@ -1386,7 +1187,7 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 
 					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
 					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
-					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR creditRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
+					elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";					//elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
 
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
 
@@ -1444,18 +1245,6 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Or</span><span class='creditRequestR'>"+myObject.details.rating+"</span></div>";
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'></span><span class='creditRequestR crediRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";
 
-
-
-
-
-
-
-
-
-
-
-
-
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>RISK ANALYSE</p><div class='redLine' style='width:637px;'></div><div class='clear'></div></div>";
 
 							elemToBeGenerated += "<div class='riskRangeLeft'>";
@@ -1511,13 +1300,6 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='clear'></div>";
 
 							elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
-							elemToBeGenerated += "</div>";
-
-
-
-
-
-
 
 							/*
 							elemToBeGenerated += "<div class='graphs'>";
@@ -1747,15 +1529,10 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
-/*
-	$('.dispAltDashboard').click(function() {
-		$('.altDashboard').slideToggle('fast');
-		return false;
-	});
-*/
 
 
- 
+
+
 /*
 	$('.peopleUnfold1').click(function() {
 		$('.peopleDocs1').slideDown('fast');
@@ -1773,19 +1550,21 @@ $(document).ready(function() {
 	});*/
 
 });
-/*
+
 function doOnOrientationChange() {
 
 	if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
 		switch(window.orientation) {  
 		  case -90:
 		  case 90:
-		    console.log('landscape');
 		    d.getElementById('wrongOrientation').className = "landscape";
 		    break; 
 		  default:
-		    console.log('portrait');
-//		    d.getElementById('wrongOrientation').className = "portrait";
+		  /*	Laurent durant le développement, tu peux commenter la ligne de JS juste en dessous
+		  *		C'est elle qui affiche une image quand l'orientation n'est pas la bonne.
+		  *		Assures toi bien de décommenter avant les mise en production ok ?
+		  */	
+		    d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1793,17 +1572,13 @@ function doOnOrientationChange() {
 
 window.addEventListener('orientationchange', doOnOrientationChange);
 
-doOnOrientationChange();*/
+doOnOrientationChange();
 
 
 /*	Should be used to post the UserSelection 	*/
-
-/*
 function submitingResult() {
 
 }
-
-*/
 
 
 
