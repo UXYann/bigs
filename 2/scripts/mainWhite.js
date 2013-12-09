@@ -606,14 +606,14 @@ document.ontouchend = function(e) {
 		d.getElementById('accept').className = "range";
 		d.getElementById('rangeSlider').value = 51;
 		statusCRSelection = "NOT DECIDED";
-		d.getElementById('userHasChosen').innerHTML = "You did not take decision about the transaction";
+		d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
 
 	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
 		d.getElementById('rangeLine').className = "orange";
 		d.getElementById('accept').className = "rangeOrange";
 		d.getElementById('rangeSlider').value = 26;
 		statusCRSelection = "YES BUT...";
-		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction at a specific condition";
+		d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
 
 	} else if (d.getElementById('rangeSlider').value < 25) {
 		d.getElementById('rangeLine').className = "green";
