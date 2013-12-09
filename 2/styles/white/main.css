@@ -526,16 +526,11 @@
 }
 
 #nextButton {
-	/*background: url('../../images/btn_next-step.png') no-repeat top left;
-	background-size: 87px 72px;
-	width: 87px;*/
 	height: 33px;
 	color: #fff;
 	display: inline-block;
 	z-index: 100000;
 	vertical-align: top;
-	/*margin-top: 25px;
-	margin-right: 20px;*/
 	margin-top: 17px;
 	padding: 15px 20px 5px 10px;
 	float: right;
@@ -602,19 +597,10 @@
 .ui-slider-vertical {
 	width: 57.5px;
 }
-/*
-.ui-slider-handle {
-	left: .9em;
-	background: transparent url("../images/img_slider_button.png") no-repeat 00;
-	width: 142px;
-	height: 142px;
-}
-*/
 
 .ui-slider-vertical .ui-slider-handle {
 	left: -2.4em;
 	bottom: 52%;
-	/*margin-left: 0;*/
 	margin-bottom: -3.9em;
 	background: transparent url("../../images/img_slider_button.png") no-repeat 00;
 	width: 142px;
@@ -631,7 +617,6 @@
 
 .validator-comment-textarea {
 	width: 80%;
-	/*height: 60px;*/
 	font-size: 14px;
 	font-weight: 400;
 }
@@ -693,15 +678,12 @@ input:focus, textarea:focus {
 /*	Credit Requests Swipe carousel styles 	*/
 .crCard {
 	display: inline-block;
-	/*border: 1px solid #DDDDDD;*/
-	/*width: 160px;*/
 	width: 180px;
 	margin: 7px;
 	background: #fff;
-	/*background-color: #EDEDED;*/
 	-webkit-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
--moz-box-shadow:    1px 1px 5px rgba(10, 10, 10, 0.2);
-box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
+	box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
 }
 
 .crCard span {
@@ -712,21 +694,15 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2);
 .crCard span.crTitle {
 	display: table-cell;
 	font-weight: 100;
-	/*color: #666666;*/
 	color: #282828;
-	/*background-color: #FFFFFF;*/
 	border-bottom: #F8F8F8;
 	padding: 7px;
 	padding-left: 40px;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	/*padding-top: 15px;
-	padding-bottom: 15px;*/
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
-	/*white-space: nowrap;*/
-	/*width: 100px;*/
 	text-overflow: ellipsis;
 	height: 60px;
 	vertical-align: middle;	
@@ -774,16 +750,13 @@ span.crTitle8 {
 
 .crCard span.crRequester {
 	display: block;
-	/*font-size: 1.2em;*/
 	font-size: 0.8em;
 	font-weight: 100;
 	color: #141414;
-	/*padding: 40px 10px 20px 10px;*/
-	padding: 5px 10px 0 10px;
+	padding: 0 10px;
 	margin-left: 7px;
 	margin-right: 7px;
 	margin-bottom: 10px;
-	/*height: 45px;*/
 }
 
 .crCard span.crRequesterRed,
@@ -799,7 +772,6 @@ span.crTitle8 {
 	height: 18px;
 	font-weight: bold;
 	text-align: left;
-	padding: 0 0 10px 0px;
 	font-size: 1.2em;
 	text-align: center;
 }
@@ -807,9 +779,7 @@ span.crTitle8 {
 .crCard span.crStatus {
 	display: block;
 	font-weight: 100;
-	/*color: #666666;*/
 	color: #000;
-	/*background-color: #FFFFFF;*/
 	border-bottom: #F8F8F8;
 	padding: 7px;
 	text-align: center;
@@ -821,9 +791,7 @@ span.crTitle8 {
 	display: block;
 	font-weight: 100;
 	color: #141414;
-	/*background-color: #FFFFFF;*/
-	/*border-bottom: 1px solid #D71236;*/
-	/*padding: 7px;*/
+	
 	font-size: 0.7em;	
 	text-align: center;
 	padding-top: 10px;
