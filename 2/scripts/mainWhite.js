@@ -1773,12 +1773,11 @@ doOnOrientationChange();
 
 /*	Should be used to post the UserSelection 	*/
 
-/*
+
 function submitingResult() {
 
 }
 
-*/
 
 
 
