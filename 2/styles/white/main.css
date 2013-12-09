@@ -288,7 +288,7 @@
 
 #indexSection {
 	/*margin-top: 175px;*/
-	margin-top: 200px;
+	margin-top: 205px;
 	margin-left: 45px;
 }
 
@@ -710,7 +710,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2);
 }
 
 .crCard span.crTitle {
-	display: block;
+	display: table-cell;
 	font-weight: 100;
 	/*color: #666666;*/
 	color: #282828;
@@ -721,52 +721,54 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2);
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	/*padding-top: 15px;
+	padding-bottom: 15px;*/
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 	/*width: 100px;*/
-	text-overflow: ellipsis;	
+	text-overflow: ellipsis;
+	height: 60px;
+	vertical-align: middle;	
 }
 
 span.crTitle1 {
-	background: url('../../images/white/crPicto-01.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-01.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle2 {
-	background: url('../../images/white/crPicto-02.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-02.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle3 {
-	background: url('../../images/white/crPicto-03.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-03.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle4 {
-	background: url('../../images/white/crPicto-04.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-04.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle5 {
-	background: url('../../images/white/crPicto-05.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-05.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle6 {
-	background: url('../../images/white/crPicto-06.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-06.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle7 {
-	background: url('../../images/white/crPicto-07.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-07.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
 span.crTitle8 {
-	background: url('../../images/white/crPicto-08.png') no-repeat 5px 5px;
+	background: url('../../images/white/crPicto-08.png') no-repeat 5px 13px;
 	background-size: 35px;
 }
 
@@ -777,10 +779,18 @@ span.crTitle8 {
 	font-weight: 100;
 	color: #141414;
 	/*padding: 40px 10px 20px 10px;*/
-	padding: 10px 10px 0 10px;
+	padding: 5px 10px 0 10px;
 	margin-left: 7px;
 	margin-right: 7px;
-	height: 45px;
+	margin-bottom: 10px;
+	/*height: 45px;*/
+}
+
+.crCard span.crRequesterRed,
+.crCardDark span.crRequesterRed {
+		color: #D71236;
+		margin-top: 5px;
+		font-size: 0.7em;
 }
 
 .crCard span.crPricing,
@@ -806,7 +816,8 @@ span.crTitle8 {
 	font-size: 0.7em;
 }
 
-.crCard span.crDeadline {
+.crCard span.crDeadline,
+.crCardDark span.crDeadline {
 	display: block;
 	font-weight: 100;
 	color: #141414;
@@ -835,7 +846,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 .crCardDark span.crTitledark {
-	display: block;
+	display: table-cell;
 	font-weight: 100;
 	color: #FFFFFF;
 	border-bottom: #F8F8F8;
@@ -843,13 +854,15 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	text-align: center;
 	font-size: 0.8em;
 	overflow: hidden;
-	white-space: nowrap;
-	width: 100px;
-	text-overflow: ellipsis;	
+	/*white-space: nowrap;*/
+	/*width: 100px;*/
+	text-overflow: ellipsis;
+	height: 60px;
+	vertical-align: middle;
 }
 
 .crCardDark span.crTitle {
-	display: block;
+	display: table-cell;
 	font-weight: 100;
 	/*color: #FFFFFF;*/
 	color: #5f5f5f;
@@ -859,15 +872,17 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	/*padding-top: 15px;
+	padding-bottom: 15px;*/
 	/*background-color: rgba(90, 90, 90, 0.9);*/
 	/*background: #fff;*/
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 	/*width: 100px;*/
-	text-overflow: ellipsis;	
+	text-overflow: ellipsis;
+	height: 60px;
+	vertical-align: middle;	
 }
 
 .crCardDark span.crRequester {
@@ -878,8 +893,9 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	/*color: #FFFFFF;*/
 	color: #525252;
 	/*padding: 40px 10px 20px 10px;*/
-	padding: 10px 10px 0 10px;
-	height: 45px;
+	padding: 5px 10px 0 10px;
+	/*height: 45px;*/
+	margin-bottom: 10px;
 	/*background-color: rgba(200, 200, 200, 0.2);*/	
 }
 
@@ -895,18 +911,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	font-size: 0.7em;
 }
 
-.crCardDark span.crDeadline {
-	display: block;
-	font-weight: 100;
-	/*color: #FFFFFF;*/
-	color: #525252;
-	/*border-bottom: 1px solid #D71236;*/
-	/*padding: 7px;*/
-	font-size: 0.7em;	
-	/*background-color: rgba(200, 200, 200, 0.2);*/	
-	text-align: left;
-	padding: 0 7px 7px 40px;
-}
+
 
 .swipePrevious {
 	position: absolute;
@@ -1080,7 +1085,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 #submitSectionPlacer .commentTitle { color: #808080; font-size: 1.2em; }
 #submitSectionPlacer .comment { margin-top: 0!important; color: #242424; font-size: 1em; font-weight: lighter; }
 #submitSectionPlacer .botButtons { margin-top: 50px; }
-#submitSectionPlacer .botButtons .modify { float: left; width: 211px; height: 40px;background-color: #FFFFFF; padding-left: 40px; padding-top: 10px; font-family: "Helvetica neue", sans-serif; font-weight: 100; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf;
+#submitSectionPlacer .botButtons .modify { float: left; width: 211px; height: 40px; line-height: 40px; background-color: #FFFFFF; text-align: center; font-family: "Helvetica neue", sans-serif; font-weight: 100; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-webkit-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-o-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	box-shadow: 0px 3px 3px 0px #dfdfdf;}
@@ -1177,5 +1182,5 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	width: 100px;	
+	/*width: 100px;	*/
 }	

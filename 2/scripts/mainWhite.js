@@ -1061,10 +1061,13 @@ function readingMainJson(callback) {
 					elemToBeGenerated += "<span onclick=\"creditRequestSelected('"+currentCRSelected+"')\" class='"+mainColor+"'>";
 
 						elemToBeGenerated += "<span class='crTitle crTitle"+z+"'>";
-						elemToBeGenerated += "<b>" + myObject[i].counterparty + "</b>";
+						elemToBeGenerated += "<b>" + myObject[i].requestLbl + "</b>";
 						elemToBeGenerated += "</span>";
+
+						elemToBeGenerated += "<span class='crRequesterRed'>Project finance for</span>";
+
 						elemToBeGenerated += "<span class='crRequester'>";
-						elemToBeGenerated +=  myObject[i].requestLbl;
+						elemToBeGenerated +=  myObject[i].counterparty;
 						elemToBeGenerated += "</span>";
 
 						elemToBeGenerated += "<span class='crPricing'>";
@@ -1521,9 +1524,6 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
-
-
-
 
 /*
 	$('.peopleUnfold1').click(function() {
