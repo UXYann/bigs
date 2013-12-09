@@ -1713,7 +1713,7 @@ function displayDocViewer() {
 }
 
 
-/*
+
 function addingClickBehaviour() {
 	if($( ".peopleUnfold1" )) {
 		$( ".peopleUnfold1" ).click(function() {
@@ -1728,7 +1728,7 @@ function addingClickBehaviour() {
 		  $( ".peopleDocs3" ).toggle( "blind", 500 );
 		});
 	}	
-}*/
+}
 
 
 $(document).ready(function() {
