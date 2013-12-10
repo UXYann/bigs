@@ -137,7 +137,7 @@ function splashscreen() {
 	
 	d.getElementById('site').style.opacity = "1";
 
-	window.setTimeout(function(){d.getElementsByTagName('header')[0].style.opacity = "1";d.getElementById('searchDocsForm').style.opacity = "1"},1000);
+	window.setTimeout(function(){d.getElementsByTagName('header')[0].style.opacity = "1";d.getElementsByClassName('searchDocsForm')[0].style.opacity = "1"},1000);
 	d.getElementById('splash').style.visibility = "hidden";
 	d.getElementById('content').className = "siteShown";
 	d.getElementById('requests').className = "siteShown";
@@ -1807,6 +1807,7 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
+
 });
 
 function doOnOrientationChange() {

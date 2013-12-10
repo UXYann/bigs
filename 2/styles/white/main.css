@@ -67,24 +67,24 @@
 	-webkit-transform: translate3d(0, 0, 0);	
 }
 
-#searchDocsForm {
+.searchDocsForm {
 	opacity: 0.7;
 	height: 65px;
 }
 
-#documentsView #searchDocsForm {
+#documentsView .searchDocsForm {
 	margin-bottom: 20px;
 }
 
 
 
-#searchDocsForm div {
+.searchDocsForm div {
 	padding-top: 0px;
 }
 
-#searchDocsForm .formButtons1, 
-#searchDocsForm .formButtons2,
-#searchDocsForm .formButtons3 {
+.searchDocsForm .formButtons1, 
+.searchDocsForm .formButtons2,
+.searchDocsForm .formButtons3 {
 	/*padding: 10px 20px 10px 20px;*/
 	/*border: 1px solid #000000;*/
 	/*font-size: 0.8em;*/
@@ -97,10 +97,10 @@
 	background-size: 300px;
 }
 
-#documentsView #searchDocsForm .formButtons1, 
-#documentsView #searchDocsForm .formButtons2,
-#documentsView #searchDocsForm .formButtons3,
-#documentsView #searchDocsForm .formButtons4 {
+#documentsView .searchDocsForm .formButtons1, 
+#documentsView .searchDocsForm .formButtons2,
+#documentsView .searchDocsForm .formButtons3,
+#documentsView .searchDocsForm .formButtons4 {
 	/*padding: 10px 20px 10px 20px;*/
 	/*border: 1px solid #000000;*/
 	/*font-size: 0.8em;*/
@@ -114,15 +114,15 @@
 	background-position: 0 -4px;
 }
 
-#search {
+.search {
 	padding-left: 50px;
 }
 
-#searchDocsForm span {
+.searchDocsForm span {
 	float: left;
 }
 
-#searchDocsForm input {
+.searchDocsForm input {
 	/*border: 1px solid #000000;*/
 	border: 1px solid #CCCCCC;	
 	/*font-size: 1em;
@@ -141,44 +141,44 @@
 	}
 
 
-#searchDocsForm .formButtons1,
-#documentsView #searchDocsForm .formButtons1 {
+.searchDocsForm .formButtons1,
+#documentsView .searchDocsForm .formButtons1 {
 	margin-left: 25px;
 	background-position: -2px 0;
 }
 
-#documentsView #searchDocsForm .formButtons1 {
+#documentsView .searchDocsForm .formButtons1 {
 	background-position: -2px -4px;
 }
 
-#searchDocsForm .formButtons2 {
+.searchDocsForm .formButtons2 {
 	background-position: -102px 0;
 }
 
-#documentsView #searchDocsForm .formButtons2 {
+#documentsView .searchDocsForm .formButtons2 {
 	background-position: -102px -4px;
 }
 
-#documentsView #searchDocsForm .formButtons2:hover {
+#documentsView .searchDocsForm .formButtons2:hover {
 	background-position: -102px -53px;
 }
 
-#searchDocsForm .formButtons3 {
+.searchDocsForm .formButtons3 {
 	background-position: -202px 0;
 }
 
-#documentsView #searchDocsForm .formButtons3 {
+#documentsView .searchDocsForm .formButtons3 {
 	background-position: -202px -4px;
 }
 
-#documentsView #searchDocsForm .formButtons3:hover {
+#documentsView .searchDocsForm .formButtons3:hover {
 	background-position: -202px -103px;
 }
 
-#documentsView #searchDocsForm .formButtons4 {
+#documentsView .searchDocsForm .formButtons4 {
 	background-position: -302px -4px;
 }
-#documentsView #searchDocsForm .formButtons4:hover {
+#documentsView .searchDocsForm .formButtons4:hover {
 	background-position: -302px -153px;
 }
 
@@ -195,13 +195,13 @@
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3);
 }
 
-#documentsView #searchDocsForm .formButtons1 {
+#documentsView .searchDocsForm .formButtons1 {
 	margin-left: 0;
 }
 
 
-#searchDocsForm #displayAsList,
-#searchDocsForm #displayAsThumbnails { 
+.searchDocsForm #displayAsList,
+.searchDocsForm #displayAsThumbnails { 
 	display: block;
 	width: 38px;
 	height: 38px;
@@ -217,16 +217,16 @@
 	background-size: 82px;
  }
 
-#searchDocsForm #displayAsThumbnails:hover {
+.searchDocsForm #displayAsThumbnails:hover {
 	background-position: 0 -47px;
 }
 
-#searchDocsForm #displayAsList {
+.searchDocsForm #displayAsList {
 	background-position: -40px 0;
 	margin-left: 0;
 }
 
-#searchDocsForm #displayAsList:hover {
+.searchDocsForm #displayAsList:hover {
 	background-position: -40px -47px;
 }
 
@@ -265,7 +265,7 @@
 	margin-left: 0px;
 }
 
-#searchDocsForm input {
+.searchDocsForm input {
 	/*padding: 10px 10px 10px 50px;
 	border-radius: 7px;*/
 	padding: 11px 0 11px 20px;
@@ -274,12 +274,12 @@
 	margin-left: 45px;
 }
 
-#documentsView #searchDocsForm input {
+#documentsView .searchDocsForm input {
 	width: 360px;
 	margin-left: 25px;
 }
 
-#searchDocsForm img {
+.searchDocsForm img {
 	float: right;
 	/*margin-right: 20px;
 	margin-top: 5px;*/
