@@ -1,5 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
-//var CWF_URL = 'http://node.ux-republic.com';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -1015,28 +1015,6 @@ function hookingCreditRequest() {
 // pure JS
 
 
-function displayAsListMySwipeJS() {
-	window.mySwipe.kill();
-	d.getElementById('indexSection').style.position = "relative";
-	d.getElementById('indexSection').style.marginLeft = "24px";
-	d.getElementById('indexSection').style.marginRight = "35px";
-	d.getElementById('mySwipe').className = "shouldBeAList";
-	d.getElementById('sliderSetToLinesHeader').style.display = "block";
-	d.getElementsByClassName('swipeNext')[0].style.display = "none";
-	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
-}
-
-function displayAsBlockMySwipeJS() {
-	window.mySwipe();
-	d.getElementById('indexSection').style.position = "relative";
-	d.getElementById('indexSection').style.marginLeft = "24px";
-	d.getElementById('indexSection').style.marginRight = "35px";
-	d.getElementById('mySwipe').className = "shouldBeAList";
-	d.getElementById('sliderSetToLinesHeader').style.display = "block";
-	d.getElementsByClassName('swipeNext')[0].style.display = "none";
-	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
-}
-
 
 var currentSwipeJSCarousel;
 
@@ -1802,7 +1780,7 @@ function displayDocViewer() {
 function addingClickBehaviour() {
 	if($( ".peopleUnfold1" )) {
 		$( ".peopleUnfold1" ).click(function() {
-		  $( ".peopleDocs1" ).toggle( "blind", 500 );
+		  $( "#currentCreditRequesDocumentSlideJS" ).toggle( "blind", 500 );
 		});
 
 		$( ".peopleUnfold2" ).click(function() {
@@ -1816,12 +1794,9 @@ function addingClickBehaviour() {
 }
 
 
+
 $(document).ready(function() {
 
-	$('.peopleUnfold1').click(function() {
-		$('.peopleDocs1').slideToggle('fast');
-		return false;
-	});
 
 	$('.peopleUnfold2').click(function() {
 		$('.peopleDocs2').slideToggle('fast');
@@ -1867,8 +1842,32 @@ function submitingResult() {
 
 
 
+function listingStuff() {
 
+	d.getElementById('indexSection').style.position = "relative";
+	d.getElementById('indexSection').style.marginLeft = "24px";
+	d.getElementById('indexSection').style.marginRight = "35px";
+	d.getElementById('mySwipe').className = "shouldBeAList";
+	d.getElementById('sliderSetToLinesHeader').style.display = "block";
+	d.getElementsByClassName('swipeNext')[0].style.display = "none";
+	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
+}
 
+function displayAsListMySwipeJS() {
+	window.mySwipe.kill();
+	listingStuff();
+}
+
+function displayAsBlockMySwipeJS() {
+	window.mySwipe();
+	d.getElementById('indexSection').style.position = "relative";
+	d.getElementById('indexSection').style.marginLeft = "24px";
+	d.getElementById('indexSection').style.marginRight = "35px";
+	d.getElementById('mySwipe').className = "shouldBeAList";
+	d.getElementById('sliderSetToLinesHeader').style.display = "block";
+	d.getElementsByClassName('swipeNext')[0].style.display = "none";
+	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
+}
 
 
 
@@ -1887,3 +1886,19 @@ function startingCreditRequestsDocumentsSlideJS() {
 	  // transitionEnd: function(index, element) {}
 	});
 }
+
+
+
+
+
+startingCreditRequestsDocumentsSlideJS();
+
+
+
+
+d.addEventListener('click',function(){
+	d.getElementById('currentCreditRequesDocumentSlideJS').style.display = "block"; 
+	d.getElementById('secondWrapper').style.display = "block"; 
+	startingCreditRequestsDocumentsSlideJS();
+} ,false);
+
