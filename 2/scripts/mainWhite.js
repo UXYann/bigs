@@ -1,5 +1,5 @@
-//var CWF_URL = 'http://localhost:8080';
-var CWF_URL = 'http://node.ux-republic.com';
+var CWF_URL = 'http://localhost:8080';
+//var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -1014,10 +1014,37 @@ function hookingCreditRequest() {
 
 // pure JS
 
+
+function displayAsListMySwipeJS() {
+	window.mySwipe.kill();
+	d.getElementById('indexSection').style.position = "relative";
+	d.getElementById('indexSection').style.marginLeft = "24px";
+	d.getElementById('indexSection').style.marginRight = "35px";
+	d.getElementById('mySwipe').className = "shouldBeAList";
+	d.getElementById('sliderSetToLinesHeader').style.display = "block";
+	d.getElementsByClassName('swipeNext')[0].style.display = "none";
+	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
+}
+
+function displayAsBlockMySwipeJS() {
+	window.mySwipe();
+	d.getElementById('indexSection').style.position = "relative";
+	d.getElementById('indexSection').style.marginLeft = "24px";
+	d.getElementById('indexSection').style.marginRight = "35px";
+	d.getElementById('mySwipe').className = "shouldBeAList";
+	d.getElementById('sliderSetToLinesHeader').style.display = "block";
+	d.getElementsByClassName('swipeNext')[0].style.display = "none";
+	d.getElementsByClassName('swipePrevious')[0].style.display = "none";
+}
+
+
+var currentSwipeJSCarousel;
+
 function startingSwipeCarousel() {
 
 	var bullets = document.getElementById('position').getElementsByTagName('li');
 
+	currentSwipeJSCarousel = document.getElementById('mySwipe');
 	var elem = document.getElementById('mySwipe');
 	window.mySwipe = Swipe(elem, {
 		continuous: true,
@@ -1072,9 +1099,6 @@ function notInitStartSwipeCarouel() {
 		displayingCreditRequest('thumbnails');
 	});
 
-	$("#displayAsList").click(function() {
-		displayingCreditRequest('list');
-	});
 }
 
 /*	END OF SWIPE 2 Carousel	*/
@@ -1809,6 +1833,8 @@ $(document).ready(function() {
 		return false;
 	});
 
+	d.getElementById('displayAsList').addEventListener('click', displayAsListMySwipeJS ,false);
+	d.getElementById('displayAsThumbnails').addEventListener('click', function(){d.getElementById('sliderSetToLinesHeader').style.display = "none"; d.getElementsByClassName('swipePrevious')[0].style.opacity = 1; d.getElementsByClassName('swipePrevious')[0].style.display = "block"; d.getElementsByClassName('swipeNext')[0].style.opacity = 1; d.getElementsByClassName('swipeNext')[0].style.display = "block"; notInitStartSwipeCarouel();} ,false);
 });
 
 function doOnOrientationChange() {

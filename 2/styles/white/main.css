@@ -909,6 +909,20 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 
 /*	End of Credit Requests Swipe Carousel Styles 	*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*	Credit Requests list styles 	*/
 
 .CRList {
@@ -998,6 +1012,145 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 /*	End of Credit Requests list styles 	*/
+
+
+
+
+
+
+
+
+
+
+
+.redBordering {
+	border-bottom: 1px solid #D71236;
+}
+
+.myOwnTableRowIndex {
+	position: absolute;
+	top: 10px;
+	z-index: 3000;
+	background-color: #FFFFFF;
+	width: 953px;
+	margin-left: 4px;
+	padding: 20px 0 15px 0;
+	vertical-align: middle;
+	font-weight: bold;
+	-webkit-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
+	box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2);
+}
+
+.myOwnTableCellIndex {
+	display: table-cell;
+	font-weight: 100;
+	padding-left: 10px;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.myOwnTableCellIndex:first-child {
+	width: 50px;
+}
+
+.myOwnTableCellIndex:nth-child(2) {
+	width: 190px;
+}
+
+.myOwnTableCellIndex:nth-child(3) {
+	width: 190px;
+}
+
+.myOwnTableCellIndex:nth-child(4) {
+	width: 90px;
+}
+
+.myOwnTableCellIndex:nth-child(5) {
+	width: 90px;
+}
+
+.myOwnTableCellIndex:nth-child(6) {
+	width: 90px;
+}
+
+.myOwnTableCellIndex:nth-child(7) {
+	width: 188px;
+}
+
+/* ================================================== */
+
+.shouldBeAList .swipeBreak { 
+	display: none;
+}
+
+.shouldBeAList { 
+	position: absolute; 
+	top: 95px;
+}
+
+.shouldBeAList .crCard,
+.shouldBeAList .crCardDark {
+	display: block;
+	width: 953px;
+	margin: 0 0 0 4px;
+}
+
+.shouldBeAList .crCard .crTitle,
+.shouldBeAList .crCardDark .crTitle,
+.shouldBeAList .crCard .crRequesterRed,
+.shouldBeAList .crCardDark .crRequesterRed,
+.shouldBeAList .crCard .crRequester,
+.shouldBeAList .crCardDark .crRequester,
+.shouldBeAList .crCard .crPricing,
+.shouldBeAList .crCardDark .crPricing,
+.shouldBeAList .crCard .crDeadline,
+.shouldBeAList .crCardDark .crDeadline,
+.shouldBeAList .crCard .crStatus,
+.shouldBeAList .crCardDark .crStatus {
+	display: table-cell;
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.shouldBeAList .crCard .crRequesterRed,
+.shouldBeAList .crCardDark .crRequesterRed {
+	display: none;
+}
+
+.shouldBeAList .crCard .crTitle,
+.shouldBeAList .crCardDark .crTitle {
+	width: 200px;
+	padding-left: 60px;
+	padding-right: 0;
+	background-position: 20px 20px;
+}
+
+.shouldBeAList .crCard .crRequester,
+.shouldBeAList .crCardDark .crRequester {
+	width: 200px;
+	padding: 0;
+}
+
+.shouldBeAList .crCard .crPricing,
+.shouldBeAList .crCardDark .crPricing {
+	width: 100px;
+	padding: 0;
+}
+
+.shouldBeAList .crCard .crDeadline,
+.shouldBeAList .crCardDark .crDeadline {
+	width: 100px;
+	padding-left: 100px;
+}
+
+.shouldBeAList .crCard .crStatus,
+.shouldBeAList .crCardDark .crStatus {
+	width: 198px;
+	line-height: 60px;
+}
+
 
 
 
