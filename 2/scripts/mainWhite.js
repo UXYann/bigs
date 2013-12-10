@@ -1780,7 +1780,7 @@ function doOnOrientationChange() {
 		    break; 
 		  default:
 		    console.log('portrait');
-		    d.getElementById('wrongOrientation').className = "portrait";
+		    //d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1789,6 +1789,9 @@ function doOnOrientationChange() {
 window.addEventListener('orientationchange', doOnOrientationChange);
 
 doOnOrientationChange();
+
+
+d.getElementById('backToHomeLastButton').addEventListener('click', function(){didYouSelectYourCr('1', 'index.html', hidingMenu, 'One')},false);
 
 /*	Should be used to post the UserSelection 	*/
 
