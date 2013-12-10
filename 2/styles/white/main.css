@@ -397,30 +397,30 @@
 #deadline {
 	display: block;
 	position: absolute;
-   top: 23%;
-   left: 18%;
-   width: 100px;
-   font-size: 1em;
-   font-weight: bold;	
+	top: 23%;
+	left: 18%;
+	width: 100px;
+	font-size: 1em;
+	font-weight: bold;	
 }
 
 #amount {
 	position: absolute;
-   top: 29%;
-   left: 23%;
-   font-size: 3em;
-   font-weight: bold;	
+	top: 29%;
+	left: 23%;
+	font-size: 3em;
+	font-weight: bold;	
 }
 
 #rw {
 	display: block;
 	position: absolute;
-   top: 29%;
-   left: 9%;
-   width: 130px;
-   font-size: 2.2em;
-   font-weight: bold;
-   word-wrap:break-word;
+	top: 29%;
+	left: 9%;
+	width: 130px;
+	font-size: 2.2em;
+	font-weight: bold;
+	word-wrap:break-word;
 }
 
 .graphSpace {
@@ -444,14 +444,14 @@
 
 .graph-rate {
 	display: block;
-   position: absolute;
-   top: 29%;
-   left: 17%;
-   width: 100px;
-   font-size: 3em;
-   font-weight: bold;
-   word-wrap:break-word;
- }
+	position: absolute;
+	top: 29%;
+	left: 17%;
+	width: 100px;
+	font-size: 3em;
+	font-weight: bold;
+	word-wrap:break-word;
+}
 
 .or {
 	left: 18%;
@@ -504,7 +504,6 @@
 	background: url('../../images/btn_load_start_star-Over_Y201px.png') no-repeat left center;
 	background-size: 453px 302px;
 }
-
 
 #startingExperience.good {
 	background: url('../../images/btn_load_start_star-Over_Y201px.png') no-repeat bottom left;
@@ -562,7 +561,6 @@
 	opacity: 1;
 }
 
-
 /*Action*/
 .container {
 	overflow: hidden;
@@ -607,6 +605,7 @@
 	border: none;
 	outline: none;
 }
+
 .validator-comment-input {
 	width: 80%;
 	height: 60px;
@@ -637,8 +636,6 @@ input:focus, textarea:focus {
 	margin-top: 0;
 	display: none;
 }
-
-
 
 .mainText {
 	 -webkit-appearance: none;
@@ -672,9 +669,8 @@ input:focus, textarea:focus {
 	font-family: 'Helvetica neue';
 }
 
-
-
 /*	Credit Requests Swipe carousel styles 	*/
+
 .crCard {
 	display: inline-block;
 	width: 180px;
@@ -760,9 +756,9 @@ span.crTitle8 {
 
 .crCard span.crRequesterRed,
 .crCardDark span.crRequesterRed {
-		color: #D71236;
-		margin-top: 5px;
-		font-size: 0.7em;
+	color: #D71236;
+	margin-top: 5px;
+	font-size: 0.7em;
 }
 
 .crCard span.crPricing,
@@ -790,7 +786,6 @@ span.crTitle8 {
 	display: block;
 	font-weight: 100;
 	color: #141414;
-	
 	font-size: 0.7em;	
 	text-align: center;
 	padding-top: 10px;
@@ -798,14 +793,12 @@ span.crTitle8 {
 
 .crCardDark {
 	display: inline-block;
-	/*border: 1px solid #2F302E;*/
-	/*width: 160px;*/
 	width: 180px;
 	margin: 7px;
 	background: #f3f3f3;
 	-webkit-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2) inset;
--moz-box-shadow:    1px 1px 5px rgba(10, 10, 10, 0.2) inset;
-box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
+	-moz-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2) inset;
+	box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 .crCardDark span {
@@ -821,8 +814,6 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	text-align: center;
 	font-size: 0.8em;
 	overflow: hidden;
-	/*white-space: nowrap;*/
-	/*width: 100px;*/
 	text-overflow: ellipsis;
 	height: 60px;
 	vertical-align: middle;
@@ -831,7 +822,6 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 .crCardDark span.crTitle {
 	display: table-cell;
 	font-weight: 100;
-	/*color: #FFFFFF;*/
 	color: #5f5f5f;
 	border-bottom: #F8F8F8;
 	padding: 4px;
@@ -839,14 +829,8 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	/*padding-top: 15px;
-	padding-bottom: 15px;*/
-	/*background-color: rgba(90, 90, 90, 0.9);*/
-	/*background: #fff;*/
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
-	/*white-space: nowrap;*/
-	/*width: 100px;*/
 	text-overflow: ellipsis;
 	height: 60px;
 	vertical-align: middle;	
@@ -854,24 +838,17 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 
 .crCardDark span.crRequester {
 	display: block;
-	/*font-size: 1.2em;*/
 	font-size: 0.8em;
 	font-weight: 100;
-	/*color: #FFFFFF;*/
 	color: #525252;
-	/*padding: 40px 10px 20px 10px;*/
 	padding: 0 10px;
-	/*height: 45px;*/
-	margin-bottom: 10px;
-	/*background-color: rgba(200, 200, 200, 0.2);*/	
+	margin-bottom: 10px;	
 }
 
 .crCardDark span.crStatus {
 	display: block;
 	font-weight: 100;
-	/*color: #FFFFFF;*/
-	color: #525252;
-	/*background-color: rgba(200, 200, 200, 0.4);*/	
+	color: #525252;	
 	border-bottom: #F8F8F8;
 	padding: 7px;
 	text-align: center;
@@ -884,10 +861,6 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	top: 230px;
 	width: 35px;
 	height: 40px;
-	/*color: #FFFFFF;
-	border-radius: 50px;
-	padding: 15px 20px 15px 20px;
-	background-color: #CCCCCC;*/
 	background: url('../../images/white/img_fleches.png') no-repeat;
 	background-size: 35px;
 }
@@ -898,10 +871,6 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	top: 230px;
 	width: 35px;
 	height: 40px;
-	/*color: #FFFFFF;
-	border-radius: 50px;
-	padding: 15px 20px 15px 20px;
-	background-color: #CCCCCC;*/
 	-webkit-transition: opacity ease-out 250ms;
 	background: url('../../images/white/img_fleches.png') no-repeat 0 -45px;
 	background-size: 35px;
@@ -935,7 +904,6 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 	display: block;
 	width: 80%;
 	margin-left: 10%;
-	/*background-color: #EDEDED;*/	
 	height: 50px;
 	vertical-align: middle;
 	margin-top: 0;
@@ -966,9 +934,7 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 .CRList .crCardDark span.crTitle {
-	/*color: #FFFFFF;*/
 	color: #5f5f5f;
-	/*background-color: rgba(90, 90, 90, 0.9);*/
 }
 
 .CRList .crCardDark span.crTitlePic1 {
@@ -989,14 +955,12 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 .CRList .crCardDark span.crRequester {
-	/*color: #FFFFFF;*/
 	color: #525252;
 }
 
 .CRList .crCard span.crStatus, .CRList .crCardDark span.crStatus {
 	font-weight: 100;
 	color: #666666;
-	/*background-color: #FFFFFF;*/
 	border-bottom: #F8F8F8;
 	padding: 7px;
 	float: right;
@@ -1006,13 +970,12 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 }
 
 .CRList .crCardDark span.crStatus {
-	/*background-color: rgba(200, 200, 200, 0.4);
-	color: #FFFFFF;*/
 	color: #525252;
 }
 
 /*	End of Credit Requests list styles 	*/
 
+<<<<<<< HEAD
 
 
 
@@ -1156,20 +1119,10 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
 
 
 
-
-
-
-
-
-
 .docName {
 	font-size: 0.8em;
 	font-weight: 100;
 }
-
-
-
-
 
 #footer {
     height: 50px;
@@ -1188,13 +1141,11 @@ box-shadow:         1px 1px 5px rgba(10, 10, 10, 0.2) inset;
     height:10px;
     border-radius:10px;
     background:#b4b4b4;
-    /*box-shadow:inset 0 1px 3px black,0 0 1px 1px #CCCCCC;*/
     margin:0 2px;
     cursor:pointer;
 }
 
-#position li.on{
-   /*box-shadow:inset 0 1px 3px -1px #28b4ea,0 1px 2px rgba(0,0,0,.5);*/
+#position li.on {
     background-color: #000;
 }
 
