@@ -1767,6 +1767,11 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.barbidul').click(function() {
+		$('.bucketTable').slideToggle('fast');
+		return false;
+	});
+
 });
 
 function doOnOrientationChange() {
