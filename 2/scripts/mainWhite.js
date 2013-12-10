@@ -189,6 +189,8 @@ buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', '
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 	changingMenuState(newState);
+
+
 }
 
 
@@ -205,8 +207,11 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 					d.getElementById('thumbNails').style.opacity = 1;	
 				}
 				if(d.getElementById('listNails')) {
-					d.getElementById('listNails').style.opacity = 1;	
+					d.getElementById('listNails').style.opacity = 1;
 				}
+
+				d.getElementsByClassName('swipePrevious')[0].style.opacity = 1;
+				d.getElementsByClassName('swipeNext')[0].style.opacity = 1;
 				
 			} else {
 
@@ -602,8 +607,41 @@ document.ontouchstart = function(e) {
 };
 
 document.ontouchmove = function(e) {
-//    stickingThings();
+
+	if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
+		d.getElementById('rangeLine').className = "neutral";
+		d.getElementById('accept').className = "range";
+		d.getElementById('rangeSlider').value = 51;
+		statusCRSelection = "NOT DECIDED";
+		d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
+
+	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+		d.getElementById('rangeLine').className = "orange";
+		d.getElementById('accept').className = "rangeOrange";
+		d.getElementById('rangeSlider').value = 26;
+		statusCRSelection = "YES BUT...";
+		d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
+
+	} else if (d.getElementById('rangeSlider').value < 25) {
+		d.getElementById('rangeLine').className = "green";
+		d.getElementById('accept').className = "rangeValidated";
+		d.getElementById('rangeSlider').value = 0;
+		statusCRSelection = "ACCEPTED";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+
+	} else if (d.getElementById('rangeSlider').value > 70) {
+		d.getElementById('rangeLine').className = "red";
+		d.getElementById('accept').className = "rangeCanceled";
+		d.getElementById('rangeSlider').value = 100;
+		statusCRSelection = "REFUSED";
+		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+	}
 };
+
+
+
+
+
 
 var statusCRSelection = "ACCEPTED";
 document.ontouchend = function(e) {
@@ -637,6 +675,11 @@ document.ontouchend = function(e) {
 		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
 	}
 };
+
+
+
+
+
 
 window.setInterval("hackingIOS7()", 5);
 
@@ -1789,7 +1832,6 @@ function doOnOrientationChange() {
 window.addEventListener('orientationchange', doOnOrientationChange);
 
 doOnOrientationChange();
-
 
 d.getElementById('backToHomeLastButton').addEventListener('click', function(){didYouSelectYourCr('1', 'index.html', hidingMenu, 'One')},false);
 

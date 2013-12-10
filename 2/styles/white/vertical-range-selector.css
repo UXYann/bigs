@@ -49,11 +49,11 @@ input[type="range"] {
 
 input[type=range] {
     -webkit-appearance: none;
-    width: 468px;
+    width: 360px;
     height:2px;
     background-color: transparent;
-    margin-left: 0;
-    margin-top: 230px;
+    margin-left: 55px;
+    margin-top: 200px;
 }
 
 .range input[type="range"]::-webkit-slider-thumb {
@@ -101,17 +101,17 @@ input[type=range] {
 }
 
 #rangeLine {
-	height: 380px;
+	height: 250px;
 	width: 60px;
 	border-radius: 20px;
 	position: absolute;
 	left: 205px;
-	top: 210px;
+	top: 240px;
 }
 
 #rangeLine.neutral {
 	background: url('../../images/white/img_background_slider_grey.png') no-repeat center center;
-	background: url('../../images/white/slider.png') no-repeat center center;
+	/*background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
@@ -119,7 +119,7 @@ input[type=range] {
 
 #rangeLine.orange {
 	background: url('../../images/white/img_background_slider_grey.png') no-repeat center center;
-	background: url('../../images/white/slider.png') no-repeat center center;
+/*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
@@ -127,7 +127,7 @@ input[type=range] {
 
 #rangeLine.red {
 	background: url('../../images/white/img_background_slider_red.png') no-repeat center center;
-	background: url('../../images/white/slider.png') no-repeat center center;
+/*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
@@ -135,7 +135,7 @@ input[type=range] {
 
 #rangeLine.green {
 	background: url('../../images/white/img_background_slider_green.png') no-repeat center 0%;
-	background: url('../../images/white/slider.png') no-repeat center center;
+/*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
@@ -150,7 +150,7 @@ input[type=range] {
 
 #sliderTexts #yes {
 	position: absolute;
-	top: 225px;
+	top: 235px;
 	left: 65px;
 	width: 90px;
 	padding-right: 20px;
@@ -172,7 +172,7 @@ input[type=range] {
 
 #sliderTexts #no {
 	position: absolute;
-	top: 540px;
+	top: 450px;
 	left: 65px;
 	width: 90px;
 	padding-right: 20px;
