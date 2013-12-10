@@ -192,6 +192,18 @@
 	background-image: url('../../images/white/img_response_gris_2x.png');
 }
 
+#dash4 span {
+	display: block;
+	background: url('../../images/white/img_response_noir_2x.png') transparent no-repeat center 30%;
+	background-size: 60px;
+	height: 55px;
+	text-align: center;
+}
+
+#dash4.dark span {
+	background-image: url('../../images/white/img_response_gris_2x.png');
+}
+
 #SGLogoBottomNav {
 	display: inline-block;
 	bottom: 0;
@@ -218,6 +230,18 @@
 	opacity: 0;
 	background: #fff;
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
+}
+
+#dashMainContentOldDashSection {
+	width: 880px;
+	margin-left: 120px;
+	font-family:  "Helvetica neue";
+	letter-spacing: 1px;
+	padding: 210px 0 100px 0;
+	background: #fff;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
+	-webkit-transform: translate3d(0, 0,0);
+	-webkit-transition: all ease-in-out 1000ms; 
 }
 
 .tableCategories .tableCategoriesTitle {
@@ -689,7 +713,7 @@
 
 .hedgingTableLine2 .hedgingLine6 { background: url('../../images/white/img_fleches_2x.png') no-repeat 97px -37px; background-size: 34px; }
 
-.bucketTable { width: 798px; margin: 0 20px 0 40px; border: 1px solid #000; font-size: 0.6em; font-weight: 300; }
+.bucketTable { display: none; width: 798px; margin: 0 20px 0 40px; border: 1px solid #000; font-size: 0.6em; font-weight: 300; }
 .bucketTable .bucketTableLine { height: 40px; line-height: 40px; }
 .bucketTable .bucketTableLine div { float: left; width: 57px; text-align: center; }
 
@@ -698,11 +722,6 @@
 .bucketTable .bucketTableLine2 {  }
 .bucketTable .bucketTableLine3 {  }
 .bucketTable .bucketTableLine4 .bucketLine1 { font-weight: bold; }
-
-
-.dispAltDashboard { display: none; width: 100px; height: 35px; background: red; }
-
-.altDashboard { display: none; }
 
 /* ============================================================================================ */
 /* === RESPONSES ============================================================================== */

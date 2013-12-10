@@ -1,5 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
-//var CWF_URL = 'http://node.ux-republic.com';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -34,18 +34,22 @@ function changingDashMenuState(whichSteAreWe) {
 		DashButtonElem1.className = "blue";
 		DashButtonElem2.className = "dark";
 		DashButtonElem3.className = "dark";
+		DashButtonElem4.className = "dark";
 	} else if (whichSteAreWe == "2") {
 		DashButtonElem1.className = "dark";
 		DashButtonElem2.className = "blue";
 		DashButtonElem3.className = "dark";
+		DashButtonElem4.className = "dark";
 	} else if (whichSteAreWe == "3") {
 		DashButtonElem1.className = "dark";
 		DashButtonElem2.className = "dark";
 		DashButtonElem3.className = "blue";
+		DashButtonElem4.className = "dark";
 	} else if (whichSteAreWe == "4") {
 		DashButtonElem1.className = "dark";
 		DashButtonElem2.className = "dark";
 		DashButtonElem3.className = "dark";
+		DashButtonElem4.className = "blue";
 	}
 }
 
@@ -153,9 +157,11 @@ function settingUpNav() {
 			DashButtonElem1 = document.getElementById('dash1');
 			DashButtonElem2 = document.getElementById('dash2');
 			DashButtonElem3 = document.getElementById('dash3');
+			DashButtonElem4 = document.getElementById('dash4');
 			DashButtonElem1.setAttribute('onclick', "changingDashMenuState('1');runningDashAjaxCall('verify-dashboard.html');"); // startingChart
 			DashButtonElem2.setAttribute('onclick', "changingDashMenuState('2');runningDashAjaxCall('verify-documents.html');");
 			DashButtonElem3.setAttribute('onclick', "changingDashMenuState('3');runningDashAjaxCall('verify-summury.html');");
+			DashButtonElem4.setAttribute('onclick', "changingDashMenuState('4');runningDashAjaxCall('verify-credapp.html');");
 	}
 
 	if (document.getElementsByClassName('request')) {
@@ -894,6 +900,25 @@ function runningDashAjaxCall(currentURL,callback) {
 			container.className = "dashMainContentSectionReset";
 			d.getElementById('UXLoader').style.display = "none";
 			window.setTimeout(function(){d.getElementById('dashMainContentSection').style.opacity = 1},50);
+		} else  if (currentURL == "verify-credapp.html") {
+
+			d.getElementById('navStepMenu').style.paddingLeft = "0px";
+			d.getElementById('topNavBarBackButton').style.display = "inline-block";
+			d.getElementById('nextButton').style.display = 'inline-block';
+
+			var newOnclick = d.getElementById('stepOne').getAttribute('onclick');
+			d.getElementById('topNavBarBackButton').setAttribute('onclick', newOnclick);
+
+			var newOnclick2 = d.getElementById('stepThree').getAttribute('onclick');
+			d.getElementById('nextButton').setAttribute('onclick', newOnclick2);
+
+			window.setTimeout(function(){d.getElementById('topNavBarBackButton').style.opacity = 1},500);
+			window.setTimeout(function(){d.getElementById('nextButton').style.opacity = 1},500);			
+
+			d.getElementById('dashMainContentOldDashSection').style.display = "block";
+			container.className = "dashMainContentSectionReset";
+			d.getElementById('UXLoader').style.display = "none";
+			window.setTimeout(function(){d.getElementById('dashMainContentSection').style.opacity = 1},50);
 		}
 
 	}, 1000);
@@ -1259,7 +1284,7 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
 							elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
 							elemToBeGenerated += "<div class='hedgingLine5'>17 years</div>";
-							elemToBeGenerated += "<div class='hedgingLine6'>CAR/VAR</div>";
+							elemToBeGenerated += "<div class='hedgingLine6 barbidul'>CAR/VAR</div>";
 						elemToBeGenerated += "<div class='clear'></div></div>";
 
 
@@ -1337,9 +1362,14 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 
 						elemToBeGenerated += "</div>";
 
-						elemToBeGenerated += "<div class='dispAltDashboard'></div>"; 
 
-						elemToBeGenerated += "<div class='altDashboard'>";
+
+
+
+
+
+				d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+				var elemToBeGenerated = "";
 
 
 
@@ -1445,17 +1475,6 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 						elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'></span><span class='creditRequestR crediRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";
 
 
-
-
-
-
-
-
-
-
-
-
-
 							elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>RISK ANALYSE</p><div class='redLine' style='width:637px;'></div><div class='clear'></div></div>";
 
 							elemToBeGenerated += "<div class='riskRangeLeft'>";
@@ -1511,7 +1530,7 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='clear'></div>";
 
 							elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
-							elemToBeGenerated += "</div>";
+							
 
 
 
@@ -1529,7 +1548,7 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "</div>";*/
 
 
-					d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+					d.getElementById('dashMainContentOldDashSection').innerHTML = elemToBeGenerated;
 							elemToBeGenerated = "";
 							elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='navMainTableOverContent'>";
@@ -1747,12 +1766,20 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
+
+	$('.barbidul').click(function() {
+		console.log('fffff');
+		$('.bucketTable').slideToggle('fast');
+		return false;
+	});
 /*
 	$('.dispAltDashboard').click(function() {
 		$('.altDashboard').slideToggle('fast');
 		return false;
-	});
-*/
+	});*/
+
+	
+
 
 
  
@@ -1773,6 +1800,8 @@ $(document).ready(function() {
 	});*/
 
 });
+
+
 /*
 function doOnOrientationChange() {
 
