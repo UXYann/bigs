@@ -21,7 +21,6 @@
 	width: 0;
 	height: 0;
 	z-index: 0;
-	position: auto;
 	-webkit-transition: opacity ease-in-out 250ms;	
 	opacity: 0;
 }

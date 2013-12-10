@@ -18,7 +18,6 @@
     -webkit-margin-before: 0;
     -o-margin-before: 0;
     -ms-margin-before: 0;
-    margin-before: 0;
     margin-bottom: 0;
 }
 
@@ -319,7 +318,6 @@
 	border-bottom: 1px solid #e6e6e6;
 	padding: 20px;
 	color: #242424;
-	font-weight: 300px;
 	font-family: 'Helvetica new', sans-serif;
 }
 
@@ -622,8 +620,6 @@
 .riskHead,
 .riskRow { float: left; width: 65px; height: 40px; line-height: 40px; text-align: center; font-weight: bold; border-bottom: 1px solid #e6e6e6; }
 
-.riskHead { text-align: bottom; }
-
 #riskHead1,
 #riskRow1 { width: 35px; }
 
@@ -713,12 +709,24 @@
 .hedgingTableLine2 { height: 60px; color: #242424; font-size: 1em; font-weight: 300; }
 .hedgingTableLine div { float: left; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #e6e6e6; }
 .hedgingTableLine2 div { height: 60px; line-height: 60px; }
-.hedgingLine1 { width: 150px; }
-.hedgingLine2 { width: 150px; }
-.hedgingLine3 { width: 150px; }
-.hedgingLine4 { width: 100px; }
-.hedgingLine5 { width: 120px; }
-.hedgingLine6 { width: 130px; }
+.hedgingLine1 { 
+	width: 150px;
+}
+.hedgingLine2 {
+	width: 150px;
+}
+.hedgingLine3 {
+	width: 150px;
+}
+.hedgingLine4 {
+	width: 100px;
+}
+.hedgingLine5 {
+	width: 120px;
+}
+.hedgingLine6 {
+	width: 130px;
+}
 
 .hedgingTableLine2 .hedgingLine6 { background: url('../../images/white/img_fleches_2x.png') no-repeat 97px -37px; background-size: 34px; }
 
