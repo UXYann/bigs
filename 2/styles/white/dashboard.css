@@ -194,14 +194,14 @@
 
 #dash4 span {
 	display: block;
-	background: url('../../images/white/img_response_noir_2x.png') transparent no-repeat center 30%;
-	background-size: 60px;
+	background: url('../../images/white/img_feuille_noir_2x.png') transparent no-repeat center 30%;
+	background-size: 45px;
 	height: 55px;
 	text-align: center;
 }
 
 #dash4.dark span {
-	background-image: url('../../images/white/img_response_gris_2x.png');
+	background-image: url('../../images/white/img_feuille_gris_2x.png');
 }
 
 #SGLogoBottomNav {
@@ -295,7 +295,8 @@
 	background: #D71236;
 }*/
 
-#dashMainContentSection div.tableRow {
+#dashMainContentSection div.tableRow,
+#dashMainContentOldDashSection div.tableRow  {
 	display: table-row;
 }
 
@@ -305,11 +306,13 @@
 }
 
 
-#dashMainContentSection span.creditRequestR {
+#dashMainContentSection span.creditRequestR,
+#dashMainContentOldDashSection span.creditRequestR {
 	/*width: 300px;*/
 }
 
-#dashMainContentSection span.creditRequestL, #dashMainContentSection span.creditRequestR {
+#dashMainContentSection span.creditRequestL, #dashMainContentSection span.creditRequestR,
+#dashMainContentOldDashSection span.creditRequestL, #dashMainContentOldDashSection span.creditRequestR {
 	display: table-cell;
 	width: 560px;
 	font-size: 1em;
@@ -320,11 +323,13 @@
 	font-family: 'Helvetica new', sans-serif;
 }
 
-#dashMainContentSection span.creditRequestComment {
+#dashMainContentSection span.creditRequestComment,
+#dashMainContentOldDashSection span.creditRequestComment {
 	border-bottom: none;
 }
 
-#dashMainContentSection span.crediRequestComment {
+#dashMainContentSection span.crediRequestComment,
+#dashMainContentOldDashSection span.crediRequestComment {
 	width: 530px;
 	padding-left: 50px;
 	font-size: 1em;
@@ -334,11 +339,13 @@
 	background-size: 22px; 
 }
 
-#dashMainContentSection span.creditRequestR:first-child {
+#dashMainContentSection span.creditRequestR:first-child,
+#dashMainContentOldDashSection span.creditRequestR:first-child {
 	border-top: 1px solid #e6e6e6;
 }
 
-#dashMainContentSection span.creditRequestL{
+#dashMainContentSection span.creditRequestL,
+#dashMainContentOldDashSection span.creditRequestL {
 	width: 200px;
 	color: #202020;
 	font-size: 0.8em;
@@ -348,14 +355,16 @@
 	border: none;
 }
 
-#dashMainContentSection .subSection {
+#dashMainContentSection .subSection,
+#dashMainContentOldDashSection .subSection {
 	font-size: 1.3em;
 	height: 90px;
 	vertical-align: middle;
 	font-weight: 300;
 }
 
-#dashMainContentSection .subUnderSection {
+#dashMainContentSection .subUnderSection,
+#dashMainContentOldDashSection .subUnderSection {
 	font-size: 1.2em;
 	height: 90px;
 	vertical-align: middle;
