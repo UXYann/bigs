@@ -116,6 +116,29 @@ header {
   position: relative;
 }
 
+
+
+
+
+
+
+#currentCreditRequesDocumentSlideJS.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  margin-left: 0;
+}
+#secondWrapper.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+#secondWrapper.swipe-wrap > div {
+  float:left;
+  width:50%;
+  position: relative;
+}
+
+
 /* END required styles */
 
 .diapo1 {
