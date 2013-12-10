@@ -189,6 +189,8 @@ buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', '
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 	changingMenuState(newState);
+
+
 }
 
 
@@ -205,8 +207,11 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 					d.getElementById('thumbNails').style.opacity = 1;	
 				}
 				if(d.getElementById('listNails')) {
-					d.getElementById('listNails').style.opacity = 1;	
+					d.getElementById('listNails').style.opacity = 1;
 				}
+
+				d.getElementsByClassName('swipePrevious')[0].style.opacity = 1;
+				d.getElementsByClassName('swipeNext')[0].style.opacity = 1;
 				
 			} else {
 
@@ -231,10 +236,14 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 
 						backToInitState();
 				} else if (amIGoing == "Two") {
+
 					if (buttonElem3.className == "setToBlue")
 
 						runningAjaxCall(url,initCallback);
+
 						backToInitState();
+
+
 				} else if (amIGoing == "Three") {
 
 					if (buttonElem4.className == "setToBlue")
@@ -602,8 +611,41 @@ document.ontouchstart = function(e) {
 };
 
 document.ontouchmove = function(e) {
-//    stickingThings();
+
+	if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
+		d.getElementById('rangeLine').className = "neutral";
+		d.getElementById('accept').className = "range";
+		d.getElementById('rangeSlider').value = 51;
+		statusCRSelection = "NOT DECIDED";
+		d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
+
+	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+		d.getElementById('rangeLine').className = "orange";
+		d.getElementById('accept').className = "rangeOrange";
+		d.getElementById('rangeSlider').value = 26;
+		statusCRSelection = "YES BUT...";
+		d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
+
+	} else if (d.getElementById('rangeSlider').value < 25) {
+		d.getElementById('rangeLine').className = "green";
+		d.getElementById('accept').className = "rangeValidated";
+		d.getElementById('rangeSlider').value = 0;
+		statusCRSelection = "ACCEPTED";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+
+	} else if (d.getElementById('rangeSlider').value > 70) {
+		d.getElementById('rangeLine').className = "red";
+		d.getElementById('accept').className = "rangeCanceled";
+		d.getElementById('rangeSlider').value = 100;
+		statusCRSelection = "REFUSED";
+		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+	}
 };
+
+
+
+
+
 
 var statusCRSelection = "ACCEPTED";
 document.ontouchend = function(e) {
@@ -638,11 +680,15 @@ document.ontouchend = function(e) {
 	}
 };
 
+
+
+
+
+
 window.setInterval("hackingIOS7()", 5);
 
 
 function creditRequestSelected(jsonAccountID) {
-
 
 	d.getElementById('displayAsThumbnails').style.opacity = 0;
 	d.getElementById('displayAsList').style.opacity = 0;
@@ -1284,11 +1330,8 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
 							elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
 							elemToBeGenerated += "<div class='hedgingLine5'>17 years</div>";
-							elemToBeGenerated += "<div class='hedgingLine6 barbidul'>CAR/VAR</div>";
+							elemToBeGenerated += "<div class='hedgingLine6' id='expandBucketTable'>CAR/VAR</div>";
 						elemToBeGenerated += "<div class='clear'></div></div>";
-
-
-
 
 						elemToBeGenerated += "<div class='bucketTable'>";
 
@@ -1362,16 +1405,14 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 
 						elemToBeGenerated += "</div>";
 
-
-
-
-
-
-
 				d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+
+				$('#expandBucketTable').click(function() {
+						$('.bucketTable').slideToggle('fast');
+						return false;
+				});
+
 				var elemToBeGenerated = "";
-
-
 
 					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 						elemToBeGenerated += "<div class='navMainTableOverContent'>";
@@ -1767,11 +1808,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$('.barbidul').click(function() {
-		$('.bucketTable').slideToggle('fast');
-		return false;
-	});
-
 });
 
 function doOnOrientationChange() {
@@ -1794,7 +1830,6 @@ function doOnOrientationChange() {
 window.addEventListener('orientationchange', doOnOrientationChange);
 
 doOnOrientationChange();
-
 
 d.getElementById('backToHomeLastButton').addEventListener('click', function(){didYouSelectYourCr('1', 'index.html', hidingMenu, 'One')},false);
 
