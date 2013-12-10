@@ -160,8 +160,8 @@ function settingUpNav() {
 			DashButtonElem4 = document.getElementById('dash4');
 			DashButtonElem1.setAttribute('onclick', "changingDashMenuState('1');runningDashAjaxCall('verify-dashboard.html',function(){window.scrollTo(0,1)});"); // startingChart
 			DashButtonElem2.setAttribute('onclick', "changingDashMenuState('2');runningDashAjaxCall('verify-documents.html',function(){window.scrollTo(0,1)});");
-			DashButtonElem3.setAttribute('onclick', "changingDashMenuState('3');runningDashAjaxCall('verify-summury.html',function(){window.scrollTo(0,1)}););");
-			DashButtonElem4.setAttribute('onclick', "changingDashMenuState('4');runningDashAjaxCall('verify-credapp.html',function(){window.scrollTo(0,1)}););");
+			DashButtonElem3.setAttribute('onclick', "changingDashMenuState('3');runningDashAjaxCall('verify-summury.html',function(){window.scrollTo(0,1)});");
+			DashButtonElem4.setAttribute('onclick', "changingDashMenuState('4');runningDashAjaxCall('verify-credapp.html',function(){window.scrollTo(0,1)});");
 	}
 
 	if (document.getElementsByClassName('request')) {
