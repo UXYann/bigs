@@ -11,7 +11,7 @@ function Timeout(fn, interval) {
         clearTimeout(id);
     };
 }
-var buttonElem1, buttonElem2, buttonElem3, buttonElem4;
+var buttonElem1, buttonElem2, buttonElem3, buttonElem4, buttonElem5;
 
 function changingMenuState(whichSteAreWe) {
 
@@ -608,34 +608,34 @@ document.ontouchmove = function(e) {
 var statusCRSelection = "ACCEPTED";
 document.ontouchend = function(e) {
 
-if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
-d.getElementById('rangeLine').className = "neutral";
-d.getElementById('accept').className = "range";
-d.getElementById('rangeSlider').value = 51;
-statusCRSelection = "NOT DECIDED";
-d.getElementById('userHasChosen').innerHTML = "You did not take decision about the transaction";
+	if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
+		d.getElementById('rangeLine').className = "neutral";
+		d.getElementById('accept').className = "range";
+		d.getElementById('rangeSlider').value = 51;
+		statusCRSelection = "NOT DECIDED";
+		d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
 
-} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
-d.getElementById('rangeLine').className = "orange";
-d.getElementById('accept').className = "rangeOrange";
-d.getElementById('rangeSlider').value = 26;
-statusCRSelection = "YES BUT...";
-d.getElementById('userHasChosen').innerHTML = "You accepted the transaction at a specific condition";
+	} else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+		d.getElementById('rangeLine').className = "orange";
+		d.getElementById('accept').className = "rangeOrange";
+		d.getElementById('rangeSlider').value = 26;
+		statusCRSelection = "YES BUT...";
+		d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
 
-} else if (d.getElementById('rangeSlider').value < 25) {
-d.getElementById('rangeLine').className = "green";
-d.getElementById('accept').className = "rangeValidated";
-d.getElementById('rangeSlider').value = 0;
-statusCRSelection = "ACCEPTED";
-d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+	} else if (d.getElementById('rangeSlider').value < 25) {
+		d.getElementById('rangeLine').className = "green";
+		d.getElementById('accept').className = "rangeValidated";
+		d.getElementById('rangeSlider').value = 0;
+		statusCRSelection = "ACCEPTED";
+		d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
 
-} else if (d.getElementById('rangeSlider').value > 70) {
-d.getElementById('rangeLine').className = "red";
-d.getElementById('accept').className = "rangeCanceled";
-d.getElementById('rangeSlider').value = 100;
-statusCRSelection = "REFUSED";
-d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
-}
+	} else if (d.getElementById('rangeSlider').value > 70) {
+		d.getElementById('rangeLine').className = "red";
+		d.getElementById('accept').className = "rangeCanceled";
+		d.getElementById('rangeSlider').value = 100;
+		statusCRSelection = "REFUSED";
+		d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+	}
 };
 
 window.setInterval("hackingIOS7()", 5);
@@ -1732,7 +1732,7 @@ function displayDocViewer() {
 }
 
 
-/*
+
 function addingClickBehaviour() {
 	if($( ".peopleUnfold1" )) {
 		$( ".peopleUnfold1" ).click(function() {
@@ -1747,7 +1747,7 @@ function addingClickBehaviour() {
 		  $( ".peopleDocs3" ).toggle( "blind", 500 );
 		});
 	}	
-}*/
+}
 
 
 $(document).ready(function() {
@@ -1767,42 +1767,8 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$('.barbidul').click(function() {
-		console.log('fffff');
-		$('.bucketTable').slideToggle('fast');
-		return false;
-	});
-/*
-	$('.dispAltDashboard').click(function() {
-		$('.altDashboard').slideToggle('fast');
-		return false;
-	});*/
-
-	
-
-
-
- 
-/*
-	$('.peopleUnfold1').click(function() {
-		$('.peopleDocs1').slideDown('fast');
-		$(this).addClass('peopleFold1');
-		$(this).removeClass('peopleUnfold1');
-		return false;
-	});
-
-	$('.peopleFold1').click(function() {
-		$('.peopleDocs1').slideUp('fast');
-		$(this).addClass('peopleUnfold1');
-		$(this).removeClass('peopleFold1');
-		console.log('fffff');
-		return false;
-	});*/
-
 });
 
-
-/*
 function doOnOrientationChange() {
 
 	if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
@@ -1814,7 +1780,7 @@ function doOnOrientationChange() {
 		    break; 
 		  default:
 		    console.log('portrait');
-//		    d.getElementById('wrongOrientation').className = "portrait";
+		    d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1822,17 +1788,14 @@ function doOnOrientationChange() {
 
 window.addEventListener('orientationchange', doOnOrientationChange);
 
-doOnOrientationChange();*/
-
+doOnOrientationChange();
 
 /*	Should be used to post the UserSelection 	*/
 
-/*
 function submitingResult() {
 
 }
 
-*/
 
 
 
