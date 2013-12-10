@@ -1,5 +1,5 @@
-//var CWF_URL = 'http://localhost:8080';
-var CWF_URL = 'http://node.ux-republic.com';
+var CWF_URL = 'http://localhost:8080';
+//var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -1822,7 +1822,7 @@ function doOnOrientationChange() {
 		    break; 
 		  default:
 		    console.log('portrait');
-		    //d.getElementById('wrongOrientation').className = "portrait";
+		    d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1843,7 +1843,7 @@ function submitingResult() {
 
 
 function listingStuff() {
-
+	d.getElementById('mainJSONFlow').style.width = "1000px";
 	d.getElementById('indexSection').style.position = "relative";
 	d.getElementById('indexSection').style.marginLeft = "24px";
 	d.getElementById('indexSection').style.marginRight = "35px";
