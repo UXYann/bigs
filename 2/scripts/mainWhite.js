@@ -236,10 +236,14 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 
 						backToInitState();
 				} else if (amIGoing == "Two") {
+
 					if (buttonElem3.className == "setToBlue")
 
 						runningAjaxCall(url,initCallback);
+
 						backToInitState();
+
+
 				} else if (amIGoing == "Three") {
 
 					if (buttonElem4.className == "setToBlue")
@@ -685,7 +689,6 @@ window.setInterval("hackingIOS7()", 5);
 
 
 function creditRequestSelected(jsonAccountID) {
-
 
 	d.getElementById('displayAsThumbnails').style.opacity = 0;
 	d.getElementById('displayAsList').style.opacity = 0;
@@ -1327,11 +1330,8 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 							elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
 							elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
 							elemToBeGenerated += "<div class='hedgingLine5'>17 years</div>";
-							elemToBeGenerated += "<div class='hedgingLine6 barbidul'>CAR/VAR</div>";
+							elemToBeGenerated += "<div class='hedgingLine6' id='expandBucketTable'>CAR/VAR</div>";
 						elemToBeGenerated += "<div class='clear'></div></div>";
-
-
-
 
 						elemToBeGenerated += "<div class='bucketTable'>";
 
@@ -1405,16 +1405,14 @@ elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 
 						elemToBeGenerated += "</div>";
 
-
-
-
-
-
-
 				d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
+
+				$('#expandBucketTable').click(function() {
+						$('.bucketTable').slideToggle('fast');
+						return false;
+				});
+
 				var elemToBeGenerated = "";
-
-
 
 					elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
 						elemToBeGenerated += "<div class='navMainTableOverContent'>";
@@ -1809,7 +1807,6 @@ $(document).ready(function() {
 		$('.peopleDocs3').slideToggle('fast');
 		return false;
 	});
-
 });
 
 function doOnOrientationChange() {
