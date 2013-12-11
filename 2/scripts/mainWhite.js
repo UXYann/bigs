@@ -203,6 +203,11 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 				if(d.getElementById('displayAsThumbnails')) {
 					d.getElementById('displayAsThumbnails').style.opacity = 1;	
 				}
+
+				if(d.getElementById('displayAsList')) {
+					d.getElementById('displayAsList').style.opacity = 1;	
+				}
+
 				if(d.getElementById('thumbNails')) {
 					d.getElementById('thumbNails').style.opacity = 1;	
 				}
@@ -218,6 +223,11 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 				if(d.getElementById('displayAsThumbnails')) {				
 					d.getElementById('displayAsThumbnails').style.opacity = 0;
 				}
+
+				if(d.getElementById('displayAsList')) {				
+					d.getElementById('displayAsList').style.opacity = 0;
+				}
+
 				if(d.getElementById('thumbNails')) {
 					d.getElementById('thumbNails').style.opacity = 1;
 				}
@@ -263,6 +273,7 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 			if(url == "index.html") {
 				wasACRSelected = 0;
 				d.getElementById('displayAsThumbnails').style.opacity = 1;
+				d.getElementById('displayAsList').style.opacity = 1;
 
 				d.getElementById('thumbNails').style.opacity = 1;
 				d.getElementById('listNails').style.opacity = 1;				
@@ -1869,6 +1880,10 @@ $.fn.redraw = function(){
 
 
 function listingStuff() {
+	d.getElementById('param').style.display = "none";
+	d.getElementById('account').style.display = "none";
+	
+	
 	d.getElementById('mainJSONFlow').style.width = "1000px";
 	d.getElementById('indexSection').style.position = "relative";
 	d.getElementById('indexSection').style.marginLeft = "24px";
@@ -1885,12 +1900,16 @@ function listingStuff() {
 }
 
 function displayAsListMySwipeJS() {
+
 	window.mySwipe.kill();
 	listingStuff();
 }
 
 function displayAsBlockMySwipeJS() {
 	window.mySwipe();
+	d.getElementById('param').style.display = "block";
+	d.getElementById('account').style.display = "block";
+
 	d.getElementById('indexSection').style.position = "relative";
 	d.getElementById('indexSection').style.marginLeft = "24px";
 	d.getElementById('indexSection').style.marginRight = "35px";
