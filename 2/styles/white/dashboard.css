@@ -729,7 +729,7 @@
 }
 
 .hedgingTableLine2 .hedgingLine6 { background: url('../../images/white/img_fleches_2x.png') no-repeat 97px -37px; background-size: 34px; }
-
+.bucketTableFolded { background: url('../../images/sortKey.png') no-repeat 92px 7px!IMPORTANT; background-size: 50px !IMPORTANT; }
 .bucketTable { display: none; width: 798px; margin: 0 20px 0 40px; border: 1px solid #000; font-size: 0.6em; font-weight: 300; }
 .bucketTable .bucketTableLine { height: 40px; line-height: 40px; }
 .bucketTable .bucketTableLine div { float: left; width: 57px; text-align: center; }
@@ -786,8 +786,6 @@
 .peopleTable .peopleInfos .peopleDecision { float: left; width: 160px; height: 20px; padding: 20px 0 20px 40px; line-height: 20px; text-align: center; background: url('../../images/white/valid.png') no-repeat 36px 16px; background-size: 30px; }
 .peopleTable .peopleInfos .peopleUnfold,
 .peopleTable .peopleInfos .peopleFold { float: left; width: 45px; height: 60px; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -38px; background-size: 35px; }
-.peopleTable .peopleInfos .peopleUnfold:hover,
-.peopleTable .peopleInfos .peopleFold:hover { background-color: #fafafa; -webkit-transition: all ease-out 500ms; }
 .peopleTable .peopleComment .peopleBubble { float: left; width: 200px; height: 80px; background: url('../../images/white/quoteGray.png') no-repeat 145px 18px; background-size: 30px; }
 .peopleTable .peopleComment .peopleQuote { float: left; width: 600px; height: 60px; padding: 10px 0; color: #a4a4a4; }
 .peopleTable .peopleDocs { display: none; padding: 10px 0 20px 0; }
@@ -797,7 +795,7 @@
 .peopleTable .peopleDocs .peopleDoc:nth-child(2) { margin-right: 0; }
 .peopleTable .peopleDocs .peopleDoc .peopleDocImg { float: left; width: 40px; height: 55px; margin: 0 20px; background: url('../../images/white/doc.png') no-repeat; background-size: 40px; }
 
-
+.peopleTable .peopleInfos .peopleFold { background: url('../../images/sortKey.png') no-repeat 0 10px; background-size: 50px; }
 .peopleTable .peopleDocs .peopleDoc .peopleDocInfo { float: left; padding-top: 10px; font-size: 0.8em; }
 
 

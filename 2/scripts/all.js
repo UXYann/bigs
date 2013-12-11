@@ -2051,6 +2051,7 @@ function readingSpecificJson(fileUrl,callback) {
         d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
 
         $('#expandBucketTable').click(function() {
+            $(this).toggleClass('bucketTableFolded');
             $('.bucketTable').slideToggle('fast');
             return false;
         });
@@ -2453,16 +2454,19 @@ $(document).ready(function() {
 
 */
   $('.peopleUnfold1').click(function() {
+    $(this).toggleClass('peopleFold');
     $('.peopleDocs1').slideToggle('fast');
     return false;
   });
 
   $('.peopleUnfold2').click(function() {
+    $(this).toggleClass('peopleFold');
     $('.peopleDocs2').slideToggle('fast');
     return false;
   });
 
   $('.peopleUnfold3').click(function() {
+    $(this).toggleClass('peopleFold');
     $('.peopleDocs3').slideToggle('fast');
     return false;
   });
