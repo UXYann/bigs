@@ -111,34 +111,51 @@ input[type=range] {
 
 #rangeLine.neutral {
 	background: url('../../images/white/img_background_slider_grey.png') no-repeat center center;
+	/*background-image: url('../../images/white/sliderGray.png');
+	background-repeat: no-repeat;
+	background-position: center center;*/
 	/*background: url('../../images/white/slider.png') no-repeat center center;*/
+	/*background-size: 180px 379px;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
+	/*background-size: 32px;*/
 }
 
 #rangeLine.orange {
 	background: url('../../images/white/img_background_slider_grey.png') no-repeat center center;
+	/*background-image: url('../../images/white/sliderOrange.png');
+	background-repeat: no-repeat;
+	background-position: center center;*/
 /*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
+	/*background-size: 32px;*/
 }
 
 #rangeLine.red {
 	background: url('../../images/white/img_background_slider_red.png') no-repeat center center;
+	/*background-image: url('../../images/white/sliderRed.png');
+	background-repeat: no-repeat;
+	background-position: center center;*/
 /*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
+	/*background-size: 32px;*/
 }
 
 #rangeLine.green {
 	background: url('../../images/white/img_background_slider_green.png') no-repeat center 0%;
+	/*background-image: url('../../images/white/sliderGreen.png');
+	background-repeat: no-repeat;
+	background-position: center center;*/
 /*	background: url('../../images/white/slider.png') no-repeat center center;*/
 	background-size: 180px 379px;
 	-webkit-transition: all ease-in-out 50ms;
 	background-size: 48px;
+	/*background-size: 32px;*/
 }
 
 
