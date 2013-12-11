@@ -1872,7 +1872,7 @@ function readingSpecificJson(fileUrl,callback) {
                 elemToBeGenerated += "</span>";               
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> "; 
+                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
                   elemToBeGenerated += myObject.details.facilities[0].total;
                 elemToBeGenerated += "</span>";             
@@ -2076,7 +2076,7 @@ function readingSpecificJson(fileUrl,callback) {
                 elemToBeGenerated += "</span>";               
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> "; 
+                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
                   elemToBeGenerated += myObject.details.facilities[0].total;
                 elemToBeGenerated += "</span>";             
@@ -2253,7 +2253,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "</span>";               
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amont</span> "; 
+              elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
               elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
               elemToBeGenerated += myObject.details.facilities[0].total;
               elemToBeGenerated += "</span>";             
@@ -2471,29 +2471,21 @@ $(document).ready(function() {
     return false;
   });
 
+  $('#displayAsList').click(function() {
+    $(this).addClass('displayAsListSelected');
+    $('#displayAsThumbnails').removeClass('displayAsThumbnailsSelected');
+    return false;
+  });
+
+  $('#displayAsThumbnails').click(function() {
+    $(this).addClass('displayAsThumbnailsSelected');
+    $('#displayAsList').removeClass('displayAsListSelected');
+    return false;
+  });
+
   d.getElementById('displayAsList').addEventListener('click', displayAsListMySwipeJS ,false);
   d.getElementById('displayAsThumbnails').addEventListener('click', function(){d.getElementById('sliderSetToLinesHeader').style.display = "none"; d.getElementsByClassName('swipePrevious')[0].style.opacity = 1; d.getElementsByClassName('swipePrevious')[0].style.display = "block"; d.getElementsByClassName('swipeNext')[0].style.opacity = 1; d.getElementsByClassName('swipeNext')[0].style.display = "block"; notInitStartSwipeCarouel();} ,false);
 });
-
-function doOnOrientationChange() {
-
-  if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
-    switch(window.orientation) {  
-      case -90:
-      case 90:
-        d.getElementById('wrongOrientation').className = "landscape";
-        break; 
-      default:
-        console.log('portrait');
-        d.getElementById('wrongOrientation').className = "portrait";
-        break; 
-    }
-  }
-}
-
-window.addEventListener('orientationchange', doOnOrientationChange);
-
-doOnOrientationChange();
 
 d.getElementById('backToHomeLastButton').addEventListener('click', function(){didYouSelectYourCr('1', 'index.html', hidingMenu, 'One')},false);
 
@@ -2551,4 +2543,25 @@ function displayAsBlockMySwipeJS() {
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
   d.getElementsByClassName('swipePrevious')[0].style.display = "none";
 }
+
+
+function doOnOrientationChange() {
+
+  if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
+    switch(window.orientation) {  
+      case -90:
+      case 90:
+        d.getElementById('wrongOrientation').className = "landscape";
+        break; 
+      default:
+        console.log('portrait');
+        d.getElementById('wrongOrientation').className = "portrait";
+        break; 
+    }
+  }
+}
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+doOnOrientationChange();
 

@@ -217,17 +217,22 @@
 	background-size: 82px;
  }
 
-.searchDocsForm #displayAsThumbnails:hover {
+.searchDocsForm #displayAsThumbnails {
 	background-position: 0 -47px;
 }
+
+.searchDocsForm .displayAsThumbnailsSelected {
+	background-position: 0 0 !IMPORTANT;
+}
+
 
 .searchDocsForm #displayAsList {
 	background-position: -40px 0;
 	margin-left: 0;
 }
 
-.searchDocsForm #displayAsList:hover {
-	background-position: -40px -47px;
+.searchDocsForm .displayAsListSelected {
+	background-position: -40px -47px !IMPORTANT;
 }
 
 
@@ -687,7 +692,7 @@ input:focus, textarea:focus {
 }
 
 .crCard span.crTitle {
-	display: table-cell;
+	display: block;
 	font-weight: 100;
 	color: #282828;
 	border-bottom: #F8F8F8;
@@ -699,8 +704,9 @@ input:focus, textarea:focus {
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	height: 60px;
+	height: 46px;
 	vertical-align: middle;	
+	width: 133px;
 }
 
 span.crTitle1 {
@@ -806,7 +812,7 @@ span.crTitle8 {
 }
 
 .crCardDark span.crTitledark {
-	display: table-cell;
+	display: block;
 	font-weight: 100;
 	color: #FFFFFF;
 	border-bottom: #F8F8F8;
@@ -815,12 +821,13 @@ span.crTitle8 {
 	font-size: 0.8em;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	height: 60px;
+	height: 46px;
 	vertical-align: middle;
+	width: 133px;
 }
 
 .crCardDark span.crTitle {
-	display: table-cell;
+	display: block;
 	font-weight: 100;
 	color: #5f5f5f;
 	border-bottom: #F8F8F8;
@@ -832,8 +839,9 @@ span.crTitle8 {
 	border-bottom: 1px solid #D71236;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	height: 60px;
+	height: 52px;
 	vertical-align: middle;	
+	width: 133px;
 }
 
 .crCardDark span.crRequester {
@@ -1149,6 +1157,7 @@ span.crTitle8 {
 	-webkit-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-o-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	box-shadow: 0px 3px 3px 0px #dfdfdf;}
+	#submitSectionPlacer .botButtons .modify a { display: block; }
 #submitSectionPlacer .botButtons .print { float: right; width: 107px; height: 40px; background: url('../../images/white/print.png') no-repeat; background-size: 107px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-webkit-box-shadow: 0px 3px 3px 0px #dfdfdf;
 	-o-box-shadow: 0px 3px 3px 0px #dfdfdf;
