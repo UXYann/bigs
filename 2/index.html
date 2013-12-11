@@ -42,6 +42,8 @@
 			// Add a script element as a child of the body
 			function downloadJSAtOnload() {
 
+/*
+
 				var swipeCarousel = document.createElement("script");
 				swipeCarousel.src = "scripts/swipe.js";
 				document.body.appendChild(swipeCarousel);
@@ -50,13 +52,19 @@
 				element2.src = "scripts/jquery-2.0.3.min.js";
 				document.body.appendChild(element2);
 
+
 				var element4 = document.createElement("script");
 				element4.src = "scripts/Chart.min.js";
 				document.body.appendChild(element4);
 
 				var element = document.createElement("script");
 				element.src = "scripts/mainWhite.js";
-				document.body.appendChild(element);			
+				document.body.appendChild(element);	
+
+*/						
+				var element = document.createElement("script");
+				element.src = "scripts/all.js";
+				document.body.appendChild(element);	
 			}
 
 			 // Check for browser support of event handling capability
@@ -75,9 +83,6 @@
 		</script>
 
 	<body>
-
-	<section id="wrongOrientation"></section>
-
 
 	<section id="splash" style="position: absolute; top: 0; left: 0; -webkit-transition: visibility ease-in-out 250ms; z-index: 100;">
 
@@ -220,10 +225,10 @@
 						Type
 					</span>
 					<span class="myOwnTableCellIndex">
-						Client
+						Transaction Name
 					</span>
 					<span class="myOwnTableCellIndex">
-						Transaction Name
+						Client
 					</span>
 					<span class="myOwnTableCellIndex">
 						Initiator
@@ -296,7 +301,7 @@
 
 							<div class='tableCategories'><p class='tableCategoriesTitle'>Documents (12)</p><div class='redLine' style="width=500px!important;"></div><div class='clear'></div></div>
 
-							<section id="searchDocsForm2" style="display:block!important;">
+							<section class="searchDocsForm" style="display:block!important;">
 
 								<div>
 									<span class="formButtons1">
@@ -472,7 +477,7 @@
 							</div>
 
 
-
+<!--
 
 						<div id='currentCreditRequesDocumentSlideJS' class='swipe' display="none !IMPORTANT;">
 						  <div id="secondWrapper" class='swipe-wrap' style="text-align: left; display: none">
@@ -525,10 +530,31 @@
 						  </div>
 						</div>
 
+-->					
+							<div class="peopleDocs peopleDocs1">
+								<div class="peopleDoc">
+									<div class="peopleDocImg"></div>
+									<div class="peopleDocInfo">
+										<div class="docTitle">Credit application</div>
+										<span class="docDate"><b>Add on</b> 12/09/13</span>
+										<span class="docOwner"><b>By</b> M. Dupont</span>
+									</div>
+									<div class="docButton"></div>
+									<div class="clear"></div>
+								</div>
+								<div class="peopleDoc">
+									<div class="peopleDocImg"></div>
+									<div class="peopleDocInfo">
+										<div class="docTitle">Credit application</div>
+										<span class="docDate"><b>Add on</b> 12/09/13</span>
+										<span class="docOwner"><b>By</b> M. Dupont</span>
+									</div>
+									<div class="docButton"></div>
+									<div class="clear"></div>
 								</div>
 								<div class="clear"></div>
-								</div>
-							</div>
+							</div>	
+
 
 							<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 							<!-- xxx PEOPLE 2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

@@ -1,5 +1,5 @@
-var CWF_URL = 'http://localhost:8080';
-//var CWF_URL = 'http://node.ux-republic.com';
+//var CWF_URL = 'http://localhost:8080';
+var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -1780,9 +1780,16 @@ function displayDocViewer() {
 
 
 function addingClickBehaviour() {
+
 	if($( ".peopleUnfold1" )) {
+		/*
 		$( ".peopleUnfold1" ).click(function() {
 		  $( "#currentCreditRequesDocumentSlideJS" ).toggle( "blind", 500 );
+		});
+*/
+
+		$( ".peopleUnfold1" ).click(function() {
+		  $( ".peopleDocs1" ).toggle( "blind", 500 );
 		});
 
 		$( ".peopleUnfold2" ).click(function() {
@@ -1798,7 +1805,17 @@ function addingClickBehaviour() {
 
 
 $(document).ready(function() {
+/*
+	$('.peopleUnfold1').click(function() {
+		$('.peopleDocs1currentCreditRequesDocumentSlideJS').slideToggle('fast');
+		return false;
+	});
 
+*/
+	$('.peopleUnfold1').click(function() {
+		$('.peopleDocs1').slideToggle('fast');
+		return false;
+	});
 
 	$('.peopleUnfold2').click(function() {
 		$('.peopleDocs2').slideToggle('fast');
@@ -1824,7 +1841,7 @@ function doOnOrientationChange() {
 		    break; 
 		  default:
 		    console.log('portrait');
-		    //d.getElementById('wrongOrientation').className = "portrait";
+		    d.getElementById('wrongOrientation').className = "portrait";
 		    break; 
 		}
 	}
@@ -1885,7 +1902,7 @@ function displayAsBlockMySwipeJS() {
 
 
 
-
+/*
 
 function startingCreditRequestsDocumentsSlideJS() {
 	var elem = document.getElementById('currentCreditRequesDocumentSlideJS');
@@ -1899,17 +1916,17 @@ function startingCreditRequestsDocumentsSlideJS() {
 	  // callback: function(index, element) {},
 	  // transitionEnd: function(index, element) {}
 	});
-}
+}*/
 
 
 
 
 
-startingCreditRequestsDocumentsSlideJS();
+//startingCreditRequestsDocumentsSlideJS();
 
 
 
-
+/*
 d.addEventListener('click',function(){
 	d.getElementById('currentCreditRequesDocumentSlideJS').style.display = "block"; 
 	d.getElementById('secondWrapper').style.display = "block"; 
@@ -1917,4 +1934,4 @@ d.addEventListener('click',function(){
 } ,false);
 
 
-
+*/

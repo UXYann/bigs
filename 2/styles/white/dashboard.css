@@ -798,10 +798,10 @@
 .peopleTable .peopleDocs .peopleDoc .peopleDocImg { float: left; width: 40px; height: 55px; margin: 0 20px; background: url('../../images/white/doc.png') no-repeat; background-size: 40px; }
 
 
-/*.peopleTable .peopleDocs .peopleDoc .peopleDocInfo { float: left; padding-top: 10px; font-size: 0.8em; }*/
+.peopleTable .peopleDocs .peopleDoc .peopleDocInfo { float: left; padding-top: 10px; font-size: 0.8em; }
 
 
-.peopleTable .peopleDocs .peopleDoc .peopleDocInfo {width: 180px; vertical-align: top; display: inline-block; padding-top: 10px; font-size: 0.8em; }
+/*.peopleTable .peopleDocs .peopleDoc .peopleDocInfo {width: 180px; vertical-align: top; display: inline-block; padding-top: 10px; font-size: 0.8em; }*/
 
 
 
@@ -810,9 +810,9 @@
 .peopleTable .peopleDocs .peopleDoc .peopleDocInfo .docTitle { font-weight: bold; text-transform: uppercase; }
 
 
-/*.peopleTable .peopleDocs .peopleDoc .docButton { float: left; width: 35px; height: 48px; margin-left: 60px; text-align: center; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -40px; background-size: 35px; }*/
+.peopleTable .peopleDocs .peopleDoc .docButton { float: left; width: 35px; height: 48px; margin-left: 60px; text-align: center; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -40px; background-size: 35px; }
 
-.peopleTable .peopleDocs .peopleDoc .docButton { width: 35px; height: 48px; margin-left: 60px; text-align: center; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -40px; background-size: 35px; }
+/*.peopleTable .peopleDocs .peopleDoc .docButton { width: 35px; height: 48px; margin-left: 60px; text-align: center; background: url('../../images/white/img_fleches_2x.png') no-repeat 4px -40px; background-size: 35px; }*/
 
 
 .peopleTable .peopleDocs .peopleDoc .docButton:hover { color: #0dbe00; cursor: pointer; }

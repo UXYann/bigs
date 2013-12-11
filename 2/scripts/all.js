@@ -630,7 +630,6 @@ b.moveTo(g,p);b.lineTo(g,p-d*v(a.datasets[e].data[f],j,k)+c.barStrokeWidth/2);b.
 
 
 
-
 var CWF_URL = 'http://localhost:8080';
 //var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
@@ -1321,6 +1320,7 @@ function creditRequestSelected(jsonAccountID) {
 
   d.getElementById('displayAsThumbnails').style.opacity = 0;
   d.getElementById('displayAsList').style.opacity = 0;
+  
   if( d.getElementById('thumbNails')) {
     d.getElementById('thumbNails').style.opacity = 0; 
   }
@@ -1639,6 +1639,8 @@ function hookingCreditRequest() {
 
     $("#displayAsThumbnails").click(function() {
       displayingCreditRequest('thumbnails');
+      d.getElementsByClassName('swipeNext')[0].style.left="auto";
+      d.getElementsByClassName('swipeNext')[0].style.left="auto";
     });
   
   };
@@ -1809,9 +1811,13 @@ function readingMainJson(callback) {
 
         d.getElementsByClassName('swipe-wrap')[0].innerHTML = elemToBeGenerated;
 
+
         if(callback) {
           callback();
         }
+
+        d.getElementById('displayAsList').style.opacity = 1;
+        d.getElementById('displayAsList').style.display = "block";
 
       } else {
         alert("An error has occured making the request")
@@ -1847,7 +1853,7 @@ function readingSpecificJson(fileUrl,callback) {
 
 
 
-elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
+          elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
             elemToBeGenerated += "<div class='navMainTableOverContent'>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";  
@@ -2411,9 +2417,16 @@ function displayDocViewer() {
 
 
 function addingClickBehaviour() {
+
   if($( ".peopleUnfold1" )) {
+    /*
     $( ".peopleUnfold1" ).click(function() {
       $( "#currentCreditRequesDocumentSlideJS" ).toggle( "blind", 500 );
+    });
+*/
+
+    $( ".peopleUnfold1" ).click(function() {
+      $( ".peopleDocs1" ).toggle( "blind", 500 );
     });
 
     $( ".peopleUnfold2" ).click(function() {
@@ -2429,7 +2442,17 @@ function addingClickBehaviour() {
 
 
 $(document).ready(function() {
+/*
+  $('.peopleUnfold1').click(function() {
+    $('.peopleDocs1currentCreditRequesDocumentSlideJS').slideToggle('fast');
+    return false;
+  });
 
+*/
+  $('.peopleUnfold1').click(function() {
+    $('.peopleDocs1').slideToggle('fast');
+    return false;
+  });
 
   $('.peopleUnfold2').click(function() {
     $('.peopleDocs2').slideToggle('fast');
@@ -2475,6 +2498,13 @@ function submitingResult() {
 
 
 
+$.fn.redraw = function(){
+  $(this).each(function(){
+    var redraw = this.offsetHeight;
+  });
+};
+
+
 function listingStuff() {
   d.getElementById('mainJSONFlow').style.width = "1000px";
   d.getElementById('indexSection').style.position = "relative";
@@ -2484,6 +2514,11 @@ function listingStuff() {
   d.getElementById('sliderSetToLinesHeader').style.display = "block";
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
   d.getElementsByClassName('swipePrevious')[0].style.display = "none";
+  var currentElemToBe = d.getElementsByClassName('mySwipe');
+  var currentElemToBeSet = d.getElementsByTagName('div');
+  for (var i=0;i < currentElemToBeSet.length; i++) {currentElemToBeSet[i].style.left="0"};
+  for (var i=0;i < currentElemToBeSet.length; i++) {currentElemToBeSet[i].style.webkitTransform="none"};
+  //$('.mySwipe').redraw();
 }
 
 function displayAsListMySwipeJS() {
@@ -2504,7 +2539,7 @@ function displayAsBlockMySwipeJS() {
 
 
 
-
+/*
 
 function startingCreditRequestsDocumentsSlideJS() {
   var elem = document.getElementById('currentCreditRequesDocumentSlideJS');
@@ -2518,21 +2553,33 @@ function startingCreditRequestsDocumentsSlideJS() {
     // callback: function(index, element) {},
     // transitionEnd: function(index, element) {}
   });
-}
+}*/
 
 
 
 
 
-startingCreditRequestsDocumentsSlideJS();
+//startingCreditRequestsDocumentsSlideJS();
 
 
 
-
+/*
 d.addEventListener('click',function(){
   d.getElementById('currentCreditRequesDocumentSlideJS').style.display = "block"; 
   d.getElementById('secondWrapper').style.display = "block"; 
   startingCreditRequestsDocumentsSlideJS();
 } ,false);
+
+
+*/
+
+
+
+
+
+
+
+
+
 
 
