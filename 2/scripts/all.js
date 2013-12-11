@@ -1250,6 +1250,9 @@ document.ontouchstart = function(e) {
 //    stickingThings();
 };
 
+
+var currentDecisionCodeToBeLogged;
+
 document.ontouchmove = function(e) {
 
   if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
@@ -1258,6 +1261,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 51;
     statusCRSelection = "NOT DECIDED";
     d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
+    currentDecisionCodeToBeLogged = "neutral";
 
   } else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
     d.getElementById('rangeLine').className = "orange";
@@ -1265,6 +1269,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 26;
     statusCRSelection = "YES BUT...";
     d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
+    currentDecisionCodeToBeLogged = "at a condition";
 
   } else if (d.getElementById('rangeSlider').value < 25) {
     d.getElementById('rangeLine').className = "green";
@@ -1272,6 +1277,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
     d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+    currentDecisionCodeToBeLogged = "accepted";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
@@ -1279,6 +1285,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
     d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+    currentDecisionCodeToBeLogged = "refused";
   }
 };
 
@@ -1292,6 +1299,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 51;
     statusCRSelection = "NOT DECIDED";
     d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
+    currentDecisionCodeToBeLogged = "neutral";
 
   } else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
     d.getElementById('rangeLine').className = "orange";
@@ -1299,6 +1307,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 26;
     statusCRSelection = "YES BUT...";
     d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
+    currentDecisionCodeToBeLogged = "at a condition";
 
   } else if (d.getElementById('rangeSlider').value < 25) {
     d.getElementById('rangeLine').className = "green";
@@ -1306,6 +1315,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
     d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+    currentDecisionCodeToBeLogged = "accepted";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
@@ -1313,6 +1323,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
     d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+    currentDecisionCodeToBeLogged = "refused";
   }
 };
 
@@ -1465,6 +1476,19 @@ function runningAjaxCall(currentURL,callback) {
 
       var newOnclick = d.getElementById('stepThree').getAttribute('onclick');
       d.getElementById('topNavBarBackButton').setAttribute('onclick', newOnclick);
+
+        $.ajax({
+            url: CWF_URL + '/decision',
+            data: {
+                code: currentRequestCodeToBeLogged,
+                action: currentDecisionCodeToBeLogged,
+                comments: d.getElementById('actionFormComment').value
+            },
+            type: 'POST',
+            success: function(data) {
+                alert('Thank you.')
+            }
+        });
 
       window.setTimeout(function(){d.getElementById('topNavBarBackButton').style.opacity = 1},500);
       window.setTimeout(function(){d.getElementById('nextButton').style.display = "none"},500);
@@ -1832,6 +1856,9 @@ function readingMainJson(callback) {
   mygetrequest.send(null)
 }
 
+
+var currentRequestCodeToBeLogged;
+
 function readingSpecificJson(fileUrl,callback) {
 
   var mygetrequest=new ajaxJsonRequest()
@@ -1844,6 +1871,10 @@ function readingSpecificJson(fileUrl,callback) {
         var myObject = eval('(' + mygetrequest.responseText + ')');
 
         if(d.getElementsByClassName('dashboardClientSelected')) {
+
+
+
+          currentRequestCodeToBeLogged = myObject.requestCode;
 
           var elemToBeGenerated = "";
           var z = Math.floor((Math.random()*7)+1);
@@ -2564,4 +2595,67 @@ function doOnOrientationChange() {
 window.addEventListener('orientationchange', doOnOrientationChange);
 
 doOnOrientationChange();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('#submitAction').click(function() {
+        $.ajax({
+            url: CWF_URL + '/decision',
+            data: {
+                code: currentRequestCodeToBeLogged,
+                action: currentDecisionCodeToBeLogged,
+                comments: d.getElementById('actionFormComment').value
+            },
+            type: 'POST',
+            success: function(data) {
+                alert('Thank you.')
+            }
+        });
+
+        didYouSelectYourCr('4', 'submit.html', '', 'Four');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
