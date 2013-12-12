@@ -1315,7 +1315,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
     d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
-    currentDecisionCodeToBeLogged = "accepted";
+    currentDecisionCodeToBeLogged = "accept";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
@@ -1323,7 +1323,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
     d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
-    currentDecisionCodeToBeLogged = "refused";
+    currentDecisionCodeToBeLogged = "refuse";
   }
 };
 
