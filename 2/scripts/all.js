@@ -1915,7 +1915,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += myObject.details.facilities[0].total;
+                  elemToBeGenerated += +myObject.details.facilities[0].total+"M";
                 elemToBeGenerated += "</span>";             
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
@@ -2119,7 +2119,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
                 elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += myObject.details.facilities[0].total;
+                  elemToBeGenerated += +myObject.details.facilities[0].total+"M";
                 elemToBeGenerated += "</span>";             
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
@@ -2279,7 +2279,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
               elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
               elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-              elemToBeGenerated += myObject.details.facilities[0].total;
+              elemToBeGenerated += +myObject.details.facilities[0].total+"M";
               elemToBeGenerated += "</span>";             
               elemToBeGenerated += "</span>";
               elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
