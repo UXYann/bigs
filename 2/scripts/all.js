@@ -1477,14 +1477,15 @@ function runningAjaxCall(currentURL,callback) {
       var newOnclick = d.getElementById('stepThree').getAttribute('onclick');
       d.getElementById('topNavBarBackButton').setAttribute('onclick', newOnclick);
 
+      var dataForDecision = {};
+      dataForDecision.requestCode = currentRequestCodeToBeLogged;
+      dataForDecision.action = currentDecisionCodeToBeLogged;
+      dataForDecision.comments = d.getElementById('actionFormComment').value;
+        
         $.ajax({
             url: CWF_URL + '/decision',
-            data: {
-                code: currentRequestCodeToBeLogged,
-                action: currentDecisionCodeToBeLogged,
-                comments: d.getElementById('actionFormComment').value
-            },
-            contentType: 'text/json',
+            data: dataForDecision,
+            contentType: 'application/json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
@@ -2619,14 +2620,14 @@ doOnOrientationChange();
 
 
     $('#submitAction').click(function() {
+        var dataForDecision = {};
+        dataForDecision.requestCode = currentRequestCodeToBeLogged;
+        dataForDecision.action = currentDecisionCodeToBeLogged;
+        dataForDecision.comments = d.getElementById('actionFormComment').value;
         $.ajax({
             url: CWF_URL + '/decision',
-            data: {
-                code: currentRequestCodeToBeLogged,
-                action: currentDecisionCodeToBeLogged,
-                comments: d.getElementById('actionFormComment').value
-            },
-            contentType: 'text/json',
+            data: dataForDecision,
+            contentType: 'application/json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
