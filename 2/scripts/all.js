@@ -817,13 +817,9 @@ buttonElem5.setAttribute('onclick',"didYouSelectYourCr('4', 'submit.html', '', '
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
+
   changingMenuState(newState);
 
-
-}
-
-
-function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 
   if(wasACRSelected != 0) {
     if(initCallback) {
@@ -1338,6 +1334,9 @@ window.setInterval("hackingIOS7()", 5);
 
 function creditRequestSelected(jsonAccountID) {
 
+  console.log("jsonAccountID");
+  console.log(jsonAccountID);
+
   d.getElementById('displayAsThumbnails').style.opacity = 0;
   d.getElementById('displayAsList').style.opacity = 0;
   if( d.getElementById('thumbNails')) {
@@ -1361,9 +1360,11 @@ function creditRequestSelected(jsonAccountID) {
   };
   var newTarget;
   if(jsonAccountID) {
+    console.log("there is one");
     newTarget = jsonAccountID;
   } else {
     newTarget = currentCRSelected;
+    console.log("there is NONE");
   }
     
   var t = new Timeout(function () {
@@ -1371,7 +1372,10 @@ function creditRequestSelected(jsonAccountID) {
   }, 1000);
   
   var t = new Timeout(function () {
+    console.log("newTarget");
+    console.log(newTarget);
       readingSpecificJson(CWF_URL + "/details/" + newTarget, startingCharts);
+
   }, 2500);
 
   settingUpNav(); 
@@ -1872,7 +1876,10 @@ var currentRequestCodeToBeLogged;
 
 function readingSpecificJson(fileUrl,callback) {
 
+  console.log(fileUrl);
+
   var mygetrequest=new ajaxJsonRequest()
+
   mygetrequest.onreadystatechange=function(){
 
     if (mygetrequest.readyState==4){
@@ -1883,8 +1890,6 @@ function readingSpecificJson(fileUrl,callback) {
 
         if(d.getElementsByClassName('dashboardClientSelected')) {
 
-
-
           currentRequestCodeToBeLogged = myObject.requestCode;
 
           var elemToBeGenerated = "";
@@ -1892,11 +1897,11 @@ function readingSpecificJson(fileUrl,callback) {
           elemToBeGenerated += "<span class='clientLogo clientLogo"+z+"'><img src='' alt='' /></span>";         
           elemToBeGenerated += "<div class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <div id='requestLbl'><span id='redLbl'>Project Finance for : </span>" + myObject.requestLbl + "</div><div id='requestLbl'>Request " + myObject.requestCode + "</div></div>";
 
+
+          console.log(myObject.counterparty);
           d.getElementById('dashboardClientSelected').innerHTML = elemToBeGenerated;
 
           var elemToBeGenerated = "";
-
-
 
           elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
             elemToBeGenerated += "<div class='navMainTableOverContent'>";
@@ -2259,23 +2264,6 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='clear'></div>";
 
               elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
-              
-
-
-
-
-
-
-
-              /*
-              elemToBeGenerated += "<div class='graphs'>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
-              elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
-              elemToBeGenerated += "<div class='graph'><span class='graph-rate'>45%</span><canvas id='chartDoughnutRW' width='140px' height='140px'></canvas><h2 class='graph-label'>LG</h3></div>";
-              elemToBeGenerated += "</div>";*/
-
 
           d.getElementById('dashMainContentOldDashSection').innerHTML = elemToBeGenerated;
               elemToBeGenerated = "";
@@ -2316,16 +2304,6 @@ function readingSpecificJson(fileUrl,callback) {
           elemToBeGenerated += "</div>";
 
 
-          /*
-              elemToBeGenerated = "";
-              elemToBeGenerated += "<div class='graphs'>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphDdl'><span id='deadline'>"+new Date(myObject.deadlineDate)+"</span><div class='graphSpace'></div><h2 class='graph-label'>Deadline</h3></div>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphAmount'><span id='amount'>"+myObject.details.facilities[0].total +"</span><div class='graphSpace'></div><h2 class='graph-label'>Amount</h3></div>";
-              elemToBeGenerated += "<div class='graph'><span class='graph-rate or'>5</span><div class='graphSpace'></div><h2 class='graph-label'>OR</h3></div>";
-              elemToBeGenerated += "<div class='graphBlock' id='graphRw'><span id='rw'>"+myObject.details.glfi_rating.rw+"</span><div class='graphSpace'></div><h2 class='graph-label'>RW</h3></div>";
-              elemToBeGenerated += "</div>";*/
-
-
           d.getElementById('shouldbeGraphicsThere').innerHTML = elemToBeGenerated;
         }
 
@@ -2342,14 +2320,18 @@ function readingSpecificJson(fileUrl,callback) {
       }
     }
   }
-
+/*
   if( (fileUrl.indexOf('?') === -1) && (currentCRSelected) && (currentCRSelected != '') )  {
-    mygetrequest.open("GET", CWF_URL + "/details/" + currentCRSelected, true)
+    console.log("1");
+    console.log(currentCRSelected);
+    mygetrequest.open("GET", CWF_URL + "/details/" + currentCRSelected, true);
     mygetrequest.send(null);
   } else {
-    mygetrequest.open("GET", fileUrl, true)
+    */
+
+    mygetrequest.open("GET", fileUrl, true);
     mygetrequest.send(null);
-  } 
+//  } 
 }
 
 
