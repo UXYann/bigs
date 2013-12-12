@@ -1484,6 +1484,7 @@ function runningAjaxCall(currentURL,callback) {
                 action: currentDecisionCodeToBeLogged,
                 comments: d.getElementById('actionFormComment').value
             },
+            contentType: 'text/json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
@@ -2625,6 +2626,7 @@ doOnOrientationChange();
                 action: currentDecisionCodeToBeLogged,
                 comments: d.getElementById('actionFormComment').value
             },
+            contentType: 'text/json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
