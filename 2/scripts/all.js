@@ -1274,7 +1274,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
     d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
-    currentDecisionCodeToBeLogged = "accepted";
+    currentDecisionCodeToBeLogged = "accept";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
@@ -1282,7 +1282,7 @@ document.ontouchmove = function(e) {
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
     d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
-    currentDecisionCodeToBeLogged = "refused";
+    currentDecisionCodeToBeLogged = "refuse";
   }
 };
 
@@ -1312,7 +1312,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
     d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
-    currentDecisionCodeToBeLogged = "accepted";
+    currentDecisionCodeToBeLogged = "accept";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
@@ -1320,7 +1320,7 @@ document.ontouchend = function(e) {
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
     d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
-    currentDecisionCodeToBeLogged = "refused";
+    currentDecisionCodeToBeLogged = "refuse";
   }
 };
 
@@ -1491,14 +1491,17 @@ function runningAjaxCall(currentURL,callback) {
       var newOnclick = d.getElementById('stepThree').getAttribute('onclick');
       d.getElementById('topNavBarBackButton').setAttribute('onclick', newOnclick);
 
+      var dataForDecision = {
+        "requestCode": currentRequestCodeToBeLogged,
+        "action": currentDecisionCodeToBeLogged,
+        "comments": d.getElementById('actionFormComment').value
+      };
+        
         $.ajax({
             url: CWF_URL + '/decision',
-            data: {
-                code: currentRequestCodeToBeLogged,
-                action: currentDecisionCodeToBeLogged,
-                comments: d.getElementById('actionFormComment').value
-            },
-            contentType: 'text/json',
+            data: JSON.stringify(dataForDecision),
+            contentType: 'application/json',
+            dataType: 'json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
@@ -2609,16 +2612,17 @@ doOnOrientationChange();
 
 
 
-
     $('#submitAction').click(function() {
+        var dataForDecision = {
+          "requestCode": currentRequestCodeToBeLogged,
+          "action": currentDecisionCodeToBeLogged,
+          "comments": d.getElementById('actionFormComment').value
+        };
         $.ajax({
             url: CWF_URL + '/decision',
-            data: {
-                code: currentRequestCodeToBeLogged,
-                action: currentDecisionCodeToBeLogged,
-                comments: d.getElementById('actionFormComment').value
-            },
-            contentType: 'text/json',
+            data: JSON.stringify(dataForDecision),
+            contentType: 'application/json',
+            dataType: 'json',
             type: 'POST',
             success: function(data) {
                 alert('Thank you.')
@@ -2627,6 +2631,7 @@ doOnOrientationChange();
 
         didYouSelectYourCr('4', 'submit.html', '', 'Four');
     });
+
 
 
 
