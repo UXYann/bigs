@@ -824,6 +824,7 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
+
   if(wasACRSelected != 0) {
     if(initCallback) {
       if(url == "index.html") {
@@ -1420,7 +1421,16 @@ function runningAjaxCall(currentURL,callback) {
       d.getElementById('indexSection').style.display = "block";
       d.getElementById('requests').className = "scaleNormal";
       d.getElementById('requests').style.display = "block";
-      d.getElementById('content').style.position = "fixed";
+
+      if(d.getElementById('sliderSetToLinesHeader').style.display == "block") {
+
+        d.getElementById('content').style.position = "relative";
+        window.scrollTo(0,1);
+        
+      } else {
+          d.getElementById('content').style.position = "fixed";
+
+      }      
       window.setTimeout(function(){d.getElementById('delayingArrival').className = "displayArrival"}, 750);
       
 

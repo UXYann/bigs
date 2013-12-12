@@ -195,6 +195,7 @@ function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
 
 
 function didYouSelectYourCr(newState,url,initCallback,amIGoing) {
+
 	if(wasACRSelected != 0) {
 		if(initCallback) {
 			if(url == "index.html") {
