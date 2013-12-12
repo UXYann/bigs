@@ -1477,7 +1477,6 @@ function runningAjaxCall(currentURL,callback) {
       var newOnclick = d.getElementById('stepThree').getAttribute('onclick');
       d.getElementById('topNavBarBackButton').setAttribute('onclick', newOnclick);
 
-      /* Removed, otherwise it send 3 requests to the server!
       var dataForDecision = {
         "requestCode": currentRequestCodeToBeLogged,
         "action": "a" + currentDecisionCodeToBeLogged,
@@ -1494,7 +1493,6 @@ function runningAjaxCall(currentURL,callback) {
                 alert('Thank you.')
             }
         });
-        */
 
       window.setTimeout(function(){d.getElementById('topNavBarBackButton').style.opacity = 1},500);
       window.setTimeout(function(){d.getElementById('nextButton').style.display = "none"},500);
