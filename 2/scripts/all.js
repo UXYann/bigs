@@ -1479,7 +1479,7 @@ function runningAjaxCall(currentURL,callback) {
 
       var dataForDecision = {
         "requestCode": currentRequestCodeToBeLogged,
-        "action": "a" + currentDecisionCodeToBeLogged,
+        "action": currentDecisionCodeToBeLogged,
         "comments": d.getElementById('actionFormComment').value
       };
         
