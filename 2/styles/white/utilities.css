@@ -1,254 +1,39 @@
-html, body {
-    height: 768px;
-	margin: 0;
-	padding: 0;
+div#mainBackground { position: fixed; top: 210px; width: 1024px; height: 610px; z-index: -1; }
 
-	font-family: 'Helvetica new', sans-serif;
-}
+.contentToBeRemoved { margin-left: -100%; -webkit-transform: translate3d(0, 0, 0); }
+.contentToBeAdded { left: 1000px; -webkit-transform: translate3d(0, 0, 0); }
+.contentReset { margin-left: 0; -webkit-transform: translate3d(0, 0, 0); }
+.content { margin-top: 85px; }
 
-body {
-	position: relative;
-	background: url('../../images/white/img-background.png') repeat;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-
-#mainBackgroundTop {
-	width: 1024px;
-	/*height: 185px;*/
-	height: 210px;
-	position: fixed;
-	top: 0;
-	z-index: 1;
-	/*background: url('../../images/app-BG__2x.jpg') no-repeat top left;*/
-	background: url('../../images/white/img-background.png') repeat; 
-	
-	/*background-size: 1024px 768px; */	
-}
-
-
-#mainBackground {
-	width: 1024px;
-	/*height: 583px;*/
-	height: 610px;
-	position: fixed;
-	/*top: 185px;*/
-	top: 210px;
-	z-index: -1;
-	/*background: url('../../images/app-BG__2x.jpg') no-repeat bottom left;*/
-	/*background-size: 1024px 768px; 	*/
-}
-
-
-header {
-	z-index: 10000;
-	-webkit-transition: opacity ease-out 1500ms;
-	position: relative!important;
-	height: auto!important;
-}
-
-
-
-
-.contentToBeRemoved {
-	margin-left: -100%;
-	-webkit-transform: translate3d(0, 0, 0);	
-}
-
-.contentToBeAdded {
-	left: 1000px;
-	-webkit-transform: translate3d(0, 0, 0);	
-}
-
-.contentReset {
-	margin-left: 0;
-	-webkit-transform: translate3d(0, 0, 0);
-}
-
-.content {
-	margin-top: 85px;
-}
-
-#UXLoader {
-	text-align: center; 
-	padding-top: 400px; 
-	position: fixed; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	background-color: rgba(0, 0, 0, 0.2); 
-	height: 100%; 
-	/*margin-top: 85px;*/
-}
-
-
-
-
-
-
-/* Basic jQuery Slider essential styles */
-
-.hiddenOverFlow {
-	overflow-x: hidden;
-}
-
-
-
+#UXLoader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding-top: 400px; text-align: center; background-color: rgba(0, 0, 0, 0.2); }
 
 /* Swipe 2 Carousel required styles */
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-  max-width: 800px;
-  text-align: center;
-  margin-left: 65px;
-}
-
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 110px;
-  padding-bottom: 6px;
-}
-
-.swipe-wrap > div {
-  float:left;
-  width:100%;
-  position: relative;
-}
-
-
-
-
-
-
-
-#currentCreditRequesDocumentSlideJS.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-  margin-left: 0;
-}
-#secondWrapper.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-#secondWrapper.swipe-wrap > div {
-  float:left;
-  width:50%;
-  position: relative;
-}
-
+.swipe { position: relative; max-width: 800px; margin: 0 0 5px 62px; text-align: center; visibility: hidden; overflow: hidden; }
+.swipe-wrap { position: relative; overflow: hidden; }
+.swipe-wrap > div { position: relative; float: left; width: 100%; }
 
 /* END required styles */
 
-.diapo1 {
-	position: absolute;
-	top: 130px;
-	margin-left: -1200px;
-	width: 900px;
-	-webkit-transition: left ease-out 500ms, margin-left ease-out 1000ms;
-	-webkit-transform: translate3d(0, 0, 0);
-	z-index: 1;
-}
+.siteHidden { margin-left: -1100px; }
+.siteShown { margin-left: 0; }
 
-.diapo2 {
-	position: absolute;
-	top: 130px;
-	width: 900px;
-	-webkit-transition: left ease-in 500ms, margin-left ease-in 1000ms;
-	-webkit-transform: translate3d(0, 0, 0);
-	z-index: 1;
-}
+.dashMainContentSectionToBeRemoved { margin-top: -2000px; -webkit-transform: translate3d(0, 0, 0); }
+.dashMainContentSectionReset { margin-top: 0; -webkit-transform: translate3d(0, 0, 0); }
 
-.diapo3 {
-	position: absolute;
-	top: 130px;
-	left: 1200px;
+.doc { color: #000; text-decoration: none;  }
 
-	width: 900px;
-	-webkit-transition: left ease-out 500ms, margin-left ease-out 1000ms;
-	-webkit-transform: translate3d(0, 0, 0);
-	z-index: 1;
-}
-
-#rightArrow {
-	color: #FFFFFF;
-	position: fixed;
-	top: 400px;
-	right: 0px;
-	z-index: 10000;
-}
-
-#rightArrow img {
-	margin-right: 50px;
-}
-
-#leftArrow {
-	color: #FFFFFF;
-	position: fixed;
-	top: 400px;
-	left: 0px;
-	z-index: 10000;
-	margin-left: 50px;
-}
-
-.visibilityHidden {
-	visibility: hidden;
-	-webkit-transition: all ease-in-out 500ms;
-}
-
-.visibilityShown {
-	visibility: visible;
-	-webkit-transition: all ease-in-out 500ms;
-}
-
-.siteHidden {
-	margin-left: -1100px;
-
-}
-
-.siteShown {
-	margin-left: 0px;
-}
-
-.hiddenArrival {
-	margin-top: 85px;
-	margin-left: -1000px;
-	-webkit-transition: all ease-in-out 500ms;
-	display: none;
-}
-
-.displayArrival {
-	margin-left: 0px;
-	/*margin-top: 85px;*/
-	-webkit-transition: all ease-in 500ms;
-}
-
-.dashMainContentSectionToBeRemoved {
-	margin-top: -2000px;
-	-webkit-transform: translate3d(0, 0, 0);	
-}
-
-.dashMainContentSectionReset {
-	margin-top: 0px;
-	-webkit-transform: translate3d(0, 0, 0);
-}
-
-.clear {
-	clear: both;
-	width: 0!important;
-	height: 0!important;
-}
-
-.doc {
-	text-decoration: none;
-	color: #000000;
-}
+/*
+.hiddenOverFlow { overflow-x: hidden; }
+#currentCreditRequesDocumentSlideJS.swipe { position: relative; margin-left: 0; visibility: hidden; overflow: hidden; }
+#secondWrapper.swipe-wrap { position: relative; overflow: hidden; }
+#secondWrapper.swipe-wrap > div { position: relative; float: left; width: 50%; }
+.diapo1 { position: absolute; top: 130px; width: 900px;  margin-left: -1200px; -webkit-transition: left ease-out 500ms, margin-left ease-out 1000ms; -webkit-transform: translate3d(0, 0, 0); z-index: 1; }
+.diapo2 { position: absolute; top: 130px; width: 900px; -webkit-transition: left ease-in 500ms, margin-left ease-in 1000ms; -webkit-transform: translate3d(0, 0, 0); z-index: 1; }
+.diapo3 { position: absolute; top: 130px; width: 900px; left: 1200px; -webkit-transition: left ease-out 500ms, margin-left ease-out 1000ms; -webkit-transform: translate3d(0, 0, 0); z-index: 1; }
+.visibilityHidden { visibility: hidden; -webkit-transition: all ease-in-out 500ms; }
+.visibilityShown { visibility: visible; -webkit-transition: all ease-in-out 500ms; }
+#rightArrow { position: fixed; top: 400px; right: 0; color: #fff; z-index: 10000; } 
+#rightArrow img { margin-right: 50px; }
+#leftArrow { position: fixed; top: 400px; left: 0; margin-left: 50px; color: #fff; z-index: 10000; }
+*/

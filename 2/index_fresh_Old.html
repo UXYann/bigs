@@ -20,104 +20,105 @@
     ###
 -->
 <html>
+	<head>
+		<title>Société Générale</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<head>
-	<title>Société Générale</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<link type="text/css" rel="stylesheet" href="styles/white/main.css" />
-	<link type="text/css" rel="stylesheet" href="styles/white/dashboard.css" />
-	<link type="text/css" rel="stylesheet" href="styles/white/utilities.css" />
-	<link type="text/css" rel="stylesheet" href="styles/white/vertical-range-selector.css" />
-	<link type="text/css" rel="stylesheet" href="styles/white/top-buttons.css" />
+		<link type="text/css" rel="stylesheet" href="styles/white/main.css" />
+		<link type="text/css" rel="stylesheet" href="styles/white/dashboard.css" />
+		<link type="text/css" rel="stylesheet" href="styles/white/utilities.css" />
+		<link type="text/css" rel="stylesheet" href="styles/white/vertical-range-selector.css" />
+		<link type="text/css" rel="stylesheet" href="styles/white/top-menu.css" />
+		<link rel="stylesheet" type="text/css" href="styles/white/top-buttons.css" />
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<link rel="icon" href="favicon.ico" />
+		<link rel="icon" href="favicon.ico" />
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 
-		// Add a script element as a child of the body
-		function downloadJSAtOnload() {
+			// Add a script element as a child of the body
+			function downloadJSAtOnload() {
 
 /*
 
-			var swipeCarousel = document.createElement("script");
-			swipeCarousel.src = "scripts/swipe.js";
-			document.body.appendChild(swipeCarousel);
+				var swipeCarousel = document.createElement("script");
+				swipeCarousel.src = "scripts/swipe.js";
+				document.body.appendChild(swipeCarousel);
 
-			var element2 = document.createElement("script");
-			element2.src = "scripts/jquery-2.0.3.min.js";
-			document.body.appendChild(element2);
+				var element2 = document.createElement("script");
+				element2.src = "scripts/jquery-2.0.3.min.js";
+				document.body.appendChild(element2);
 
 
-			var element4 = document.createElement("script");
-			element4.src = "scripts/Chart.min.js";
-			document.body.appendChild(element4);
+				var element4 = document.createElement("script");
+				element4.src = "scripts/Chart.min.js";
+				document.body.appendChild(element4);
 
-			var element = document.createElement("script");
-			element.src = "scripts/mainWhite.js";
-			document.body.appendChild(element);	
+				var element = document.createElement("script");
+				element.src = "scripts/mainWhite.js";
+				document.body.appendChild(element);	
 
 */						
-			var element = document.createElement("script");
-			element.src = "scripts/all.js";
-			document.body.appendChild(element);	
-		}
+				var element = document.createElement("script");
+				element.src = "scripts/all.js";
+				document.body.appendChild(element);	
+			}
 
-		 // Check for browser support of event handling capability
-		if (window.addEventListener)
-			window.addEventListener("load", downloadJSAtOnload, false);
-		else if (window.attachEvent)
-			window.attachEvent("onload", downloadJSAtOnload);
-		else window.onload = downloadJSAtOnload;
+			 // Check for browser support of event handling capability
+			if (window.addEventListener)
+				window.addEventListener("load", downloadJSAtOnload, false);
+			else if (window.attachEvent)
+				window.attachEvent("onload", downloadJSAtOnload);
+			else window.onload = downloadJSAtOnload;
 
-		function changingStartingButtonState() {
-			//document.getElementById('startingExperience').className = 'good';
-			document.getElementById('loginSubmit').className = 'good';
-		}
+			function changingStartingButtonState() {
+				document.getElementById('startingExperience').className = 'good';
+			}
 
-		window.setTimeout(changingStartingButtonState, 2000);
+			window.setTimeout(changingStartingButtonState, 2000);
 
-	</script>
+		</script>
 
-<body>
+	<body>
 
-	<section id="wrongOrientation">
-	</section>
+				<section id="wrongOrientation"></section>
 
-	<section id="splash">
-        <img src="images/white/img_logo_societegeneral.png" alt="" height="64px"/>
-        <!--<a id="startingExperience"></a>-->
-        <div id="loginForm">
-        	<div id="loginFormError">
-        		<p id="firstLine">Invalid login/password</p>
-        		<p id="secondLine">Reminder: Login and Password are case sensitive</p>
-        	</div>
-        	<div class="formLine">
-        		<label for="loginFiled">Login</label>
-        		<input type="text" name="loginField" id="loginField" autofocus>
-        		<span id="sesamIcon"></span>
-        		<div class="clear"></div>
-        	</div>
-        	<div class="formLine">
-        		<label for="pwdField">Password</label>
-        		<input type="password" name="pwdField" id="pwdField">
-        		<div class="clear"></div>
-        	</div>
-        	<div id="loginSubmit">LOGIN</div>
+
+	<section id="splash" style="position: absolute; top: 0; left: 0; -webkit-transition: visibility ease-in-out 250ms; z-index: 100;">
+
+        <div style="margin-top: 250px;">
+           <span style="display: inline-block; background: url('images/white/logo-ux-republic__2x.png') no-repeat 150px 35px; background-size: 77px 78px; padding-left: 160px; height: 128px; width: 77px; border-right: 1px solid #464749;">
+
+            <span>
+
+            <span style="display: inline-block;  padding-left: 96px; padding-top: 35px;">
+              <img src="images/white/img_logo_societegeneral.png" alt="" height="64px"/>
+                <br/>
+
+                <span style="display: inline-block; /*color: #FFFFFF;*/ font-size: 0.9em;">
+                    Prototype 12.11.2013
+                </span>
+
+            </span>
+
         </div>
+
+        <div style="color: #FFFFFF; font-size: 3em; margin-left: 270px; margin-top: 100px;">
+                <a class="pending" id="startingExperience"></a>
+        </div>
+
 	</section>
 
 	<div id="mainBackgroundTop">		
-		<header>
+		<header style="opacity: 0">
 			<div id="logoHeadBand">
 				<img id="headBandLogo" src="images/white/img_logo_societegeneral.png"/>
 				<div id="optHolder">
 					<div id="param"></div>
 					<div id="account"></div>
-					<div id="close"></div>
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
@@ -135,40 +136,45 @@
 
 				<span id="navStepMenu" class="state1">
 					<a id="stepOne">
-						<span class="navStepMenuLabels"></span>
+						<span class="navStepMenuLabels">
+
+						</span>
 					</a>
 					<a id="stepTwo">
-						<span class="navStepMenuLabels"></span>
+						<span class="navStepMenuLabels">
+
+						</span>
 					</a>
 					<a id="stepThree">	
-						<span class="navStepMenuLabels"></span>
+						<span class="navStepMenuLabels">
+
+						</span>
 					</a>
 					<a id="stepFour">
-						<span class="navStepMenuLabels"></span>
+						<span class="navStepMenuLabels">
+
+						</span>
 					</a>
 				</span>
-
 			</div>
 		</header>
 
 		<section id="delayingArrival" class="hiddenArrival">
 
-			<div id="crSelectTitle">Select a credit request</div>
-
 			<section class="searchDocsForm" style="opacity: 0">
 				<div>
-					<span class="formButton formButtons1">
+					<span class="formButtons1">
 						<!--Project ame A / Z-->
 					</span>
-					<span class="formButton formButtons2">
+					<span class="formButtons2">
 						<!--First deadline-->
 					</span>
-					<span class="formButton formButtons3">
+					<span class="formButtons3">
 					</span>
 					<span>
 						<input type="text" name="search" class="search" placeholder="Search : Request, Initiator, Value..." />
 					</span>
-					<!--<span id="loupe"></span>-->
+					<span id="loupe"></span>
 					<span id="displayAsThumbnails" class="displayAsThumbnailsSelected">
 
 					</span>
@@ -233,7 +239,7 @@
 						Address / team
 					</span>
 					<span class="myOwnTableCellIndex">
-						Team Pending <br/>Action
+						Team Pending Action
 					</span>
 					<span class="myOwnTableCellIndex">
 						Deadline
@@ -301,15 +307,15 @@
 							<section class="searchDocsForm" style="display:block!important;">
 
 								<div>
-									<span class="formButton formButtons1">
+									<span class="formButtons1">
 										<!--Project ame A / Z-->
 									</span>
-									<span class="formButton formButtons2">
+									<span class="formButtons2">
 										<!--First deadline-->
 									</span>
-									<span class="formButton formButtons3">
+									<span class="formButtons3">
 									</span>
-									<span class="formButton formButtons4">
+									<span class="formButtons4">
 									</span>
 									<span>
 										<input type="text" name="search" class="search" placeholder="Search..." />

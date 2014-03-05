@@ -627,8 +627,8 @@ k),c.scaleShowGridLines?(b.lineWidth=c.scaleGridLineWidth,b.strokeStyle=c.scaleG
 
 b.moveTo(g,p);b.lineTo(g,p-d*v(a.datasets[e].data[f],j,k)+c.barStrokeWidth/2);b.lineTo(g+s,p-d*v(a.datasets[e].data[f],j,k)+c.barStrokeWidth/2);b.lineTo(g+s,p);c.barShowStroke&&b.stroke();b.closePath();b.fill()}}},b)},D=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)},F={}};
 
-//var CWF_URL = 'http://localhost:8080';
-var CWF_URL = 'http://node.ux-republic.com';
+var CWF_URL = 'http://localhost:8080';
+//var CWF_URL = 'http://node.ux-republic.com';
 var d = document;
 var wasACRSelected = 0;
 
@@ -770,6 +770,7 @@ function splashscreen() {
   d.getElementById('splash').style.visibility = "hidden";
   d.getElementById('content').className = "siteShown";
   d.getElementById('requests').className = "siteShown";
+
 
 
   var t = new Timeout(function () {
@@ -1647,9 +1648,9 @@ function runningDashAjaxCall(currentURL,callback) {
 
 
 function settingUpFixedNav() {
-  d.getElementsByTagName('header')[0].style.position = "fixed";
-  d.getElementsByTagName('header')[0].style.top = "0px";
-  d.getElementsByTagName('header')[0].style.height = "85px";
+  //d.getElementsByTagName('header')[0].style.position = "fixed";
+  //d.getElementsByTagName('header')[0].style.top = "0px";
+  //d.getElementsByTagName('header')[0].style.height = "85px";
 }
 
 function displayingCreditRequest(presentationStyle) {
@@ -1803,7 +1804,8 @@ function readingMainJson(callback) {
           }
 
           if(myObject[i].requestStatusLbl == "Not submitted") {
-            mainColor = 'crCardDark';
+            //mainColor = 'crCardDark';
+            mainColor = 'crCard';
           } else {
             mainColor = 'crCard';
           }
@@ -1820,7 +1822,8 @@ function readingMainJson(callback) {
             elemToBeGenerated += "<span class='crRequester'>";
             elemToBeGenerated +=  myObject[i].counterparty;
             elemToBeGenerated += "</span>";
-
+            elemToBeGenerated += "<span class='listCrCardTeam'>" + "Team" + "</span>";
+            elemToBeGenerated += "<span class='listCrCardInit'>" + "Init" + "</span>";
             elemToBeGenerated += "<span class='crPricing'>";
 
             elemToBeGenerated += Math.floor(Math.random() * 100);
@@ -1829,24 +1832,24 @@ function readingMainJson(callback) {
 
             elemToBeGenerated += "<span class='crDeadline'>";
             var deadline = new Date(myObject[i].deadlineDate);
-            elemToBeGenerated +=  "Deadline : " + deadline.getDate() + "/" + deadline.getMonth() + "/" + deadline.getYear();
-            elemToBeGenerated +=  "<br/>" + "Initiator : " + myObject[i].initiator;
+            elemToBeGenerated +=  "<span class='crDeadLineLine'><span id='crDeadLineLineTxt'>Deadline :</span> " + deadline.getDate() + "/" + deadline.getMonth() + "/" + deadline.getYear() + "</span>";
+            elemToBeGenerated +=  "<span class='crInitLine'>Initiator : " + myObject[i].initiator + "</span>";
             elemToBeGenerated += "</span>";
             elemToBeGenerated += "<span class='crStatus'>";
-            elemToBeGenerated +=  myObject[i].requestStatusLbl;
+            elemToBeGenerated +=  "Request : " + myObject[i].requestCode;
             elemToBeGenerated += "</span>";
             elemToBeGenerated += "</span>";
 
           j++;
 
-          if(j == 4) {
+          if(j == 3) {
             elemToBeGenerated += "<br class='swipeBreak' />";
             j = 0;
           }
 
           k++;
 
-          if(k == 8) {
+          if(k == 6) {
             elemToBeGenerated += "</div>";
             k = 0;
           }
@@ -2400,7 +2403,7 @@ function backToInitState() {
 
   if( (d.getElementById('topNavBarBackButton').style.display == "inline-block") || (d.getElementById('topNavBarBackButton').style.display == "") ) {
     d.getElementById('topNavBarBackButton').style.display = "none";
-    d.getElementById('navStepMenu').style.paddingLeft = "110px";
+    //d.getElementById('navStepMenu').style.paddingLeft = "110px";
     d.getElementById('nextButton').style.display = "none;";
     d.getElementById('site').style.position = "absolute";
 
@@ -2415,10 +2418,15 @@ function backToInitState() {
 
 backToInitState();
 
+
 if(d.getElementById('startingExperience')) {
   d.getElementById('startingExperience').setAttribute('onclick', "splashscreen()"); 
 }
 
+
+if(d.getElementById('loginSubmit')) {
+  d.getElementById('loginSubmit').setAttribute('onclick', "splashscreen()"); 
+}
 
 function removingDocViewer() {
   if(d.getElementById('documentsOverlay')) {
@@ -2523,14 +2531,14 @@ $.fn.redraw = function(){
 
 
 function listingStuff() {
-  d.getElementById('param').style.display = "none";
-  d.getElementById('account').style.display = "none";
+  //d.getElementById('param').style.display = "none";
+  //d.getElementById('account').style.display = "none";
   
   
-  d.getElementById('mainJSONFlow').style.width = "1000px";
+  d.getElementById('mainJSONFlow').style.width = "990px";
   d.getElementById('indexSection').style.position = "relative";
-  d.getElementById('indexSection').style.marginLeft = "24px";
-  d.getElementById('indexSection').style.marginRight = "35px";
+  //d.getElementById('indexSection').style.marginLeft = "24px";
+  //d.getElementById('indexSection').style.marginRight = "35px";
   d.getElementById('mySwipe').className = "shouldBeAList";
   d.getElementById('sliderSetToLinesHeader').style.display = "block";
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
@@ -2553,9 +2561,9 @@ function displayAsBlockMySwipeJS() {
   d.getElementById('param').style.display = "block";
   d.getElementById('account').style.display = "block";
 
-  d.getElementById('indexSection').style.position = "relative";
-  d.getElementById('indexSection').style.marginLeft = "24px";
-  d.getElementById('indexSection').style.marginRight = "35px";
+  //d.getElementById('indexSection').style.position = "relative";
+  //d.getElementById('indexSection').style.marginLeft = "24px";
+  //d.getElementById('indexSection').style.marginRight = "35px";
   d.getElementById('mySwipe').className = "shouldBeAList";
   d.getElementById('sliderSetToLinesHeader').style.display = "block";
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
