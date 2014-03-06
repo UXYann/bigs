@@ -169,25 +169,28 @@
 .tableFinancialBlockSubTitle { margin-top: 0; padding-left: 30px; font-size: 18px; font-weight: bold; color: #e20030; }
 .tableFinancialBlockSubTitle2 { margin-top: 30px; }
 
-.financeTableLine { width: 800px; height: 41px; margin-left: 40px; font-size: 0.8em; font-weight: 300; }
-.financeTableLine div { float: left; width: 100px; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #e6e6e6; }
+.financeTableLine { height: 41px; margin-left: 40px; font-size: 0.8em; font-weight: 300; }
+.financeTableLine div { float: left; width: 90px; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #e6e6e6; }
 .financeTableLine .financeTableName { width: 160px; }
-.financeTableLine .financeTableCounter { width: 140px; }
-.financeTableLine .financeTableRat { width: 80px; }
+.financeTableLine .financeTableCounter { width: 130px; }
+.financeTableLine .financeTableRat { width: 60px; }
 .financeTableLine .financeTableUnder { width: 115px; }
-.financeTableLine .columnFold { width: 113px; background: url('../../images/rightBlackArrow.png') 90px center no-repeat; background-size: 7px; border: 1px solid #000; }
-.financeTableLine .columnFold:hover { cursor: pointer; } 
+.financeTableLine .columnFold1 { width: 113px; background: url('../../images/rightBlackArrow.png') 90px center no-repeat; background-size: 7px; border: 1px solid #000; }
+.financeTableLine .columnFold1:hover { cursor: pointer; }
+.financeTableLine .columnUnfold { background: #000; color: #fff; -webkit-transition: bakground-color ease-in-out 250ms; -webkit-transition: color ease-in-out 250ms; }
+.financeTableLine .financeTableCeiling1 { display: none; width: 80px; background: #f4f4f4; }
 .financeTableLine .financeTableFinal { width: 65px; }
 .financeTableLine .financeTableTerm { width: 60px; }
 .financeTableLine .financeTablePro {  }
-.financeTableLine .financeTableLgd { width: 80px; }
+.financeTableLine .financeTableLgd { width: 60px; }
 
 .financeTableLine1 { font-weight: bold; }
 .financeTableLine1 .financeTableUnder,
+.financeTableLine1 .financeTableCeiling1,
 .financeTableLine1 .financeTableFinal { line-height: normal; }
-.financeTableLine3 .financeTableName { width: 300px; }
-.financeTableLine3 { background: #f4f4f4;}
-.financeTableLine5 { font-weight: bold; background: #f4f4f4;}
+.financeTableLine3 .financeTableName { width: 290px; }
+.financeTableLine3 div { background: #f4f4f4;}
+.financeTableLine5 div { font-weight: bold; background: #f4f4f4;}
 
 .hedgingTableLine { width: 800px; margin-left: 40px; font-size: 0.8em; }
 .hedgingTableLine1 { height: 40px; margin-top: 20px; font-weight: bold; }
@@ -201,13 +204,15 @@
 .hedgingLine5 { width: 120px; }
 .hedgingLine6 { width: 130px; }
 
-.hedgingTableLine2 .hedgingLine6 { background: url('../../images/rightBlackArrow.png') no-repeat 115px center; background-size: 11px; }
+.hedgingTableLine2 .hedgingLine6 { background: url('../../images/rightBlackArrow.png') no-repeat 110px center; background-size: 11px; }
 .hedgingTableLine2 .hedgingLine6:hover { cursor: pointer; }
-.bucketTableFolded { background: url('../../images/sortKey.png') no-repeat 92px 7px!IMPORTANT; background-size: 50px !IMPORTANT; }
+.bucketTableFolded { background: #000!important; color: #fff!important; -webkit-transition: bakground-color ease-in-out 250ms; -webkit-transition: color ease-in-out 250ms; }
 .bucketTable,
 .bucketTable2 { display: none; width: 798px; margin: 0 20px 0 40px; border: 1px solid #000; font-size: 0.6em; font-weight: 300; }
 .bucketTable .bucketTableLine,
 .bucketTable2 .bucketTableLine { height: 40px; line-height: 40px; }
+.bucketTable .bucketTableLine3,
+.bucketTable2 .bucketTableLine3 { background: #e6e6e6; }
 .bucketTable .bucketTableLine div,
 .bucketTable2 .bucketTableLine div { float: left; width: 57px; text-align: center; }
 
@@ -217,6 +222,8 @@
 .bucketTable2 .bucketTableLine1 .bucketLine1 { font-weight: bold; font-size: 1.2em; }
 .bucketTable .bucketTableLine4 .bucketLine1,
 .bucketTable2 .bucketTableLine4 .bucketLine1 { font-weight: bold; }
+
+.expandBucketTable { width: 128px; height: 59px; border: 1px solid #000; }
 
 .riskMultiL {
 	float: left;

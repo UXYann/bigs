@@ -105,7 +105,7 @@ div#mainBackgroundTop header #topNavBar #navStepMenu a.setToDark { color: #A5A6A
 
 div#mainBackground { /*position: fixed; top: 210px;*/ width: 1024px; /*height: 610px;*/ z-index: -1; }
 
-.ErrorZone { display: none; position: absolute; top: 137px; left: 51px; width: 936px; height: 60px; margin: 10px 0 0 -20px; background: #f6f6f6; z-index: 300; }
+.ErrorZone { display: none; position: absolute; top: 135px; left: 51px; width: 936px; height: 65px; margin: 10px 0 0 -20px; background: #f6f6f6; z-index: 300; }
 .ErrorZoneTxt { width: 876px; height: 40px; margin-top: 10px; padding-left: 60px; line-height: 40px; font-size: 18px; color: #c10d0d; text-transform: uppercase; background: #ecd4d4 url('../../images/warning.png') 20px center no-repeat; background-size: 30px; }
 /* ====================================================================================== */
 /* === 1 - CREDIT SELECTION ============================================================= */
@@ -541,27 +541,21 @@ from {top:0px;}
 to {top:-200px;}
 }
 
-
-
-
-
-
-
 #loginForm {
--webkit-animation: fadein 1500ms; /* Safari and Chrome */
--webkit-animation-delay: 3s;
+-webkit-animation: fadein 2s; /* Safari and Chrome */
+-webkit-animation-delay: 2500ms;
 -webkit-animation-fill-mode: forwards;
--moz-animation: fadein 1500ms; /* Firefox */
--moz-animation-delay: 3s;
+-moz-animation: fadein 2s; /* Firefox */
+-moz-animation-delay: 2500ms;
 -moz-animation-fill-mode: forwards;
--ms-animation: fadein 1500ms; /* Internet Explorer */
--ms-animation-delay: 3s;
+-ms-animation: fadein 2s; /* Internet Explorer */
+-ms-animation-delay: 2500ms;
 -ms-animation-fill-mode: forwards;
--o-animation: fadein 1500ms; /* Opera */
--o-animation-delay: 3s;
+-o-animation: fadein 2s; /* Opera */
+-o-animation-delay: 2500ms;
 -o-animation-fill-mode: forwards;
-animation: fadein 1500ms;
-animation-delay: 3s;
+animation: fadein 2s;
+animation-delay: 2500ms;
 animation-fill-mode: forwards;
 }
 

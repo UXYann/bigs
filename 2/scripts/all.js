@@ -1950,6 +1950,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableCounter'>Counterparty</div>";
               elemToBeGenerated += "<div class='financeTableRat'>Rating</div>";
               elemToBeGenerated += "<div class='financeTableUnder'>SG Underwriting</div>";
+              elemToBeGenerated += "<div class='financeTableCeiling1'>Ceiling Amount</div>";
               elemToBeGenerated += "<div class='financeTableFinal'>SG Final Take</div>";
               elemToBeGenerated += "<div class='financeTableTerm'>Term</div>";
               elemToBeGenerated += "<div class='financeTablePro'>Profile</div>";
@@ -1961,6 +1962,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableCounter'>Client A</div>";
               elemToBeGenerated += "<div class='financeTableRat'>4</div>";
               elemToBeGenerated += "<div class='financeTableUnder'>10M€</div>";
+              elemToBeGenerated += "<div class='financeTableCeiling1'>99M€</div>";
               elemToBeGenerated += "<div class='financeTableFinal'>5M€</div>";
               elemToBeGenerated += "<div class='financeTableTerm'>17 Years</div>";
               elemToBeGenerated += "<div class='financeTablePro'>Amortising</div>";
@@ -1971,6 +1973,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableName'>Secured By Guarantor B</div>";
               elemToBeGenerated += "<div class='financeTableRat'>2</div>";
               elemToBeGenerated += "<div class='financeTableUnder'></div>";
+              elemToBeGenerated += "<div class='financeTableCeiling1'>99M€</div>";
               elemToBeGenerated += "<div class='financeTableFinal'>4M€</div>";
               elemToBeGenerated += "<div class='financeTableTerm'></div>";
               elemToBeGenerated += "<div class='financeTablePro'></div>";
@@ -1982,6 +1985,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableCounter'>Client B</div>";
               elemToBeGenerated += "<div class='financeTableRat'>4</div>";
               elemToBeGenerated += "<div class='financeTableUnder'>5M€</div>";
+              elemToBeGenerated += "<div class='financeTableCeiling1'></div>";
               elemToBeGenerated += "<div class='financeTableFinal'>2M€</div>";
               elemToBeGenerated += "<div class='financeTableTerm'>3 Years</div>";
               elemToBeGenerated += "<div class='financeTablePro'>Bullet</div>";
@@ -1992,7 +1996,8 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableName'>Total Debt</div>";
               elemToBeGenerated += "<div class='financeTableCounter'></div>";
               elemToBeGenerated += "<div class='financeTableRat'></div>";
-              elemToBeGenerated += "<div class='financeTableUnder columnFold'>15M€</div>";
+              elemToBeGenerated += "<div class='financeTableUnder columnFold1'>15M€</div>";
+              elemToBeGenerated += "<div class='financeTableCeiling1'></div>";
               elemToBeGenerated += "<div class='financeTableFinal'>7M€</div>";
               elemToBeGenerated += "<div class='financeTableTerm'></div>";
               elemToBeGenerated += "<div class='financeTablePro'></div>";
@@ -2278,6 +2283,13 @@ function readingSpecificJson(fileUrl,callback) {
             $('.bucketTable2').slideToggle('fast');
             return false;
         });
+
+        $('.columnFold1').click(function() { 
+          $(this).toggleClass('columnUnfold');
+          $('.financeTableCeiling1').toggle('blind', { direction: 'horizontal' }, 500);
+          return false;
+        });
+
 
         changingDashMenuState('1');       
               
@@ -2600,5 +2612,4 @@ doOnOrientationChange();
 
         didYouSelectYourCr('4', 'submit.html', '', 'Four');
     });
-
 
