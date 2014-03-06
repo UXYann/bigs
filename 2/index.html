@@ -126,7 +126,7 @@
 			<div id="topNavBar">
 
 				<span id='nextButton'>
-					make <br/> <span id="light">your decision</span>
+					Next<span id="light"> step</span>
 				</span>
 
 				<span id="topNavBarBackButton" onclick="history.back()">
@@ -209,7 +209,7 @@
 				</li>
 				<li id="dash4" class="dark">
 					<span></span>
-					Cred. App
+					Invited Team
 				</li>
 			</ul>
 		</section> 
@@ -287,6 +287,11 @@
 				</div>
 			</section>
 			<section id="dashMain">
+
+				<!--<div class="errorZone errorDocZone">
+					<div class="errorZoneTxt">Technical error</div>
+				</div>-->
+
 				<section id="dashMainContentSection" style="display: none; top: 210px;">
 				</section>
 
@@ -295,26 +300,17 @@
 					<div id="documentsView">
 
 						<div class="docsTable">
-
-							<div class='tableCategories'><p class='tableCategoriesTitle'>Documents (12)</p><div class='redLine' style="width=500px!important;"></div><div class='clear'></div></div>
+							<div class='tableCategories'><p class='tableCategoriesTitle'>Documents <span id="docNum">(12)</span></p><div class='redLine' style="width=500px!important;"></div><div class='clear'></div></div>
 
 							<section class="searchDocsForm" style="display:block!important;">
 
 								<div>
 									<span class="formButton formButtons1">
-										<!--Project ame A / Z-->
-									</span>
-									<span class="formButton formButtons2">
-										<!--First deadline-->
-									</span>
-									<span class="formButton formButtons3">
 									</span>
 									<span class="formButton formButtons4">
 									</span>
 									<span>
-										<input type="text" name="search" class="search" placeholder="Search..." />
-									</span>
-									<span id="loupe"></span>					
+									<input type="text" name="search" class="search" placeholder="Search..." />
 								</div>
 							</section>	
 
@@ -431,11 +427,11 @@
 				<section id="dashMainContentSummarySection" style="display: none; top: 140px;">
 					<div class="mainSummaryContainer">
 
-						<div class="teamLeft teamLeft1">Team Initiators</div>
+						<!--<div class="teamLeft teamLeft1">Team Initiators</div>
 						<div class="teamRight teamRight1">
 							<p>MET : Nicolas Palmero, Pavlina Zajc, Dilpesh Patel</p>
 							<p>EXT : Isabelle Roux-Sharpe, Virginie Bouthillon de La Serve,Damien Midot</p>
-						</div>
+						</div>-->
 						
 						<div class="clear"></div>
 
@@ -463,7 +459,7 @@
 								<div class="peopleName"><b>ITEC / FCC / OSD</b><br/>Martin Dupont</div>
 								<div class="peopleDate">Friday, November 29</div>
 								<div class="peopleType">1</div>
-								<div class="peopleDecision">All approved<br/>(Final)</div>
+								<div class="peopleDecision">All approved<br/><span class="type">Final</span></div>
 								<div class="peopleUnfold peopleUnfold1"></div>
 								<div class="clear"></div>
 							</div>
@@ -562,7 +558,7 @@
 								<div class="peopleName"><b>GLF/ EXT / DIR</b><br/>Annie Croche</div>
 								<div class="peopleDate">Friday, November 29</div>
 								<div class="peopleType">3</div>
-								<div class="peopleDecision">All approved<br/>(LGD validation)</div>
+								<div class="peopleDecision">All approved<br/><span class="type">LGD validation</span></div>
 								<!--<div class="peopleUnfold peopleUnfold2"></div>-->
 								<div class="clear"></div>
 							</div>
@@ -597,7 +593,7 @@
 								<div class="peopleName">Sophie Pierret</div>
 								<div class="peopleDate">Thursday, November 28</div>
 								<div class="peopleType">2</div>
-								<div class="peopleDecision">LGD approved<br/>(Intermediary)</div>
+								<div class="peopleDecision">LGD approved<br/><span class="type">Intermediary</span></div>
 								<div class="peopleUnfold peopleUnfold3"></div>
 								<div class="clear"></div>
 							</div>
@@ -633,8 +629,13 @@
 
 						</div>
 
-						<div class="peopleLeftHeadBand">
-							<div class="peopleTitle">People still have given their decision (<b>5</b>/8)</div>
+					</div>
+				</section>
+
+				<section id="dashMainContentOldDashSection" style="display: none;">
+
+					<div class="peopleLeftHeadBand">
+							<div class="peopleTitle"><span class="light">People still have to give their decision</span> (<b>5</b>/8)</div>
 							<div class="redLine"></div>
 							<div class="clear"></div>
 						</div>
@@ -643,44 +644,35 @@
 							<div class="peopleLeft peopleLeft1">
 								<div class="peopleLeftWhat">GLF/ EXT / DIR</div>
 								<div class="peopleLeftName">Sarah Porte - Alice Baune</div>
-								<div class="peopleLeftRank">3</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft2">
 								<div class="peopleLeftWhat">GLF/ CMK / DIR</div>
 								<div class="peopleLeftName">Anne Estaisie</div>
-								<div class="peopleLeftRank">4</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft3">
 								<div class="peopleLeftWhat">CORI / DIR</div>
 								<div class="peopleLeftName">Jeremy Du Bois</div>
-								<div class="peopleLeftRank">3</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft4">
 								<div class="peopleLeftWhat">RISQ / CIB - CAG / LET</div>
 								<div class="peopleLeftName">Sammy Rémilleux</div>
-								<div class="peopleLeftRank">5</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 							<div class="peopleLeft peopleLeft5">
 								<div class="peopleLeftWhat">CORI / RISQ / DIR</div>
 								<div class="peopleLeftName">Pierre Farret</div>
-								<div class="peopleLeftRank">4</div>
 								<div class="peopleLeftStatus">Waiting</div>
 								<div class="clear"></div>
 							</div>
 						</div>
 
-					</div>
-				</section>
-
-				<section id="dashMainContentOldDashSection" style="display: none;">
 				</section>
 
 			</section>
@@ -693,9 +685,8 @@
 						<h3 class="content-slider__sous-titre"></h3>
 
 						<div id="sliderTexts">
-							<p id="yes">Yes, I accept It</p>
-							<p id="but">Yes, but...</p>
-							<p id="no">No, I refuse</p>
+							<p id="yes"><span class="sliderBigTxts">Yes</span><br/>I accept</p>
+							<p id="no"><span class="sliderBigTxts">No</span><br/>I refuse</p>
 						</div>	
 
 						<div id="submitAction" onclick="submitingResult()">Submit</div>
@@ -733,10 +724,6 @@
 					</div>
 					<div class="botButtons">
 						<div class="modify"><a style="text-decoration: none; color: #000" id="backToHomeLastButton">Back to Home</a></div>
-						<div class="save"></div>
-						<div class="send"></div>
-						<div class="print"></div>
-						<div class="clear"></div>
 					</div>
 				</div>
 			</section>

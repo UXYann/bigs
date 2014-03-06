@@ -28,15 +28,15 @@
 
 .actionFormTextarea {
 	-webkit-appearance: none;
-	margin-top: 60px;
+	margin-top: 80px;
 	padding: 20px;
 	border: none;
 
 	box-shadow: 0 0 10px #CCCCCC;
 	width: 600px;
 	height: 300px;
-	background: #fff url('../../images/white/textareaBg.png') no-repeat 150px 100px;
-	background-size: 300px;
+	background: #fff url('../../images/textareaBg.png') no-repeat center center;
+	background-size: 350px;
 	margin-left: 80px;
 }
 
@@ -53,7 +53,7 @@ input[type=range] {
     height:2px;
     background-color: transparent;
     margin-left: 55px;
-    margin-top: 200px;
+    margin-top: 224px;
 }
 
 .range input[type="range"]::-webkit-slider-thumb {
@@ -106,7 +106,7 @@ input[type=range] {
 	border-radius: 20px;
 	position: absolute;
 	left: 205px;
-	top: 240px;
+	top: 260px;
 }
 
 #rangeLine.neutral {
@@ -135,7 +135,7 @@ input[type=range] {
 }
 
 #rangeLine.red {
-	background: url('../../images/white/img_background_slider_red.png') no-repeat center center;
+	background: url('../../images/white/img_background_slider_red.png') no-repeat center -56px;
 	/*background-image: url('../../images/white/sliderRed.png');
 	background-repeat: no-repeat;
 	background-position: center center;*/
@@ -147,7 +147,7 @@ input[type=range] {
 }
 
 #rangeLine.green {
-	background: url('../../images/white/img_background_slider_green.png') no-repeat center 0%;
+	background: url('../../images/white/img_background_slider_green.png') no-repeat center -56px;
 	/*background-image: url('../../images/white/sliderGreen.png');
 	background-repeat: no-repeat;
 	background-position: center center;*/
@@ -172,8 +172,8 @@ input[type=range] {
 	width: 90px;
 	padding-right: 20px;
 	text-align: right;
-	background: url('../../images/white/img_fleches_2x.png') no-repeat 95px -17px;
-	background-size: 12px;
+	background: url('../../images/rightBlackArrow.png') no-repeat 102px center;
+	background-size: 7px;
 }
 
 #sliderTexts #but {
@@ -194,13 +194,15 @@ input[type=range] {
 	width: 90px;
 	padding-right: 20px;
 	text-align: right;
-	background: url('../../images/white/img_fleches_2x.png') no-repeat 95px -17px;
-	background-size: 12px;
+	background: url('../../images/rightBlackArrow.png') no-repeat 102px center;
+	background-size: 7px;
 }
+
+#sliderTexts .sliderBigTxts { font-size: 35px; }
 
 #submitAction {
 	position: absolute;
-	top: 560px;
+	top: 537px;
 	right: 58px;
 	width: 150px;
 	height: 50px;
@@ -218,7 +220,7 @@ input[type=range] {
 }
 
 #submitAction:hover {
-	background-color: #23dd30;
+	background-color: #23dd30; cursor: pointer;
 }
 
 

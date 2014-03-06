@@ -1822,8 +1822,8 @@ function readingMainJson(callback) {
             elemToBeGenerated += "<span class='crRequester'>";
             elemToBeGenerated +=  myObject[i].counterparty;
             elemToBeGenerated += "</span>";
-            elemToBeGenerated += "<span class='listCrCardTeam'>" + "Team" + "</span>";
-            elemToBeGenerated += "<span class='listCrCardInit'>" + "Init" + "</span>";
+            elemToBeGenerated += "<span class='listCrCardInit'>" + myObject[i].initiatorTeamLbl + "</span>";
+            elemToBeGenerated += "<span class='listCrCardTeam'>" + myObject[i].initiatorTeamLbl + "</span>";
             elemToBeGenerated += "<span class='crPricing'>";
 
             elemToBeGenerated += Math.floor(Math.random() * 100);
@@ -1893,7 +1893,7 @@ function readingSpecificJson(fileUrl,callback) {
           var elemToBeGenerated = "";
           var z = Math.floor((Math.random()*7)+1);
           elemToBeGenerated += "<span class='clientLogo clientLogo"+z+"'><img src='' alt='' /></span>";         
-          elemToBeGenerated += "<div class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <div id='requestLbl'><span id='redLbl'>Project Finance for : </span>" + myObject.requestLbl + "</div><div id='requestLbl'>Request " + myObject.requestCode + "</div></div>";
+          elemToBeGenerated += "<div class='clientNameRLabel'>" + myObject.counterparty + "&#160;&#160; <div id='requestLbl'><span id='redLbl'>Project Finance for : </span>" + myObject.requestLbl + "</div><div id='requestInitTeam'>Initiator Team : " + myObject.initiatorTeamLbl + "</div></div>";
 
 
           d.getElementById('dashboardClientSelected').innerHTML = elemToBeGenerated;
@@ -1941,11 +1941,14 @@ function readingSpecificJson(fileUrl,callback) {
 
           elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
-          elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
-          elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
+          //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
+          //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
           elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR creditRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";         //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
 
               elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
+
+              elemToBeGenerated += "<p class='tableFinancialBlockTitle tableFinancialBlockTitle1'>DEAL (id)</p>";
+              elemToBeGenerated += "<p class='tableFinancialBlockSubTitle tableFinancialBlockSubTitle1'>Financial authorizations</p>";
 
 
             elemToBeGenerated += "<div class='financeTableLine financeTableLine1'>";
@@ -2002,8 +2005,11 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableLgd'></div>";
             elemToBeGenerated += "<div class='clear'></div></div>";
 
+            elemToBeGenerated += "<p class='tableFinancialBlockSubTitle tableFinancialBlockSubTitle2'>Market authorizations</p>";
+
+
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine1'>";
-              elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
+              //elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
               elemToBeGenerated += "<div class='hedgingLine2'>Authorization Name</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Risk Category</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>Amount</div>";
@@ -2012,7 +2018,7 @@ function readingSpecificJson(fileUrl,callback) {
             elemToBeGenerated += "<div class='clear'></div></div>";
 
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine2'>";
-              elemToBeGenerated += "<div class='hedgingLine1'></div>";
+              //elemToBeGenerated += "<div class='hedgingLine1'></div>";
               elemToBeGenerated += "<div class='hedgingLine2'>SWAP</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
@@ -2092,6 +2098,179 @@ function readingSpecificJson(fileUrl,callback) {
 
             elemToBeGenerated += "</div>";
 
+
+
+
+
+
+
+
+
+
+
+
+
+            elemToBeGenerated += "<p class='tableFinancialBlockTitle tableFinancialBlockTitle2'>OTHER AUTHORIZATIONS</p>";
+            elemToBeGenerated += "<p class='tableFinancialBlockSubTitle tableFinancialBlockSubTitle1'>Financial authorizations</p>";
+
+
+            elemToBeGenerated += "<div class='financeTableLine financeTableLine1'>";
+              elemToBeGenerated += "<div class='financeTableName'>Authorization Name</div>";
+              elemToBeGenerated += "<div class='financeTableCounter'>Counterparty</div>";
+              elemToBeGenerated += "<div class='financeTableRat'>Rating</div>";
+              elemToBeGenerated += "<div class='financeTableUnder'>SG Underwriting</div>";
+              elemToBeGenerated += "<div class='financeTableFinal'>SG Final Take</div>";
+              elemToBeGenerated += "<div class='financeTableTerm'>Term</div>";
+              elemToBeGenerated += "<div class='financeTablePro'>Profile</div>";
+              elemToBeGenerated += "<div class='financeTableLgd'>LGD</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='financeTableLine financeTableLine2'>";
+              elemToBeGenerated += "<div class='financeTableName'>Team Loan A</div>";
+              elemToBeGenerated += "<div class='financeTableCounter'>Client A</div>";
+              elemToBeGenerated += "<div class='financeTableRat'>4</div>";
+              elemToBeGenerated += "<div class='financeTableUnder'>10M€</div>";
+              elemToBeGenerated += "<div class='financeTableFinal'>5M€</div>";
+              elemToBeGenerated += "<div class='financeTableTerm'>17 Years</div>";
+              elemToBeGenerated += "<div class='financeTablePro'>Amortising</div>";
+              elemToBeGenerated += "<div class='financeTableLgd'>30%</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='financeTableLine financeTableLine3'>";
+              elemToBeGenerated += "<div class='financeTableName'>Secured By Guarantor B</div>";
+              elemToBeGenerated += "<div class='financeTableRat'>2</div>";
+              elemToBeGenerated += "<div class='financeTableUnder'></div>";
+              elemToBeGenerated += "<div class='financeTableFinal'>4M€</div>";
+              elemToBeGenerated += "<div class='financeTableTerm'></div>";
+              elemToBeGenerated += "<div class='financeTablePro'></div>";
+              elemToBeGenerated += "<div class='financeTableLgd'>10%</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='financeTableLine financeTableLine4'>";
+              elemToBeGenerated += "<div class='financeTableName'>Revolver</div>";
+              elemToBeGenerated += "<div class='financeTableCounter'>Client B</div>";
+              elemToBeGenerated += "<div class='financeTableRat'>4</div>";
+              elemToBeGenerated += "<div class='financeTableUnder'>5M€</div>";
+              elemToBeGenerated += "<div class='financeTableFinal'>2M€</div>";
+              elemToBeGenerated += "<div class='financeTableTerm'>3 Years</div>";
+              elemToBeGenerated += "<div class='financeTablePro'>Bullet</div>";
+              elemToBeGenerated += "<div class='financeTableLgd'>30%</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='financeTableLine financeTableLine5'>";
+              elemToBeGenerated += "<div class='financeTableName'>Total Debt</div>";
+              elemToBeGenerated += "<div class='financeTableCounter'></div>";
+              elemToBeGenerated += "<div class='financeTableRat'></div>";
+              elemToBeGenerated += "<div class='financeTableUnder'>15M€</div>";
+              elemToBeGenerated += "<div class='financeTableFinal'>7M€</div>";
+              elemToBeGenerated += "<div class='financeTableTerm'></div>";
+              elemToBeGenerated += "<div class='financeTablePro'></div>";
+              elemToBeGenerated += "<div class='financeTableLgd'></div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+
+
+            elemToBeGenerated += "<p class='tableFinancialBlockSubTitle tableFinancialBlockSubTitle2'>Market authorizations</p>";
+
+
+
+            elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine1'>";
+              //elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
+              elemToBeGenerated += "<div class='hedgingLine2'>Authorization Name</div>";
+              elemToBeGenerated += "<div class='hedgingLine3'>Risk Category</div>";
+              elemToBeGenerated += "<div class='hedgingLine4'>Amount</div>";
+              elemToBeGenerated += "<div class='hedgingLine5'>Tenor</div>";
+              elemToBeGenerated += "<div class='hedgingLine6'>Profile</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine2'>";
+              //elemToBeGenerated += "<div class='hedgingLine1'></div>";
+              elemToBeGenerated += "<div class='hedgingLine2'>SWAP</div>";
+              elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
+              elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
+              elemToBeGenerated += "<div class='hedgingLine5'>17 years</div>";
+              elemToBeGenerated += "<div class='hedgingLine6' id='expandBucketTable2'>CAR/VAR</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='bucketTable2'>";
+
+            elemToBeGenerated += "<div class='bucketTableLine bucketTableLine1'>";
+              elemToBeGenerated += "<div class='bucketLine1'>Bucket</div>";
+              elemToBeGenerated += "<div class='bucketLine2'>(OD-3D)</div>";
+              elemToBeGenerated += "<div class='bucketLine3'>(3D-1M)</div>";
+              elemToBeGenerated += "<div class='bucketLine4'>(1M-3M)</div>";
+              elemToBeGenerated += "<div class='bucketLine5'>(3M-6M)</div>";
+              elemToBeGenerated += "<div class='bucketLine6'>(6M-12M)</div>";
+              elemToBeGenerated += "<div class='bucketLine7'>(1Y-2Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine8'>(2Y-3Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine9'>(3Y-5Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine10'>(5Y-7Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine11'>(7Y-10Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine12'>(10Y-15Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine13'>(15Y-20Y)</div>";
+              elemToBeGenerated += "<div class='bucketLine14'>(20Y-30Y)</div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='bucketTableLine bucketTableLine2'>";
+              elemToBeGenerated += "<div class='bucketLine1'>CAR/Nominal</div>";
+              elemToBeGenerated += "<div class='bucketLine2'>3.82 M</div>";
+              elemToBeGenerated += "<div class='bucketLine3'>3.62 M</div>";
+              elemToBeGenerated += "<div class='bucketLine4'></div>";
+              elemToBeGenerated += "<div class='bucketLine5'></div>";
+              elemToBeGenerated += "<div class='bucketLine6'></div>";
+              elemToBeGenerated += "<div class='bucketLine7'></div>";
+              elemToBeGenerated += "<div class='bucketLine8'></div>";
+              elemToBeGenerated += "<div class='bucketLine9'></div>";
+              elemToBeGenerated += "<div class='bucketLine10'></div>";
+              elemToBeGenerated += "<div class='bucketLine11'></div>";
+              elemToBeGenerated += "<div class='bucketLine12'></div>";
+              elemToBeGenerated += "<div class='bucketLine13'></div>";
+              elemToBeGenerated += "<div class='bucketLine14'></div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='bucketTableLine bucketTableLine3'>";
+              elemToBeGenerated += "<div class='bucketLine1'>cVar</div>";
+              elemToBeGenerated += "<div class='bucketLine2'>4.51 M</div>";
+              elemToBeGenerated += "<div class='bucketLine3'>5.46 M</div>";
+              elemToBeGenerated += "<div class='bucketLine4'></div>";
+              elemToBeGenerated += "<div class='bucketLine5'></div>";
+              elemToBeGenerated += "<div class='bucketLine6'></div>";
+              elemToBeGenerated += "<div class='bucketLine7'></div>";
+              elemToBeGenerated += "<div class='bucketLine8'></div>";
+              elemToBeGenerated += "<div class='bucketLine9'></div>";
+              elemToBeGenerated += "<div class='bucketLine10'></div>";
+              elemToBeGenerated += "<div class='bucketLine11'></div>";
+              elemToBeGenerated += "<div class='bucketLine12'></div>";
+              elemToBeGenerated += "<div class='bucketLine13'></div>";
+              elemToBeGenerated += "<div class='bucketLine14'></div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "<div class='bucketTableLine bucketTableLine4'>";
+              elemToBeGenerated += "<div class='bucketLine1'>Currency</div>";
+              elemToBeGenerated += "<div class='bucketLine2'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine3'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine4'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine5'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine6'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine7'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine8'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine9'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine10'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine11'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine12'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine13'>EUR</div>";
+              elemToBeGenerated += "<div class='bucketLine14'></div>";
+            elemToBeGenerated += "<div class='clear'></div></div>";
+
+            elemToBeGenerated += "</div>";
+
+
+
+
+
+
+
+
         d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
 
         $('#expandBucketTable').click(function() {
@@ -2100,208 +2279,14 @@ function readingSpecificJson(fileUrl,callback) {
             return false;
         });
 
+        $('#expandBucketTable2').click(function() {
+            $(this).toggleClass('bucketTableFolded');
+            $('.bucketTable2').slideToggle('fast');
+            return false;
+        });
+
         changingDashMenuState('1');       
-
-        var elemToBeGenerated = "";
-
-          elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
-            elemToBeGenerated += "<div class='navMainTableOverContent'>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";  
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent'>";
-
-                  currentDL = new Date(myObject.deadlineDate)
-                  var month = currentDL.getUTCMonth();
-                  var day = currentDL.getUTCDate();
-                  var year = currentDL.getUTCFullYear();
-
-                  elemToBeGenerated += year + "/" + month + "/" + day;
-
-                elemToBeGenerated += "</span>";               
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += +myObject.details.facilities[0].total+"M";
-                elemToBeGenerated += "</span>";             
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";  
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += myObject.details.glfi_rating.or;
-                elemToBeGenerated += "</span>";               
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";  
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += myObject.details.currency;
-                elemToBeGenerated += "</span>";           
-              elemToBeGenerated += "</span>";
-            elemToBeGenerated += "</div>";
-          elemToBeGenerated += "</div>";
-
-
-
-
-          elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
-
-          elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
-          elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
-          elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR creditRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";         //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
-
-              elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
-
-              elemToBeGenerated += "<div class='tableFinanceHead'>";
-              elemToBeGenerated += "<div id='financeHead1'>Dept Facilities</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead2'>Tranche</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead3'>Total(€M)</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead4'>SG</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead5'>Pricing</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead6'>Repayment</div>";
-              elemToBeGenerated += "<div class='financeHead' id='financeHead7'>Maturity</div>";
-              elemToBeGenerated += "<div class='clear'></div></div>";
-              elemToBeGenerated += "<div class='tableFinanceRow'>";
-              elemToBeGenerated += "<div id='financeRow1'></div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow2'>"+myObject.details.facilities[0].tranche+"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow3'>"+myObject.details.facilities[0].total +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow4'>"+myObject.details.facilities[0].sg +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow5'>"+myObject.details.facilities[0].pricing + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow6'>"+myObject.details.facilities[0].repayment + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow7'>"+myObject.details.facilities[0].maturity +"</div>";
-              elemToBeGenerated += "<div class='clear'></div></div>";
-              elemToBeGenerated += "<div class='tableFinanceRow tableFinanceRowGray'>";
-              elemToBeGenerated += "<div id='financeRow1'></div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow2'>"+myObject.details.facilities[0].tranche+"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow3'>"+myObject.details.facilities[0].total +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow4'>"+myObject.details.facilities[0].sg +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow5'>"+myObject.details.facilities[0].pricing + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow6'>"+myObject.details.facilities[0].repayment + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow7'>"+myObject.details.facilities[0].maturity +"</div>";
-              elemToBeGenerated += "<div class='clear'></div></div>";
-              elemToBeGenerated += "<div class='tableFinanceRow'>";
-              elemToBeGenerated += "<div id='financeRow1'></div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow2'>"+myObject.details.facilities[0].tranche+"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow3'>"+myObject.details.facilities[0].total +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow4'>"+myObject.details.facilities[0].sg +"</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow5'>"+myObject.details.facilities[0].pricing + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow6'>"+myObject.details.facilities[0].repayment + "</div>";
-              elemToBeGenerated += "<div class='financeRow' id='financeRow7'>"+myObject.details.facilities[0].maturity +"</div>";
-              elemToBeGenerated += "<div class='clear'></div></div>";
-              elemToBeGenerated += "<div class='tableFinanceRow'>";
-              elemToBeGenerated += "<div id='financeRow1'></div>";
-              elemToBeGenerated += "<div id='financeRowComment'>We contemplate an equal risk sharing between MET, EXT and BHM i.e 1/3 1/3 1/3</div>";
-              elemToBeGenerated += "<div class='clear'></div></div>";
-
-              elemToBeGenerated += "<div style='height:30px;'></div>";
-
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Currency</span><span class='creditRequestR'>"+ myObject.details.currency.toLowerCase() +"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Hedging</span><span class='creditRequestR'>"+myObject.details.hedging+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Flat Fee</span><span class='creditRequestR'>"+myObject.details.flat_fee+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Commitment Fee</span><span class='creditRequestR'>"+myObject.details.commitment_fee+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Security Package</span><span class='creditRequestR'>"+myObject.details.security_package+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Ownership</span><span class='creditRequestR'>"+myObject.details.ownership+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>SG Role</span><span class='creditRequestR'>"+myObject.details.sg_role+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Or</span><span class='creditRequestR'>"+myObject.details.rating+"</span></div>";
-            elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'></span><span class='creditRequestR crediRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";
-
-
-              elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>RISK ANALYSE</p><div class='redLine' style='width:637px;'></div><div class='clear'></div></div>";
-
-              elemToBeGenerated += "<div class='riskRangeLeft'>";
-                elemToBeGenerated += "<div class='riskLeft1'>Risk Rating and Profitability</div>";
-                elemToBeGenerated += "<div class='riskLeft2'>Country Limit</div>";
-                elemToBeGenerated += "<div class='riskLeft3'>Environmental Development Categorization</div>";
-                elemToBeGenerated += "<div class='riskLeft4'>GLFI Risk Rating and Profitability</div>";
-              elemToBeGenerated += "</div>";
-
-              elemToBeGenerated += "<div class='riskRangeRight'>";
-
-                elemToBeGenerated += "<div class='riskRight1'>";
-                  elemToBeGenerated += "<div class='riskRight1Left'>Funding / Use of assets</div>";
-                  elemToBeGenerated += "<div class='riskRight1Right'>";
-                    elemToBeGenerated += "<div class='riskRight1RightTop'>20% rule : eligibility of the transaction, amount to be reserved</div>";
-                    elemToBeGenerated += "<div class='riskRight1RightBot'>Concentration issue if anybreak (break of SUE/declic tresholds</div>";
-                  elemToBeGenerated += "</div>";
-                  elemToBeGenerated += "<div class='clear'></div>";
-                elemToBeGenerated += "</div>";
-
-                elemToBeGenerated += "<div class='riskRight2'>As of January 2013, €31M of available country limit for Romania</div>";
-                elemToBeGenerated += "<div class='riskRight3'><span id='span1'>Project Categorization (A,B,C)</span><span id='span2'>Not applicable , telecom equipment</span></div>";
-
-                elemToBeGenerated += "<div class='riskRight4'>";
-                  elemToBeGenerated += "<div class='riskLeft4Top'>Deal Id : L0688513 - Profitability based on 100% of the transaction, equally shared between EXT and MET</div>";
-                  elemToBeGenerated += "<div class='tableRiskHead'>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead1'>OR</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead2'>PD</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead3'>LGD</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead4'>RW</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead5'>EL bppa</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead6'>REVA</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead7'>RARORC</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead8'>RARORC after LCR</div>";
-                    elemToBeGenerated += "<div class='riskHead' id='riskHead9'>Return on funding</div>";
-                    elemToBeGenerated += "<div class='clear'></div>";
-                  elemToBeGenerated += "</div>";
-                  elemToBeGenerated += "<div class='tableRiskRow'>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow1'>"+myObject.details.glfi_rating.or+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow2'>"+myObject.details.glfi_rating.pd+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow3'>"+myObject.details.glfi_rating.lgd+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow4'>"+myObject.details.glfi_rating.rw+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow5'>"+myObject.details.glfi_rating.el_bppa+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow6'>"+myObject.details.glfi_rating.reva+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow7'>"+myObject.details.glfi_rating.rarorc+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow8'>"+myObject.details.glfi_rating.rarorc_after_lcr+"</div>";
-                    elemToBeGenerated += "<div class='riskRow' id='riskRow9'>"+myObject.details.glfi_rating.return_on_funding+"</div>";
-                    elemToBeGenerated += "<div class='clear'></div>";
-                  elemToBeGenerated += "</div>";
-                elemToBeGenerated += "</div>";
-
-              elemToBeGenerated += "</div>";
-              elemToBeGenerated += "<div class='clear'></div>";
-
-              elemToBeGenerated += "<div class='tableCategories'><div class='redLine' style='width: 820px; margin-left: 20px;'></div><div class='clear'></div></div>";
-
-          d.getElementById('dashMainContentOldDashSection').innerHTML = elemToBeGenerated;
-              elemToBeGenerated = "";
-              elemToBeGenerated += "<div class='navMainTableOverContentTable'>";
-              elemToBeGenerated += "<div class='navMainTableOverContent'>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Deadline</span> ";  
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold dateCurrent'>";
-
-                  currentDL = new Date(myObject.deadlineDate)
-                  var month = currentDL.getUTCMonth();
-                  var day = currentDL.getUTCDate();
-                  var year = currentDL.getUTCFullYear();
-
-              elemToBeGenerated += year + "/" + month + "/" + day;
-
-              elemToBeGenerated += "</span>";               
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Amount</span> "; 
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-              elemToBeGenerated += +myObject.details.facilities[0].total+"M";
-              elemToBeGenerated += "</span>";             
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>OR</span> ";  
-              elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-              elemToBeGenerated += myObject.details.glfi_rating.or;
-              elemToBeGenerated += "</span>";               
-              elemToBeGenerated += "</span>";
-              elemToBeGenerated += "<span class='navMainTableCellOverContent'>";
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitle'>Currency</span> ";  
-                elemToBeGenerated += "<span class='stylingHeadDetailsTitleBold'>";
-                  elemToBeGenerated += myObject.details.currency;
-                elemToBeGenerated += "</span>";           
-              elemToBeGenerated += "</span>";
-            elemToBeGenerated += "</div>";
-          elemToBeGenerated += "</div>";
-
-
-          d.getElementById('shouldbeGraphicsThere').innerHTML = elemToBeGenerated;
+              
         }
 
         if(callback) {
@@ -2449,12 +2434,6 @@ function displayDocViewer() {
 function addingClickBehaviour() {
 
   if($( ".peopleUnfold1" )) {
-    /*
-    $( ".peopleUnfold1" ).click(function() {
-      $( "#currentCreditRequesDocumentSlideJS" ).toggle( "blind", 500 );
-    });
-*/
-
     $( ".peopleUnfold1" ).click(function() {
       $( ".peopleDocs1" ).toggle( "blind", 500 );
     });
@@ -2472,13 +2451,7 @@ function addingClickBehaviour() {
 
 
 $(document).ready(function() {
-/*
-  $('.peopleUnfold1').click(function() {
-    $('.peopleDocs1currentCreditRequesDocumentSlideJS').slideToggle('fast');
-    return false;
-  });
 
-*/
   $('.peopleUnfold1').click(function() {
     $(this).toggleClass('peopleFold');
     $('.peopleDocs1').slideToggle('fast');
@@ -2531,9 +2504,6 @@ $.fn.redraw = function(){
 
 
 function listingStuff() {
-  //d.getElementById('param').style.display = "none";
-  //d.getElementById('account').style.display = "none";
-  
   
   d.getElementById('mainJSONFlow').style.width = "990px";
   d.getElementById('indexSection').style.position = "relative";
@@ -2630,30 +2600,5 @@ doOnOrientationChange();
 
         didYouSelectYourCr('4', 'submit.html', '', 'Four');
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

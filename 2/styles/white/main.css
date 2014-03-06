@@ -40,7 +40,7 @@ section#splash #loginForm #sesamIcon { float: left; display: inline-block; width
 /* === HEADBAND ========================================================================= */
 /* ====================================================================================== */
 
-div#mainBackgroundTop { position: fixed; top: 0; width: 1024px; height: 210px; background: url('../../images/white/img-background.png') repeat; z-index: 1; }
+div#mainBackgroundTop { position: fixed; top: 0; width: 1024px; height: 230px; background: url('../../images/white/img-background.png') repeat; z-index: 1; }
 div#mainBackgroundTop header { position: relative; height: auto; opacity: 0; -webkit-transition: opacity ease-out 1500ms; z-index: 10000; }
 div#mainBackgroundTop header #logoHeadBand {width: 100%; }
 div#mainBackgroundTop header #logoHeadBand #headBandLogo { float: left; height: 40px; margin: 20px 0 0 20px; }
@@ -52,7 +52,7 @@ div#mainBackgroundTop header #logoHeadBand #optHolder #account { background-posi
 div#mainBackgroundTop header #logoHeadBand #optHolder #close { background-position: 0 -90px; }
 
 div#mainBackgroundTop header #topNavBar { position: relative; top: 0; width: 100%; height: 85px; vertical-align: top; -webkit-transition: all ease-in-out 500ms; z-index: 10000; }
-div#mainBackgroundTop header #topNavBar #topNavBarBackButton { display: inline-block; width: 50px; height: 53px; margin: 15px 56px 0 0; background: url('../../images/white/left-arrow.png') no-repeat 20px 17px; background-size: 10px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); -webkit-transition: all ease-in-out 500ms; }
+div#mainBackgroundTop header #topNavBar #topNavBarBackButton { display: inline-block; width: 50px; height: 53px; margin: 21px 56px 0 0; background: url('../../images/white/left-arrow.png') no-repeat 20px 17px; background-size: 10px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); -webkit-transition: all ease-in-out 500ms; }
 div#mainBackgroundTop header #topNavBar #topNavBarBackButton:hover { background-color: #fafafa; }
 div#mainBackgroundTop header #topNavBar #topNavBarBackButton #topNavBarBackBorder { display: none; float: right; height: 70%; margin-top: 10%; border-right: 2px solid #3E3E3E; }
 div#mainBackgroundTop header #topNavBar #navStepMenu { position: absolute; top: 0; left: 0; display: inline-block; width: 712px; height: 60px; margin: 20px 0 0 160px; vertical-align: top; background: url('../../images/white/timeline_2.png') no-repeat; background-size: 712px; }
@@ -102,6 +102,8 @@ div#mainBackgroundTop header #topNavBar #navStepMenu a.setToDark { color: #A5A6A
 
 div#mainBackground { position: fixed; top: 210px; width: 1024px; height: 610px; z-index: -1; }
 
+.ErrorZone { width: 890px; height: 60px; margin: 10px 0 0 -20px; background: #f6f6f6; z-index: 300; }
+.ErrorZoneTxt { width: 820px; height: 40px; margin-top: 10px; padding-left: 60px; line-height: 40px; font-size: 18px; color: #c10d0d; text-transform: uppercase; background: #ecd4d4 url('../../images/warning.png') 20px center no-repeat; background-size: 30px; }
 /* ====================================================================================== */
 /* === 1 - CREDIT SELECTION ============================================================= */
 /* ====================================================================================== */
@@ -137,16 +139,18 @@ section#content { width: 100%; z-index: 0; -webkit-transition: margin ease-in-ou
 section.searchDocsForm { height: 65px; opacity: 0.7; background: url('../../images/white/img-background.png') -30px -210px no-repeat; }
 section.searchDocsForm div { padding-top: 0; }
 
+section#dashMainContentDumentsSection section.searchDocsForm { position: relative!important; top: 0!important; margin-bottom: 20px; background: none; }
+section#dashMainContentDumentsSection section.searchDocsForm .docSortArrow { display: inline-block; width: 45px; height: 45px; background: url('../../images/docSortArrow.png') center center no-repeat; background-size: 16px; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButton { width: 100px; height: 45px; background: url('../../images/white/btn-filter-document.png') no-repeat -5px -4px; background-size: 400px; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons1 { background-position: -2px -1px; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons2 { background-position: -102px 0; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons3 { background-position: -202px 0; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons4 { background-position: -302px 0; }
 
-section#dashMainContentDumentsSection section.searchDocsForm { margin-bottom: 20px; }
-section#dashMainContentDumentsSection section.searchDocsForm .formButton { background: url('../../images/white/btn-filter-document.png') no-repeat 0 -4px; background-size: 400px; }
-
-
-
-
-
-
-
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons1:hover { background-position-y: -1px; cursor: pointer; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons2:hover { background-position-y: -50px; cursor: pointer; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons3:hover { background-position-y: -99px; cursor: pointer; }
+section#dashMainContentDumentsSection section.searchDocsForm .formButtons4:hover { background-position-y: -148px; cursor: pointer; }
 
 
 .search { padding-left: 50px; }
@@ -168,7 +172,7 @@ section#dashMainContentDumentsSection section.searchDocsForm .formButton { backg
 #documentsView .searchDocsForm .formButtons4 { background-position: -302px -4px; }
 #documentsView .searchDocsForm .formButtons4:hover { background-position: -302px -153px; }
 
-#loupe { width: 60px; height: 38px; margin-top: 2px; background: #2c2c2c url('../../images/white/loupe.png') no-repeat 20px 9px; background-size: 20px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); }
+#loupe { display: none; width: 60px; height: 38px; margin-top: 2px; background: #2c2c2c url('../../images/white/loupe.png') no-repeat 20px 9px; background-size: 20px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); }
 
 .searchDocsForm #displayAsList,
 .searchDocsForm #displayAsThumbnails { display: block; width: 38px; height: 38px; margin: 2px 0 0 20px; background: url('../../images/white/mode-view.png') no-repeat; background-size: 82px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); }
@@ -195,7 +199,7 @@ section#dashMainContentDumentsSection section.searchDocsForm .formButton { backg
 
 .searchDocsForm input { width: 495px; margin-left: 45px; padding: 11px 0 11px 20px; border: none; }
 
-#documentsView .searchDocsForm input { width: 360px; margin-left: 25px; }
+#documentsView .searchDocsForm input { width: 610px; margin-left: 25px; padding-top: 15px; }
 
 .searchDocsForm img { float: right; }
 
@@ -244,9 +248,9 @@ section#dashMainContentDumentsSection section.searchDocsForm .formButton { backg
 
 #summuryPic { display: inline-block; float: right; clear: both; width: 890px; height: 552px; margin: 150px 16px 200px 0; background: url('../../images/img_summary.png') #fff no-repeat top left; background-size: 890px 552px; }
 
-#nextButton { display: inline-block; display: none; float: right; height: 33px; margin-top: 17px; padding: 15px 20px 5px 10px; font-size: 0.7em; color: #fff; text-transform: uppercase; vertical-align: top; background: #00ce0f url('../../images/white/right-arrow.png') no-repeat 104px 20px; background-size: 8px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); -webkit-transition: all ease-in-out 500ms; z-index: 100000; }
+#nextButton { display: inline-block; display: none; float: right; width: 145px; height: 53px; margin-top: 21px; line-height: 53px; font-size: 15px; font-weight: 500; color: #fff; text-transform: uppercase; text-align: center; background: #00ce0f url('../../images/white/right-arrow.png') no-repeat 120px 20px; background-size: 8px; -moz-box-shadow: 0px 3px 3px 0px #dfdfdf; -webkit-box-shadow: 0px 3px 3px 0px #dfdfdf; -o-box-shadow: 0px 3px 3px 0px #dfdfdf; box-shadow: 0px 3px 3px 0px #dfdfdf; filter:progid:DXImageTransform.Microsoft.Shadow(color=#dfdfdf, Direction=180, Strength=3); -webkit-transition: all ease-in-out 500ms; z-index: 100000; }
 #nextButton #light { font-weight: lighter; }
-#nextButton:hover { background-color: #23dd30; }
+#nextButton:hover { background-color: #23dd30; cursor: pointer; }
 #nextButton.hidden { opacity: 0; }
 #nextButton.shown { opacity: 1; }
 
@@ -311,11 +315,11 @@ input:focus, textarea:focus { outline: none; }
 .crCard span.crPricing,
 .crCardDark span.crPricing { display: block; height: 18px; font-size: 1.2em; font-weight: bold; text-align: center; }
 
-.crCard span.crStatus { display: block; padding: 0 0 7px 7px; font-size: 0.7em; font-weight: 100; color: #000; text-align: left; border-bottom: #F8F8F8; }
+.crCard span.crStatus { display: block; padding: 0 0 7px 7px; font-size: 0.7em; font-weight: 100; color: #000; text-align: center; border-bottom: #F8F8F8; }
 
 .crCard span.crDeadline,
 .crCardDark span.crDeadline { display: block; padding-top: 10px; font-size: 0.7em; font-weight: 100; color: #141414; text-align: center; }
-.crCard span.crDeadline { padding-left: 7px; text-align: left; }
+.crCard span.crDeadline { padding-left: 7px; text-align: center; }
 .crCard span.crDeadline .crDeadLineLine { display: inline-block; font-size: 12px; color: #D71236; }
 .crCard span.crDeadline .crDeadLineLine { display: inline-block; font-size: 12px; color: #D71236; }
 .crCard span.crDeadline .crDeadLineLine #crDeadLineLineTxt { display: inline-block; }
@@ -469,7 +473,7 @@ input:focus, textarea:focus { outline: none; }
 #position li.on { background-color: #000; }
 
 #submitSectionPlacer { margin-top: 20px; padding: 0 50px 0 70px; }
-#submitSectionPlacer .accepted { width: 500px; height: 50px; margin: 0 0 10px 202px; line-height: 50px; font-size: 1.2em; font-weight: bold; text-align: center; text-transform: uppercase; background-size: 35px; }
+#submitSectionPlacer .accepted { width: 500px; padding-top: 45px; font-size: 1.2em; font-weight: bold; text-transform: uppercase; background-size: 35px; }
 #submitSectionPlacer .commentTitle { font-size: 1.2em; color: #808080; }
 #submitSectionPlacer .comment { margin-top: 0!important; font-size: 1em; font-weight: lighter; color: #242424; }
 #submitSectionPlacer .botButtons { margin-top: 50px; }
