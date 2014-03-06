@@ -1211,19 +1211,13 @@ function chacingColorOfSlider() {
 
   if (d.getElementById('rangeSlider').value < 50) {
     d.getElementById('rangeLine').className = "green";
-
     d.getElementById('accept').className = "rangeValidated";
-
   } else if ( (d.getElementById('rangeSlider').value > 50) && (d.getElementById('rangeSlider').value < 70) ) {
     d.getElementById('rangeLine').className = "neutral";
-
     d.getElementById('accept').className = "range";
-
   } else if (d.getElementById('rangeSlider').value > 70) {
     d.getElementById('rangeLine').className = "red";
-
     d.getElementById('accept').className = "rangeCanceled";
-
   }             
 }
 
@@ -1261,7 +1255,7 @@ document.ontouchmove = function(e) {
     d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
     currentDecisionCodeToBeLogged = "neutral";
 
-  } else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+  } /*else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
     d.getElementById('rangeLine').className = "orange";
     d.getElementById('accept').className = "rangeOrange";
     d.getElementById('rangeSlider').value = 26;
@@ -1269,12 +1263,12 @@ document.ontouchmove = function(e) {
     d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
     currentDecisionCodeToBeLogged = "at a condition";
 
-  } else if (d.getElementById('rangeSlider').value < 25) {
+  }*/ else if (d.getElementById('rangeSlider').value < 25) {
     d.getElementById('rangeLine').className = "green";
     d.getElementById('accept').className = "rangeValidated";
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
-    d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+    d.getElementById('userHasChosen').innerHTML = "Your decision « Accept » was taken into account.";
     currentDecisionCodeToBeLogged = "accept";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
@@ -1282,7 +1276,7 @@ document.ontouchmove = function(e) {
     d.getElementById('accept').className = "rangeCanceled";
     d.getElementById('rangeSlider').value = 100;
     statusCRSelection = "REFUSED";
-    d.getElementById('userHasChosen').innerHTML = "You refused the transaction";
+    d.getElementById('userHasChosen').innerHTML = "You Refused the transaction";
     currentDecisionCodeToBeLogged = "refuse";
   }
 };
@@ -1299,7 +1293,7 @@ document.ontouchend = function(e) {
     d.getElementById('userHasChosen').innerHTML = "You did not take any decision";
     currentDecisionCodeToBeLogged = "neutral";
 
-  } else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
+  } /*else if ( (d.getElementById('rangeSlider').value < 50) &&  (d.getElementById('rangeSlider').value > 25) ) {
     d.getElementById('rangeLine').className = "orange";
     d.getElementById('accept').className = "rangeOrange";
     d.getElementById('rangeSlider').value = 26;
@@ -1307,12 +1301,12 @@ document.ontouchend = function(e) {
     d.getElementById('userHasChosen').innerHTML = "You accepted at a specific condition";
     currentDecisionCodeToBeLogged = "at a condition";
 
-  } else if (d.getElementById('rangeSlider').value < 25) {
+  }*/ else if (d.getElementById('rangeSlider').value < 25) {
     d.getElementById('rangeLine').className = "green";
     d.getElementById('accept').className = "rangeValidated";
     d.getElementById('rangeSlider').value = 0;
     statusCRSelection = "ACCEPTED";
-    d.getElementById('userHasChosen').innerHTML = "You accepted the transaction";
+    d.getElementById('userHasChosen').innerHTML = "Your decision « Accept » was taken into account.";
     currentDecisionCodeToBeLogged = "accept";
 
   } else if (d.getElementById('rangeSlider').value > 70) {
@@ -1998,7 +1992,7 @@ function readingSpecificJson(fileUrl,callback) {
               elemToBeGenerated += "<div class='financeTableName'>Total Debt</div>";
               elemToBeGenerated += "<div class='financeTableCounter'></div>";
               elemToBeGenerated += "<div class='financeTableRat'></div>";
-              elemToBeGenerated += "<div class='financeTableUnder'>15M€</div>";
+              elemToBeGenerated += "<div class='financeTableUnder columnFold'>15M€</div>";
               elemToBeGenerated += "<div class='financeTableFinal'>7M€</div>";
               elemToBeGenerated += "<div class='financeTableTerm'></div>";
               elemToBeGenerated += "<div class='financeTablePro'></div>";
@@ -2429,7 +2423,13 @@ function displayDocViewer() {
   
 }
 
-
+function displayNoWifi() {
+  if(d.getElementById('documentsOverlay')) {
+    d.getElementById('documentsOverlay').style.display = "block";
+    window.setTimeout(function(){d.getElementById('documentsOverlay').style.opacity = 1}, 500);
+  }
+  
+}
 
 function addingClickBehaviour() {
 

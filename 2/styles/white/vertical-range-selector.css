@@ -259,4 +259,9 @@ input[type=range] {
 	border: none;
 	z-index: -1;
 }
+
+.range input[type="range"]::-webkit-slider-thumb:hover,
+.rangeCanceled input[type="range"]::-webkit-slider-thumb:hover,
+.rangeValidated input[type="range"]::-webkit-slider-thumb:hover,
+.rangeOrange input[type="range"]::-webkit-slider-thumb:hover { cursor: pointer; }
   

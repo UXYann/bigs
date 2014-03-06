@@ -30,6 +30,7 @@
 .navDashBoard ul li { width: 110px; padding: 10px 0 10px 0; font-size: 0.8em; font-weight: 100; text-align: center; -webkit-transition: all ease-in-out 250ms; }
 .navDashBoard ul li.blue { font-weight: bold; background: #fff; }
 .navDashBoard ul li.dark { width: 102px; margin: 4px; padding: 8px 0; font-weight: lighter; background: transparent; box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18); }
+.navDashBoard ul li.dark:hover { cursor: pointer; }
 .navDashBoard ul li span { display: block; height: 55px; text-align: center; }
 .navDashBoard ul li#dash1 span { background: url('../../images/white/img_dashboard_noir_2x.png') transparent no-repeat center top; background-size: 60px; }
 .navDashBoard ul li#dash2 span { background: url('../../images/white/img_documents_noir_2x.png') transparent no-repeat center 100%; background-size: 46px; }
@@ -44,8 +45,9 @@
 /* === DASH & CRED. APP ======================================================= */
 /* ============================================================================ */
 
-#dashMainContentSection {
+#dashMain #dashMainContentSection {
 	position: absolute;
+	top: 225px!important;
 	left: 120px;
 	width: 880px;
 	min-height: 88%;
@@ -173,6 +175,8 @@
 .financeTableLine .financeTableCounter { width: 140px; }
 .financeTableLine .financeTableRat { width: 80px; }
 .financeTableLine .financeTableUnder { width: 115px; }
+.financeTableLine .columnFold { width: 113px; background: url('../../images/rightBlackArrow.png') 90px center no-repeat; background-size: 7px; border: 1px solid #000; }
+.financeTableLine .columnFold:hover { cursor: pointer; } 
 .financeTableLine .financeTableFinal { width: 65px; }
 .financeTableLine .financeTableTerm { width: 60px; }
 .financeTableLine .financeTablePro {  }
@@ -417,7 +421,7 @@
 	display: block;
 	width: 150px;
 	text-align: center;
-	text-decoration: none;
+	/*text-decoration: none;*/
 	color: #000;
 }
 
@@ -488,6 +492,8 @@
 .peopleTable .peopleInfos .peopleDecision .type { font-weight: normal; color: #c10d0d; }
 .peopleTable .peopleInfos .peopleUnfold,
 .peopleTable .peopleInfos .peopleFold { float: left; width: 45px; height: 60px; background: url('../../images/rightBlackArrow.png') no-repeat 22px center; background-size: 10px; }
+.peopleTable .peopleInfos .peopleUnfold:hover,
+.peopleTable .peopleInfos .peopleFold:hover { cursor: pointer; }
 .peopleTable .peopleComment .peopleBubble { float: left; width: 200px; height: 80px; background: url('../../images/white/quoteGray.png') no-repeat 145px 18px; background-size: 30px; }
 .peopleTable .peopleComment .peopleQuote { float: left; width: 600px; height: 60px; padding: 10px 0; color: #a4a4a4; }
 .peopleTable .peopleDocs { display: none; padding: 10px 0 20px 0; }

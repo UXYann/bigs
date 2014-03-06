@@ -1,4 +1,4 @@
-div#mainBackground { position: fixed; top: 210px; width: 1024px; height: 610px; z-index: -1; }
+div#mainBackground { /*position: fixed; top: 210px;*/ width: 1024px; /*height: 610px;*/ z-index: -1; }
 
 .contentToBeRemoved { margin-left: -100%; -webkit-transform: translate3d(0, 0, 0); }
 .contentToBeAdded { left: 1000px; -webkit-transform: translate3d(0, 0, 0); }
@@ -21,7 +21,8 @@ div#mainBackground { position: fixed; top: 210px; width: 1024px; height: 610px; 
 .dashMainContentSectionToBeRemoved { margin-top: -2000px; -webkit-transform: translate3d(0, 0, 0); }
 .dashMainContentSectionReset { margin-top: 0; -webkit-transform: translate3d(0, 0, 0); }
 
-.doc { color: #000; text-decoration: none;  }
+.doc a { color: #000; text-decoration: none; }
+.doc a:active .fileName { display: inline-block; padding-left: 20px; color: #009cce!important; background: url('../../images/blueBullet.png') 10px center no-repeat!important; background-size: 12px!important; }
 
 /*
 .hiddenOverFlow { overflow-x: hidden; }

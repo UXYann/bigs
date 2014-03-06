@@ -149,6 +149,11 @@
 				</span>
 
 			</div>
+
+			<div class="errorZone errorDocZone">
+					<div class="errorZoneTxt">Technical error</div>
+				</div>
+				
 		</header>
 
 		<section id="delayingArrival" class="hiddenArrival">
@@ -191,7 +196,6 @@
 	</div>
 	
 	<section id="site" style="position: absolute;">
-
 		<section class="navDashBoard">
 
 			<ul class="dashLeftMenu">
@@ -216,7 +220,6 @@
 
 		<section id="content" class="siteHidden">
 			<section id="indexSection" class="content" style="position: fixed;">
-
 				<div class="myOwnTableRowIndex redBordering" id="sliderSetToLinesHeader" style="display: none;">
 					<span class="myOwnTableCellIndex">
 						Type
@@ -245,7 +248,10 @@
 
 
 				<section id="requests" class="siteHidden">
-					
+					<div id="noRequestsResults">
+						<p>No result found.</p>
+						<p><b>Change your search criteria.</b></p>
+					</div>
 					<div class="swipePrevious" onclick='mySwipe.prev()'><!-- '<' --></div>
 
 					<div class="swipeNext" onclick='mySwipe.next()'><!-- '>' --></div>
@@ -287,10 +293,6 @@
 				</div>
 			</section>
 			<section id="dashMain">
-
-				<!--<div class="errorZone errorDocZone">
-					<div class="errorZoneTxt">Technical error</div>
-				</div>-->
 
 				<section id="dashMainContentSection" style="display: none; top: 210px;">
 				</section>
@@ -717,13 +719,14 @@
 				<div id="submitSectionPlacer">
 					<div id="userHasChosen" class="accepted">You accepted the transaction</div>
 
-					<div class="comment" style="margin-top: 220px;">
+					<div class="comment">
+						<div class="commentIntro">Here is your comment :</div>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
 						</p>
 					</div>
 					<div class="botButtons">
-						<div class="modify"><a style="text-decoration: none; color: #000" id="backToHomeLastButton">Back to Home</a></div>
+						<div class="modify"><a style="text-decoration: none; color: #000" id="backToHomeLastButton">Back to <span class="modifyBold">Home</span></a></div>
 					</div>
 				</div>
 			</section>
@@ -735,6 +738,11 @@
 				<img src="images/ajax-loader.gif" width="128" />
 			</div>
 		</section>
+
+		<div id="noConnexion">
+			<div id="noConnexionHead">Sorry there is no connexion available ! <b>Try later please</b></div>
+			<div id="noCOnnexionMain"></div>
+		</div>
 
 	</body>
 	
