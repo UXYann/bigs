@@ -1707,17 +1707,7 @@ function startingSwipeCarousel() {
         bullets[pos].className = 'on';
 
       }   
-    // startSlide: 4,
-    // auto: 3000,
-    // continuous: true,
-    // disableScroll: true,
-    // stopPropagation: true,
-    // callback: function(index, element) {},
-    // transitionEnd: function(index, element) {}
   });
-
-  // with jQuery
-  // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
   hookingCreditRequest();
 }
 
@@ -1738,7 +1728,6 @@ function notInitStartSwipeCarouel() {
   if(d.getElementById('requests')) {
     if(d.getElementById('requests').className == "siteHidden") {
       d.getElementById('requests').className = "siteShown";
-      //window.setTimeout(fakingFalseParallax, 1000);
       var t = new Timeout(function () {
           fakingFalseParallax();
       }, 1000);     
@@ -1798,7 +1787,6 @@ function readingMainJson(callback) {
           }
 
           if(myObject[i].requestStatusLbl == "Not submitted") {
-            //mainColor = 'crCardDark';
             mainColor = 'crCard';
           } else {
             mainColor = 'crCard';
@@ -1935,8 +1923,6 @@ function readingSpecificJson(fileUrl,callback) {
 
           elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>Credit Request Information</p><div class='redLine'></div><div class='clear'></div></div>";
 
-          //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Initiator Team</span><span class='creditRequestR'>"+myObject.initiatorTeamLbl+"</span></div>";
-          //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>PCRU</span><span class='creditRequestR'>"+myObject.details.pcru+"</span></div>";
           elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Comments</span><span class='creditRequestR creditRequestComment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>";         //elemToBeGenerated += "<div class='tableRow'><span class='creditRequestL'>Reception Date</span><span class='creditRequestR'>"+new Date(myObject.receptionDate)+"</span></div>";
 
               elemToBeGenerated += "<div class='tableCategories'><p class='tableCategoriesTitle'>FINANCIAL INFORMATION</p><div class='redLine' style='width:535px;'></div><div class='clear'></div></div>";
@@ -1958,7 +1944,7 @@ function readingSpecificJson(fileUrl,callback) {
             elemToBeGenerated += "<div class='clear'></div></div>";
 
             elemToBeGenerated += "<div class='financeTableLine financeTableLine2'>";
-              elemToBeGenerated += "<div class='financeTableName'>Team Loan A</div>";
+              elemToBeGenerated += "<div class='financeTableName'>Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A Team Loan A </div>";
               elemToBeGenerated += "<div class='financeTableCounter'>Client A</div>";
               elemToBeGenerated += "<div class='financeTableRat'>4</div>";
               elemToBeGenerated += "<div class='financeTableUnder'>10M€</div>";
@@ -2008,7 +1994,6 @@ function readingSpecificJson(fileUrl,callback) {
 
 
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine1'>";
-              //elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
               elemToBeGenerated += "<div class='hedgingLine2'>Authorization Name</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Risk Category</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>Amount</div>";
@@ -2017,7 +2002,6 @@ function readingSpecificJson(fileUrl,callback) {
             elemToBeGenerated += "<div class='clear'></div></div>";
 
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine2'>";
-              //elemToBeGenerated += "<div class='hedgingLine1'></div>";
               elemToBeGenerated += "<div class='hedgingLine2'>SWAP</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
@@ -2174,7 +2158,6 @@ function readingSpecificJson(fileUrl,callback) {
 
 
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine1'>";
-              //elemToBeGenerated += "<div class='hedgingLine1'>HEDGING LINE</div>";
               elemToBeGenerated += "<div class='hedgingLine2'>Authorization Name</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Risk Category</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>Amount</div>";
@@ -2183,7 +2166,6 @@ function readingSpecificJson(fileUrl,callback) {
             elemToBeGenerated += "<div class='clear'></div></div>";
 
             elemToBeGenerated += "<div class='hedgingTableLine hedgingTableLine2'>";
-              //elemToBeGenerated += "<div class='hedgingLine1'></div>";
               elemToBeGenerated += "<div class='hedgingLine2'>SWAP</div>";
               elemToBeGenerated += "<div class='hedgingLine3'>Replacement Risk</div>";
               elemToBeGenerated += "<div class='hedgingLine4'>3M€</div>";
@@ -2263,13 +2245,6 @@ function readingSpecificJson(fileUrl,callback) {
 
             elemToBeGenerated += "</div>";
 
-
-
-
-
-
-
-
         d.getElementById('dashMainContentSection').innerHTML = elemToBeGenerated;
 
         $('#expandBucketTable').click(function() {
@@ -2290,7 +2265,6 @@ function readingSpecificJson(fileUrl,callback) {
           return false;
         });
 
-
         changingDashMenuState('1');       
               
         }
@@ -2308,31 +2282,12 @@ function readingSpecificJson(fileUrl,callback) {
       }
     }
   }
-/*
-  if( (fileUrl.indexOf('?') === -1) && (currentCRSelected) && (currentCRSelected != '') )  {
-    console.log("1");
-    console.log(currentCRSelected);
-    mygetrequest.open("GET", CWF_URL + "/details/" + currentCRSelected, true);
-    mygetrequest.send(null);
-  } else {
-    */
-
-    mygetrequest.open("GET", fileUrl, true);
-    mygetrequest.send(null);
-//  } 
+  mygetrequest.open("GET", fileUrl, true);
+  mygetrequest.send(null);
 }
-
-
-
-
 
 if(document.getElementById('mySwipe')) {
   readingMainJson(startingSwipeCarousel);
-}
-
-function didYouChooseACR() {
-
-
 }
 
 var currentDashStylesState = 0;
@@ -2359,8 +2314,6 @@ function stickingThings() {
       d.getElementsByClassName('navDashBoardFixed')[0].className = "navDashBoard";    
     }
   }
-
-  //window.setTimeout('stickingThings()', 10);  
 
   var t = new Timeout(function () {
       stickingThings();
@@ -2394,7 +2347,6 @@ function backToInitState() {
 
   if( (d.getElementById('topNavBarBackButton').style.display == "inline-block") || (d.getElementById('topNavBarBackButton').style.display == "") ) {
     d.getElementById('topNavBarBackButton').style.display = "none";
-    //d.getElementById('navStepMenu').style.paddingLeft = "110px";
     d.getElementById('nextButton').style.display = "none;";
     d.getElementById('site').style.position = "absolute";
 
@@ -2423,44 +2375,31 @@ function removingDocViewer() {
   if(d.getElementById('documentsOverlay')) {
     d.getElementById('documentsOverlay').style.opacity = 0;
   }
-  
   window.setTimeout(function(){if(d.getElementById('documentsOverlay')){d.getElementById('documentsOverlay').style.display = "none"}}, 500);
 }
+
 
 function displayDocViewer() {
   if(d.getElementById('documentsOverlay')) {
     d.getElementById('documentsOverlay').style.display = "block";
     window.setTimeout(function(){d.getElementById('documentsOverlay').style.opacity = 1}, 500);
   }
-  
 }
 
-function displayNoWifi() {
-  if(d.getElementById('documentsOverlay')) {
-    d.getElementById('documentsOverlay').style.display = "block";
-    window.setTimeout(function(){d.getElementById('documentsOverlay').style.opacity = 1}, 500);
-  }
-  
-}
 
 function addingClickBehaviour() {
-
   if($( ".peopleUnfold1" )) {
     $( ".peopleUnfold1" ).click(function() {
       $( ".peopleDocs1" ).toggle( "blind", 500 );
     });
-
     $( ".peopleUnfold2" ).click(function() {
       $( ".peopleDocs2" ).toggle( "blind", 500 );
     });
-
     $( ".peopleUnfold3" ).click(function() {
       $( ".peopleDocs3" ).toggle( "blind", 500 );
     });
   } 
 }
-
-
 
 $(document).ready(function() {
 
@@ -2500,13 +2439,6 @@ $(document).ready(function() {
 
 d.getElementById('backToHomeLastButton').addEventListener('click', function(){didYouSelectYourCr('1', 'index.html', hidingMenu, 'One')},false);
 
-/*  Should be used to post the UserSelection  */
-
-function submitingResult() {
-
-}
-
-
 
 $.fn.redraw = function(){
   $(this).each(function(){
@@ -2515,12 +2447,9 @@ $.fn.redraw = function(){
 };
 
 
-function listingStuff() {
-  
+function listingStuff() { 
   d.getElementById('mainJSONFlow').style.width = "990px";
   d.getElementById('indexSection').style.position = "relative";
-  //d.getElementById('indexSection').style.marginLeft = "24px";
-  //d.getElementById('indexSection').style.marginRight = "35px";
   d.getElementById('mySwipe').className = "shouldBeAList";
   d.getElementById('sliderSetToLinesHeader').style.display = "block";
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
@@ -2529,23 +2458,19 @@ function listingStuff() {
   var currentElemToBeSet = currentElemToBe.getElementsByTagName('div');
   for (var i=0;i < currentElemToBeSet.length; i++) {currentElemToBeSet[i].style.left="0"};
   for (var i=0;i < currentElemToBeSet.length; i++) {currentElemToBeSet[i].style.webkitTransform="none"};
-  //$('.mySwipe').redraw();
 }
 
-function displayAsListMySwipeJS() {
 
+function displayAsListMySwipeJS() {
   window.mySwipe.kill();
   listingStuff();
 }
+
 
 function displayAsBlockMySwipeJS() {
   window.mySwipe();
   d.getElementById('param').style.display = "block";
   d.getElementById('account').style.display = "block";
-
-  //d.getElementById('indexSection').style.position = "relative";
-  //d.getElementById('indexSection').style.marginLeft = "24px";
-  //d.getElementById('indexSection').style.marginRight = "35px";
   d.getElementById('mySwipe').className = "shouldBeAList";
   d.getElementById('sliderSetToLinesHeader').style.display = "block";
   d.getElementsByClassName('swipeNext')[0].style.display = "none";
@@ -2554,7 +2479,6 @@ function displayAsBlockMySwipeJS() {
 
 
 function doOnOrientationChange() {
-
   if((navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 6_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i)) || (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i))) {
     switch(window.orientation) {  
       case -90:
@@ -2577,39 +2501,24 @@ doOnOrientationChange();
 
 
 
+$('#submitAction').click(function() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $('#submitAction').click(function() {
-
-        var dataForDecision = {
-          "requestCode": currentRequestCodeToBeLogged,
-          "action": currentDecisionCodeToBeLogged,
-          "comments": d.getElementById('actionFormComment').value
-        };
-        $.ajax({
-            url: CWF_URL + '/decision',
-            data: JSON.stringify(dataForDecision),
-            contentType: 'application/json',
-            dataType: 'json',
-            type: 'POST',
-            success: function(data) {
-                alert('Thank you.')
-            }
-        });
-
-        didYouSelectYourCr('4', 'submit.html', '', 'Four');
+    var dataForDecision = {
+      "requestCode": currentRequestCodeToBeLogged,
+      "action": currentDecisionCodeToBeLogged,
+      "comments": d.getElementById('actionFormComment').value
+    };
+    $.ajax({
+        url: CWF_URL + '/decision',
+        data: JSON.stringify(dataForDecision),
+        contentType: 'application/json',
+        dataType: 'json',
+        type: 'POST',
+        success: function(data) {
+            alert('Thank you.')
+        }
     });
+
+    didYouSelectYourCr('4', 'submit.html', '', 'Four');
+});
 
