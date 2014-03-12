@@ -271,16 +271,14 @@ input:focus, textarea:focus { outline: none; }
 .crCard { display: inline-block; width: 240px; margin: 7px; background: #fff; -webkit-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); -moz-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); }
 .crCard span { display: block; -webkit-transition: all ease-in-out 500ms; }
 .crCard span.crTitle { display: block; width: 188px; height: 46px; padding: 7px 7px 7px 45px; font-size: 0.8em; font-weight: 100; color: #282828; text-align: left; text-transform: uppercase; text-overflow: ellipsis; vertical-align: middle; overflow: auto; background-repeat: no-repeat; background-position: 5px 13px; background-size: 35px; border-bottom: 1px solid #D71236; }
-.crCard span.crTitle1 { background-image: url('images/crPicto-001.png'); }
-.crCard span.crTitle2 { background-image: url('images/crPicto-002.png'); }
-.crCard span.crTitle3 { background-image: url('images/crPicto-003.png'); }
-.crCard span.crTitle4 { background-image: url('images/crPicto-004.png'); }
-.crCard span.crTitle5 { background-image: url('images/crPicto-005.png'); }
-.crCard span.crTitle6 { background-image: url('images/crPicto-006.png'); }
-.crCard span.crTitle7 { background-image: url('images/crPicto-007.png'); }
-.crCard span.crTitle8 { background-image: url('images/crPicto-008.png'); }
-.crCard span.crTitle9 { background-image: url('images/crPicto-009.png'); }
-.crCard span.crTitle10 { background-image: url('images/crPicto-0010.png'); }
+.crCard span.crTitle1 { background-image: url('images/crPicto-01.png'); }
+.crCard span.crTitle2 { background-image: url('images/crPicto-02.png'); }
+.crCard span.crTitle3 { background-image: url('images/crPicto-03.png'); }
+.crCard span.crTitle4 { background-image: url('images/crPicto-04.png'); }
+.crCard span.crTitle5 { background-image: url('images/crPicto-05.png'); }
+.crCard span.crTitle6 { background-image: url('images/crPicto-06.png'); }
+.crCard span.crTitle7 { background-image: url('images/crPicto-07.png'); }
+.crCard span.crTitle8 { background-image: url('images/crPicto-08.png'); }
 
 .crCard span.crRequester { display: block; margin: 0 7px 10px 7px; padding: 0 10px; font-size: 0.8em; font-weight: 100; color: #141414; }
 .crCard span.crRequesterRed,
@@ -782,16 +780,8 @@ animation-fill-mode: forwards;
 .tableFinancialBlockSubTitle { margin-top: 0; padding-left: 30px; font-size: 18px; font-weight: bold; color: #e20030; }
 .tableFinancialBlockSubTitle2 { margin-top: 30px; }
 
-<<<<<<< HEAD
 .financeTableLine { /*height: 41px;*/ margin-left: 40px; font-size: 0.8em; font-weight: 300; }
 .financeTableLine div { /*float: left;*/ width: 90px; padding: 12px 0; /*height: 40px; line-height: 40px;*/ text-align: center; border-bottom: 1px solid #e6e6e6; display: table-cell;
-=======
-.financeTableLine { height: 41px; margin-left: 40px; font-size: 0.8em; font-weight: 300; }
-.financeTableLine div { overflow: hidden !important; float: left; width: 90px; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #e6e6e6; /*display: table-cell;
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 vertical-align: middle;
 word-wrap: break-word; overflow: hidden!important; }
 .financeTableLine .financeTableName { width: 160px; }

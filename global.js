@@ -1781,7 +1781,7 @@ function readingMainJson(callback) {
         
         for (var i = 0; i < myObject.length; i++) {
 
-          var z = Math.floor((Math.random()*10)+1);
+          var z = Math.floor((Math.random()*8)+1);
           if(k == 0) {
             elemToBeGenerated += "<div>";
           }
