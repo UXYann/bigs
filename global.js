@@ -2261,7 +2261,7 @@ function readingSpecificJson(fileUrl,callback) {
 
         $('.columnFold1').click(function() { 
           $(this).toggleClass('columnUnfold');
-          $('.financeTableCeiling1').toggle('blind', { direction: 'horizontal' }, 500);
+          $('.financeTableCeiling1').toggleClass('open');
           return false;
         });
 

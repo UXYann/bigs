@@ -270,7 +270,7 @@ input:focus, textarea:focus { outline: none; }
 
 .crCard { display: inline-block; width: 240px; margin: 7px; background: #fff; -webkit-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); -moz-box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.2); }
 .crCard span { display: block; -webkit-transition: all ease-in-out 500ms; }
-.crCard span.crTitle { display: block; width: 188px; height: 46px; padding: 7px 7px 7px 45px; font-size: 0.8em; font-weight: 100; color: #282828; text-align: left; text-transform: uppercase; text-overflow: ellipsis; vertical-align: middle; overflow: hidden; background-repeat: no-repeat; background-position: 5px 13px; background-size: 35px; border-bottom: 1px solid #D71236; }
+.crCard span.crTitle { display: block; width: 188px; height: 46px; padding: 7px 7px 7px 45px; font-size: 0.8em; font-weight: 100; color: #282828; text-align: left; text-transform: uppercase; text-overflow: ellipsis; vertical-align: middle; overflow: auto; background-repeat: no-repeat; background-position: 5px 13px; background-size: 35px; border-bottom: 1px solid #D71236; }
 .crCard span.crTitle1 { background-image: url('images/crPicto-01.png'); }
 .crCard span.crTitle2 { background-image: url('images/crPicto-02.png'); }
 .crCard span.crTitle3 { background-image: url('images/crPicto-03.png'); }
@@ -780,13 +780,10 @@ animation-fill-mode: forwards;
 .tableFinancialBlockSubTitle { margin-top: 0; padding-left: 30px; font-size: 18px; font-weight: bold; color: #e20030; }
 .tableFinancialBlockSubTitle2 { margin-top: 30px; }
 
-.financeTableLine { height: 41px; margin-left: 40px; font-size: 0.8em; font-weight: 300; }
-.financeTableLine div { float: left; width: 90px; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #e6e6e6; /*display: table-cell;
+.financeTableLine { /*height: 41px;*/ margin-left: 40px; font-size: 0.8em; font-weight: 300; }
+.financeTableLine div { /*float: left;*/ width: 90px; padding: 12px 0; /*height: 40px; line-height: 40px;*/ text-align: center; border-bottom: 1px solid #e6e6e6; display: table-cell;
 vertical-align: middle;
-overflow: hidden;
-word-wrap: break-word;
-table-layout: fixed;
-text-overflow: ellipsis;*/ overflow-x: scroll; }
+word-wrap: break-word; overflow: hidden; }
 .financeTableLine .financeTableName { width: 160px; }
 .financeTableLine .financeTableCounter { width: 130px; }
 .financeTableLine .financeTableRat { width: 60px; }
@@ -794,7 +791,8 @@ text-overflow: ellipsis;*/ overflow-x: scroll; }
 .financeTableLine .columnFold1 { width: 113px; height: 39px; background: url('images/rightBlackArrow.png') 90px center no-repeat; background-size: 7px; border: 1px solid #000; }
 .financeTableLine .columnFold1:hover { cursor: pointer; }
 .financeTableLine .columnUnfold { background: #000; color: #fff; -webkit-transition: bakground-color ease-in-out 250ms; -webkit-transition: color ease-in-out 250ms; }
-.financeTableLine .financeTableCeiling1 { display: none; width: 78px; background: #f4f4f4; border-left: 1px solid #000; border-right: 1px solid #000; }
+.financeTableLine .financeTableCeiling1 { display: none; opacity: 0; column-width: 0; background: #f4f4f4; border-left: 1px solid #000; border-right: 1px solid #000; -webkit-transition: all ease-in-out 500ms; transition: all ease-in-out 500ms; }
+.financeTableLine .open { display: table-cell; opacity: 1; width: 78px; -webkit-transition: all ease-in-out 500ms; transition: all ease-in-out 500ms; }
 .financeTableLine .financeTableFinal { width: 65px; }
 .financeTableLine .financeTableTerm { width: 60px; }
 .financeTableLine .financeTablePro {  }
@@ -804,7 +802,7 @@ text-overflow: ellipsis;*/ overflow-x: scroll; }
 .financeTableLine1 .financeTableUnder,
 .financeTableLine1 .financeTableCeiling1,
 .financeTableLine1 .financeTableFinal { line-height: normal; }
-.financeTableLine1 .financeTableCeiling1 { border-top: 1px solid #000; }
+.financeTableLine1 .financeTableCeiling1 { padding-bottom: 11px; border-top: 1px solid #000; }
 .financeTableLine5 .financeTableCeiling1 { border-bottom: 1px solid #000; }
 .financeTableLine3 .financeTableName { width: 290px; }
 .financeTableLine3 div { background: #f4f4f4;}
