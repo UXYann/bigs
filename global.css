@@ -783,7 +783,7 @@ animation-fill-mode: forwards;
 .financeTableLine { /*height: 41px;*/ margin-left: 40px; font-size: 0.8em; font-weight: 300; }
 .financeTableLine div { /*float: left;*/ width: 90px; padding: 12px 0; /*height: 40px; line-height: 40px;*/ text-align: center; border-bottom: 1px solid #e6e6e6; display: table-cell;
 vertical-align: middle;
-word-wrap: break-word; overflow: hidden; }
+word-wrap: break-word; overflow: hidden!important; }
 .financeTableLine .financeTableName { width: 160px; }
 .financeTableLine .financeTableCounter { width: 130px; }
 .financeTableLine .financeTableRat { width: 60px; }
